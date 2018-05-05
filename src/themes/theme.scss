@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+$bgcolor: #333333;
+$fgcolor: #dddddd;
+$header-height: 200px;
+$header-items: 3;
+$img-size: 50px;
+$spacing: 5px;
+$trans-short: 0.3s;
+$h1-size: 8rem;
+$lang-width: 480px;
+
+body{
+	background-color: $bgcolor;
+	color: $fgcolor;
+	font-family: 'Slabo 27px';
+
+	ul, ol{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	header{
+		border-left: none;
+		position: fixed;
+		left: 0;
+		top: 50vh;
+		height: $header-height;
+		margin-top: -$header-height/2;
+		margin-left: 2*$spacing;
+		z-index: 99;
+
+		nav{
+			height: 100%;
+
+			ul{
+				height: 100%;
+				display:flex;
+				flex-direction: column;
+				justify-content: space-around;
+
+				li{
+					display:flex;
+					align-items: center;
+
+					img{
+						height:$img-size;
+						max-height:$img-size;
+						width:auto;
+						margin-right: 2*$spacing;
+						transition: $trans-short;
+						
+						&+h3{
+							visibility: hidden;
+							opacity: 0;
+							transition: $trans-short;
+						}
+					}
+
+					img:hover{
+						transform: scale(1.2);
+						transition: $trans-short;
+						margin-top: $spacing;
+						margin-bottom: $spacing;
+
+						&+h3{
+							visibility: visible;
+							opacity: 1;
+							transition: $trans-short;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	article.slide{
+		width: 100%;
+		height: 100vh;
+
+		&.cover{
+			h1{
+				position: absolute;
+				width:100%;
+				text-align: center;
+				font-size: $h1-size;
+				top: 50vh;
+				margin-top: -$h1-size/2;
+			}
+		}
+
+		&.langs{
+			ul{
+				@import 'langblob';
+			}
+		}
+	}
+}

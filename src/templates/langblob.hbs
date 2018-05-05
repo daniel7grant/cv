@@ -1,0 +1,18 @@
+<li id="lang-{{id}}" class="lang-blob">
+	<div class="lang-title">
+		<img src="static/icons/{{icon}}" />
+		<h2>{{name}}</h2>
+	</div>
+	<hr />
+	<div class="lang-description">
+		{{{description}}}
+		<ul class="lang-modules">
+			{{#each modules}}
+			<li>
+				<img src="static/icons/{{icon}}" title="{{name}}" />
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+
+</li>

@@ -1,0 +1,22 @@
+<html>
+
+<head></head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				{{#each slides}}
+				<li>
+					<img src="static/icons/{{icon}}" title="{{name}}" />
+					<h3>{{name}}</h3>
+				</li>
+				{{/each}}
+			</ul>
+		</nav>
+	</header>
+	{{> cover}}
+	{{> langs}}
+</body>
+
+</html>
