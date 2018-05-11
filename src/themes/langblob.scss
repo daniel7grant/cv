@@ -1,4 +1,5 @@
 li.lang-blob{
+	position: absolute;
 	max-width: $img-size;
 	margin: auto;
 	transition: $trans-short;
@@ -13,13 +14,13 @@ li.lang-blob{
 	div.lang-title{
 		display:flex;
 		align-items: center;
-		padding-bottom: $spacing/2;
 		overflow: hidden;
+		cursor: pointer;
 
 		img{
 
 		}
-		h2{
+		h3{
 			margin:0;
 			visibility:hidden;
 			opacity: 0;
@@ -40,18 +41,32 @@ li.lang-blob{
 		margin-top: 2*$spacing;
 		margin-left: $img-size + 2*$spacing;
 		overflow: hidden;
-		width: $lang-width;
+		width: $lang-width - ($img-size + 2*$spacing);
 
 		ul.lang-modules{
 			display: flex;
+			margin-top: 2*$spacing;
+
+			li{
+
+				img{
+					margin-left: 2*$spacing;
+				}
+
+				div{
+					margin-top: $spacing;
+					text-align: center;
+				}
+			}
 		}
 	}
 
-	&:hover{
+	&.is-active{
 		max-width: $lang-width;
 
 		div.lang-title{
-			h2{
+
+			h3{
 				visibility:visible;
 				opacity: 1;
 				transition: $trans-short/2 $trans-short;
