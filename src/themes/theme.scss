@@ -7,8 +7,10 @@ $header-items: 3;
 $img-size: 50px;
 $spacing: 5px;
 $trans-short: 0.3s;
+$trans-long: 0.8s;
 $h1-size: 8rem;
 $lang-width: 480px;
+$lang-radius: 300px;
 
 body{
 	background-color: $bgcolor;
@@ -103,20 +105,32 @@ body{
 		&.langs{
 
 			h2{
-				// box-sizing: border-box;
 				position: relative;
-				// width:100%;
 				font-size: $h1-size/2;
 				top: 50vh;
 				margin:0;
 				margin-top: -$h1-size/4;
-				// padding-left: 15%;
 				text-align: center;
-				// text-shadow: #000000 0px 0px 20px;
+				transition: $trans-short;
 			}
 
 			ul{
 				@import 'langblob';
+
+				
+			}
+			
+			&.is-active{
+				h2{
+					transform: translateY(-$lang-radius*0.75);
+					transition: $trans-short;
+				}
+				ul{
+					li.lang-blob:not(.is-active){
+						opacity: 0;
+						visibility: hidden;
+					}
+				}
 			}
 		}
 	}

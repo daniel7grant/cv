@@ -1,8 +1,11 @@
 li.lang-blob{
 	position: absolute;
 	max-width: $img-size;
-	margin: auto;
 	transition: $trans-short;
+	top: 50vh;
+	left: 50%;
+	margin-left:-$img-size/2;
+
 	
 	img{
 		height:$img-size;
@@ -63,6 +66,8 @@ li.lang-blob{
 
 	&.is-active{
 		max-width: $lang-width;
+		transform: translate(-$lang-width/2, -$lang-radius/2) !important; //I don't usually do this I swear
+		margin-left:0;
 
 		div.lang-title{
 
@@ -78,5 +83,9 @@ li.lang-blob{
 			opacity: 1;
 			transition: $trans-short/2 $trans-short;
 		}
+	}
+
+	&:not(.is-active):hover{
+		transform: scale(1.2);
 	}
 }

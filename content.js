@@ -39,7 +39,7 @@ module.exports = {
 			id: "php",
 			name: "PHP",
 			icon: "php/php-original.svg",
-			description: "",
+			description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!",
 			modules: [{
 				name: "Wordpress",
 				icon: "wordpress/wordpress-plain.svg"
@@ -66,7 +66,7 @@ module.exports = {
 			id: "sql",
 			name: "SQL",
 			icon: "mysql/mysql-original.svg",
-			description: "",
+			description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!",
 			modules: [{
 				name: "MySQL",
 				icon: "mysql/mysql-original.svg"
@@ -78,7 +78,7 @@ module.exports = {
 			id: "java",
 			name: "Java",
 			icon: "java/java-original.svg",
-			description: "",
+			description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!",
 			modules: [{
 				name: "Android",
 				icon: "android/android-original.svg"
@@ -88,9 +88,9 @@ module.exports = {
 			}]
 		}, {
 			id: "c",
-			name: "C",
+			name: "C-family languages",
 			icon: "c/c-original.svg",
-			description: "",
+			description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!",
 			modules: [{
 				name: "C++",
 				icon: "cplusplus/cplusplus-original.svg"
@@ -102,10 +102,13 @@ module.exports = {
 			id: "devops",
 			name: "DevOps",
 			icon: "linux/linux-original.svg",
-			description: "",
+			description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!",
 			modules: [{
 				name: "Linux",
 				icon: "linux/linux-original.svg",
+			}, {
+				name: "Git",
+				icon: "git/git-original.svg"
 			}, {
 				name: "Docker",
 				icon: "docker/docker-original.svg"
@@ -116,18 +119,6 @@ module.exports = {
 				name: "Nginx",
 				icon: "nginx/nginx-original.svg"
 			}]
-		}, {
-			id: "git",
-			name: "Git",
-			icon: "git/git-original.svg",
-			description: "",
-			modules: [{
-				name: "GitHub",
-				icon: "github/github-original.svg"
-			}, {
-				name: "GitLab",
-				icon: "gitlab/gitlab-original.svg"
-			}]
-		},
+		}
 	]
 };
