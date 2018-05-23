@@ -1,0 +1,35 @@
+{
+	"name": "cv-website",
+	"version": "0.0.0",
+	"description": "Website for a CV",
+	"main": "index.js",
+	"scripts": {
+		"dev": "webpack-dev-server --port 47268",
+		"build": "./node_modules/.bin/webpack -p --progress"
+	},
+	"author": "Daniel Grant (daniel7grant@gmail.com)",
+	"license": "Beerware",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/daniel7grant/cv.git"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.4",
+		"babel-preset-env": "^1.6.1",
+		"css-loader": "^0.28.11",
+		"handlebars": "^4.0.11",
+		"handlebars-loader": "^1.7.0",
+		"html-webpack-plugin": "^3.2.0",
+		"node-sass": "^4.9.0",
+		"sass-loader": "^7.0.1",
+		"style-loader": "^0.21.0",
+		"webpack": "^4.7.0",
+		"webpack-cli": "^2.1.2",
+		"webpack-dev-server": "^3.1.4"
+	},
+	"dependencies": {
+		"do-slide": "^1.1.4",
+		"normalize.css": "^8.0.0"
+	}
+}
