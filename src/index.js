@@ -4,12 +4,11 @@ import DoSlide from 'do-slide'
 import MainTemplate from './templates/index.hbs'
 import content from './content.js'
 
+
 document.addEventListener('DOMContentLoaded', function () {
-
-	document.body.innerHTML = MainTemplate(content.en);
-
-	var slide = new DoSlide("#slide-container");
-
+	
+	//document.body.innerHTML += MainTemplate(content.en);
+	
 	const langRadius = 300, langOffset = Math.PI / 2;
 	let langBlobs = Array.from(document.getElementsByClassName('lang-blob'));
 	let langTitleRect = document.getElementById('slide-lang-title').getBoundingClientRect();
@@ -17,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	Array.from(document.getElementsByClassName('close')).forEach(element => element.addEventListener('click', deactivateElement));
 	document.body.addEventListener('click', deactivateElement);
+
+	var slide = new DoSlide("#slide-container");
 
 });
 

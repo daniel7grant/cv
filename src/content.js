@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	hu: {
 		name: "Gergely Dániel",
 		slides: [{

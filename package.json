@@ -8,6 +8,10 @@
 	},
 	"author": "Daniel Grant (daniel7grant@gmail.com)",
 	"license": "Beerware",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/daniel7grant/cv.git"
+	},
 	"devDependencies": {
 		"babel-core": "^6.26.3",
 		"babel-loader": "^7.1.4",
