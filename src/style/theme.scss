@@ -11,6 +11,8 @@ $trans-long: 0.8s;
 $h1-size: 8rem;
 $lang-width: 480px;
 $lang-radius: 300px;
+$card-width:400px;
+$card-height:300px;
 
 body{
 	background-color: $bgcolor;
@@ -21,6 +23,28 @@ body{
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
+	}
+
+	h1{
+		font-size: $h1-size;
+		margin-top: -$h1-size/2;
+		text-align: center;
+		text-shadow: #000000 0px 0px 20px;
+	}
+	h2{
+		font-size: $h1-size/2;
+		margin-top: -$h1-size/4;
+		text-align: center;
+	}
+	h3{
+		font-size: $h1-size/3.5;
+		margin: 0;
+	}
+	img.icon{
+		height:$img-size;
+		max-height:$img-size;
+		width:auto;
+		transition: $trans-short;
 	}
 
 	header{
@@ -93,12 +117,8 @@ body{
 				box-sizing: border-box;
 				position: absolute;
 				width:100%;
-				font-size: $h1-size;
 				top: 50vh;
-				margin-top: -$h1-size/2;
 				padding-left: 15%;
-				text-align: center;
-				text-shadow: #000000 0px 0px 20px;
 			}
 		}
 
@@ -106,18 +126,13 @@ body{
 
 			h2{
 				position: relative;
-				font-size: $h1-size/2;
 				top: 50vh;
 				margin:0;
-				margin-top: -$h1-size/4;
-				text-align: center;
 				transition: $trans-short;
 			}
 
 			ul{
 				@import 'langblob';
-
-				
 			}
 			
 			&.is-active{
@@ -133,5 +148,18 @@ body{
 				}
 			}
 		}
+
+		&.projects{
+			padding-top: $h1-size;
+
+			ul#slide-projects-list{
+				display:flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+
+				@import 'projectcard';
+			}
+		}
 	}
+
 }

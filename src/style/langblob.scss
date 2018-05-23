@@ -5,15 +5,7 @@ li.lang-blob{
 	top: 50vh;
 	left: 50%;
 	margin-left:-$img-size/2;
-
 	
-	img{
-		height:$img-size;
-		max-height:$img-size;
-		width:auto;
-		margin-right: 2*$spacing;
-	}
-
 	div.lang-title{
 		display:flex;
 		align-items: center;
@@ -22,11 +14,11 @@ li.lang-blob{
 
 		img{
 			flex: 0 1 auto;
+			margin-right: 2*$spacing;
 		}
 		h3{
 			margin:0;
 			flex: 1 0 auto;
-			font-size: 2rem;
 			white-space: nowrap;
 			visibility:hidden;
 			opacity: 0;
@@ -82,7 +74,7 @@ li.lang-blob{
 			li{
 
 				img{
-					margin-left: 2*$spacing;
+					margin: 0 2*$spacing;
 				}
 
 				div{
@@ -115,6 +107,9 @@ li.lang-blob{
 	}
 
 	&:not(.is-active):hover{
-		transform: scale(1.2);
+		div.lang-title, hr{
+			transition: $trans-short;
+			transform: scale(1.2);
+		}
 	}
 }
