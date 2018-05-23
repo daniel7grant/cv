@@ -7,16 +7,12 @@ var PORT = process.env.PORT || 8082;
 app.use(express.static(path.join(__dirname, 'public/dist')));
 app.use(express.static(path.join(__dirname, 'public/static')));
 
-app.get('/', function(req, res){
-	res.sendFile(path.join(__dirname, 'public/dist/index.html'));
+app.get(['/', '/en'], function(req, res){
+	res.sendFile(path.join(__dirname, 'public/dist/en.html'));
 });
 
 app.get('/hu', function(req, res){
-	res.sendFile(path.join(__dirname, 'public/dist/index.html'));
-});
-
-app.get('/en', function(req, res){
-	res.sendFile(path.join(__dirname, 'public/dist/index.html'));
+	res.sendFile(path.join(__dirname, 'public/dist/hu.html'));
 });
 
 app.listen(PORT, function(){

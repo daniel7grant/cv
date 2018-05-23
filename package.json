@@ -4,6 +4,7 @@
 	"description": "Website for a CV",
 	"main": "index.js",
 	"scripts": {
+		"start": "node index.js"
 	},
 	"author": "Daniel Grant (daniel7grant@gmail.com)",
 	"license": "Beerware",
