@@ -21,15 +21,44 @@ li.lang-blob{
 		cursor: pointer;
 
 		img{
-
+			flex: 0 1 auto;
 		}
 		h3{
 			margin:0;
+			flex: 1 0 auto;
+			font-size: 2rem;
+			white-space: nowrap;
 			visibility:hidden;
 			opacity: 0;
-			font-size: 1.8em;
 			transition: $trans-short/2 $trans-short;
-			white-space: nowrap;
+		}
+		div.lang-level{
+			display:flex;
+			flex-direction: column;
+			justify-content: space-around;
+			visibility:hidden;
+			opacity: 0;
+			transition: $trans-short/2 $trans-short;
+			flex: 0 1 auto;
+			height: 100%;
+			max-height: 100%;
+			text-align:center;
+			text-transform: uppercase;
+			margin:0 $spacing;
+
+			h4{
+				font-size:1.66rem;
+				margin:0;
+			}
+			div{
+				font-size:0.66rem;
+			}
+		}
+		img.close{
+			margin:0;
+			visibility:hidden;
+			opacity: 0;
+			transition: $trans-short/2 $trans-short;
 		}
 	}
 	hr{
@@ -71,7 +100,7 @@ li.lang-blob{
 
 		div.lang-title{
 
-			h3{
+			h3,div.lang-level,img.close{
 				visibility:visible;
 				opacity: 1;
 				transition: $trans-short/2 $trans-short;

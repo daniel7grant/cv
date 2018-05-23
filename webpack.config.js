@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Content = require('./content.js');
 
 module.exports = {
 	entry: './src/index.js',
@@ -26,9 +25,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Gergely Dániel',
-			template: 'src/templates/index.hbs',
-			templateParameters: Content
+			title: 'Gergely Dániel'
 		})
 	]
 };
