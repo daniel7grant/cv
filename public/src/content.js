@@ -131,7 +131,86 @@ module.exports = {
 					icon: 'nginx/nginx-original.svg'
 				}]
 			}
-		]
+		],
+		projects: [{
+			name: 'FK Tippjáték',
+			cover: 'fk.png',
+			url: 'http://www.fkclub.hu/tippjatek/',
+			details:[
+				'1000+ user',
+				'Custom design',
+				'Without any PHP or JS frameworks'
+			],
+			languages:[{
+				name: "PHP",
+				icon: "php/php-original.svg"
+			}, {
+				name: "JavaScript",
+				icon: "javascript/javascript-original.svg"
+			}]
+		}, {
+			name: 'GSZK Website',
+			cover: 'gszk.png',
+			url: 'http://gszk.bme.hu/',
+			details:[
+				'Based on Drupal',
+				'Custom module and theme'
+			],
+			languages:[{
+				name: "Drupal",
+				icon: "drupal/drupal-original.svg"
+			}, {
+				name: "JavaScript",
+				icon: "javascript/javascript-original.svg"
+			}]
+		}, {
+			name: 'FK Tippjáték',
+			cover: 'fk.png',
+			url: 'http://www.fkclub.hu/tippjatek/',
+			details:[
+				'1000+ user',
+				'Custom design',
+				'Without any PHP or JS frameworks'
+			],
+			languages:[{
+				name: "PHP",
+				icon: "php/php-original.svg"
+			}, {
+				name: "JavaScript",
+				icon: "javascript/javascript-original.svg"
+			}]
+		}, {
+			name: 'GSZK Website',
+			cover: 'gszk.png',
+			url: 'http://gszk.bme.hu/',
+			details:[
+				'Based on Drupal',
+				'Custom module and theme'
+			],
+			languages:[{
+				name: "PHP",
+				icon: "php/php-original.svg"
+			}, {
+				name: "JavaScript",
+				icon: "javascript/javascript-original.svg"
+			}]
+		}, {
+			name: 'FK Tippjáték',
+			cover: 'fk.png',
+			url: 'http://www.fkclub.hu/tippjatek/',
+			details:[
+				'1000+ user',
+				'Custom design',
+				'Without any PHP or JS frameworks'
+			],
+			languages:[{
+				name: "PHP",
+				icon: "php/php-original.svg"
+			}, {
+				name: "JavaScript",
+				icon: "javascript/javascript-original.svg"
+			}]
+		}]
 	},
 	en: {
 		name: 'Gergely Dániel',
