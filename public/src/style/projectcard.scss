@@ -1,7 +1,7 @@
 li.project-card{
 	position: relative;
 	cursor: pointer;
-	width: 22.5%;
+	width: $card-width;		//TODO: Responsive design
 	height: $card-height;
 	perspective: 1000px;
 	margin-bottom: 8*$spacing;
@@ -56,7 +56,6 @@ li.project-card{
 			list-style-type: circle;
 
 			li{
-				font-size: 1.2em;
 				margin-bottom: $spacing;
 			}
 		}

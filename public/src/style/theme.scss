@@ -12,10 +12,10 @@ $h1-size: 8rem;
 $lang-width: 480px;
 $lang-radius: 300px;
 $card-width:400px;
-$card-height:300px;
+$card-height:3/4*$card-width;
 
 body{
-	background-color: $bgcolor;
+	background: $bgcolor url('/real-carbon-fibre.png');
 	color: $fgcolor;
 	font-family: 'Slabo 27px';
 

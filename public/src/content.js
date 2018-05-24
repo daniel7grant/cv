@@ -377,20 +377,25 @@ module.exports = {
 				icon: 'javascript/javascript-original.svg'
 			}]
 		}, {
-			name: 'FK Tippjáték',
+			name: 'KTKSzSz Docker server',
 			cover: 'fk.png',
-			url: 'http://www.fkclub.hu/tippjatek/',
+			url: '',
 			details:[
-				'1000+ user',
-				'Custom design',
-				'Without any PHP or JS frameworks'
+				'Migrating 19 webservers to Docker platform',
+				'Automatically generated NGINX reverse proxy',
+				'Automatic SSL with Let\'s Encrypt wildcard certificates',
+				'No-downtime deploy with systemd units',
+				'Easy version update for Drupal webservers'
 			],
 			languages:[{
-				name: 'PHP',
-				icon: 'php/php-original.svg'
+				name: 'Linux',
+				icon: 'linux/linux-original.svg'
 			}, {
-				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				name: 'Docker',
+				icon: 'docker/docker-original.svg'
+			}, {
+				name: 'NGINX',
+				icon: 'nginx/nginx-original.svg'
 			}]
 		}, {
 			name: 'GSZK Website',

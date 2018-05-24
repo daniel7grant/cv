@@ -11,6 +11,7 @@ li.lang-blob{
 		align-items: center;
 		overflow: hidden;
 		cursor: pointer;
+		transition: $trans-short;
 
 		img{
 			flex: 0 1 auto;
@@ -56,6 +57,7 @@ li.lang-blob{
 	hr{
 		height: 0;
 		border-bottom: 1px solid $fgcolor;
+		transition: $trans-short;
 	}
 	div.lang-description{
 		visibility:hidden;

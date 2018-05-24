@@ -1,17 +1,11 @@
 import 'normalize.css';
 import './style/theme.scss';
 import DoSlide from 'do-slide';
-//import MainTemplate from './templates/index.hbs';
-//import content from './content.js';
-
 
 document.addEventListener('DOMContentLoaded', function () {
-	
-	//document.body.innerHTML += MainTemplate(content.en);
-	
 	new DoSlide('#slide-container');
 	
-	const langRadius = 300, langOffset = Math.PI / 2;
+	const langRadius = 300, langOffset = Math.PI / 2;		//TODO: Responsive design
 	let langBlobs = Array.from(document.getElementsByClassName('lang-blob'));
 	positionLangs(langBlobs, langRadius, langOffset);
 
@@ -49,7 +43,7 @@ function toggleElement(ev, element){
 		ev.stopPropagation();
 	}
 	else{
-		deactivateAll(ev);		
+		deactivateAll(ev);
 	}
 }
 
