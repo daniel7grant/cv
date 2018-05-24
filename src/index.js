@@ -1,27 +1,26 @@
-import 'normalize.css'
-import './style/theme.scss'
-import DoSlide from 'do-slide'
-import MainTemplate from './templates/index.hbs'
-import content from './content.js'
+import 'normalize.css';
+import './style/theme.scss';
+import DoSlide from 'do-slide';
+//import MainTemplate from './templates/index.hbs';
+//import content from './content.js';
 
 
 document.addEventListener('DOMContentLoaded', function () {
 	
 	//document.body.innerHTML += MainTemplate(content.en);
 	
-	var slide = new DoSlide("#slide-container");
+	new DoSlide('#slide-container');
 	
 	const langRadius = 300, langOffset = Math.PI / 2;
 	let langBlobs = Array.from(document.getElementsByClassName('lang-blob'));
-	let langTitleRect = document.getElementById('slide-lang-title').getBoundingClientRect();
 	positionLangs(langBlobs, langRadius, langOffset);
 
 	Array.from(document.getElementsByClassName('project-card')).forEach(element => element.addEventListener('click', ev => toggleElement(ev, element)));
 
-	Array.from(document.getElementsByClassName('close')).forEach(element => element.addEventListener('click', deactivateElement));
-	document.body.addEventListener('click', deactivateElement);
-	document.body.addEventListener('mousewheel', deactivateElement);
-	document.body.addEventListener('DOMMouseScroll', deactivateElement);
+	Array.from(document.getElementsByClassName('close')).forEach(element => element.addEventListener('click', deactivateAll));
+	document.body.addEventListener('click', deactivateAll);
+	document.body.addEventListener('mousewheel', deactivateAll);
+	document.body.addEventListener('DOMMouseScroll', deactivateAll);
 
 });
 
@@ -45,16 +44,16 @@ function activateElement(element) {
 
 function toggleElement(ev, element){
 	if(!element.classList.contains('is-active')){
-		deactivateElement(ev);
+		deactivateAll(ev);
 		element.classList.add('is-active');
 		ev.stopPropagation();
 	}
 	else{
-		deactivateElement(ev);		
+		deactivateAll(ev);		
 	}
 }
 
-function deactivateElement(ev) {
+function deactivateAll(ev) {
 	document.getElementById('slide-lang').classList.remove('is-active');
 	Array.from(document.getElementsByClassName('lang-blob')).forEach(element => element.classList.remove('is-active'));
 	Array.from(document.getElementsByClassName('project-card')).forEach(element => element.classList.remove('is-active'));
