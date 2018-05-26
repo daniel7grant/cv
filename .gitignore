@@ -1,4 +1,5 @@
 node_modules/
+public/.nyc_output/
+public/coverage/
 public/dist/
 public/node_modules/
-

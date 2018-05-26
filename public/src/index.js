@@ -5,52 +5,49 @@ import 'do-slide/dist/do-slide.min.css';
 
 document.addEventListener('DOMContentLoaded', function () {
 	var doSlide = new DoSlide('#slide-container');
-	
+
 	const langRadius = 300, langOffset = Math.PI / 2;		//TODO: Responsive design
 	let langBlobs = Array.from(document.getElementsByClassName('lang-blob'));
 	positionLangs(langBlobs, langRadius, langOffset);
 
-	Array.from(document.getElementsByClassName('project-card')).forEach(element => element.addEventListener('click', ev => toggleElement(ev, element)));
+	langBlobs.forEach(element => element.addEventListener('click', ev => {
+		activateElements(ev, [element, document.getElementById('slide-lang')]);
+		ev.stopPropagation();
+	}));
 
-	Array.from(document.getElementsByClassName('close')).forEach(element => element.addEventListener('click', deactivateAll));
-	document.body.addEventListener('click', deactivateAll);
-	document.body.addEventListener('mousewheel', deactivateAll);
-	document.body.addEventListener('DOMMouseScroll', deactivateAll);
+	Array.from(document.getElementsByClassName('project-card'))
+		.forEach(element => element.addEventListener('click', ev => toggleElement(ev, element)));
+
+	Array.from(document.getElementsByClassName('close')).concat([document.body])
+		.forEach(element => element.addEventListener('click', deactivateElements));
 
 });
 
-function positionLangs(blobs, radius = 300, offset = 0) {
+export function positionLangs(blobs, radius = 300, offset = 0) {
 	blobs.forEach((element, index) => {
-
 		element.style.transform = `translate(${radius * Math.cos(index * 2 * Math.PI / blobs.length + offset)}px,
 								${ -radius * Math.sin(index * 2 * Math.PI / blobs.length + offset)}px)`;
-
-		element.addEventListener('click', function (ev) {
-			activateElement(this);
-			ev.stopPropagation();
-		});
 	});
 }
 
-function activateElement(element) {
-	document.getElementById('slide-lang').classList.add('is-active');
-	element.classList.add('is-active');
+export function activateElements(ev, elements) {
+	if (elements instanceof HTMLElement) elements = [elements];
+	elements.forEach(element => element.classList.add('is-active'));
 }
 
-function toggleElement(ev, element){
-	if(!element.classList.contains('is-active')){
-		deactivateAll(ev);
+export function toggleElement(ev, element) {
+	if (!element.classList.contains('is-active')) {
+		deactivateElements(ev);
 		element.classList.add('is-active');
-		ev.stopPropagation();
 	}
-	else{
-		deactivateAll(ev);
+	else {
+		deactivateElements(ev);
+		element.classList.remove('is-active');
 	}
 }
 
-function deactivateAll(ev) {
-	document.getElementById('slide-lang').classList.remove('is-active');
-	Array.from(document.getElementsByClassName('lang-blob')).forEach(element => element.classList.remove('is-active'));
-	Array.from(document.getElementsByClassName('project-card')).forEach(element => element.classList.remove('is-active'));
+export function deactivateElements(ev, elements = Array.from(document.querySelectorAll('#slide-lang,.lang-blob,.project-card'))) {
+	if (elements instanceof HTMLElement) elements = [elements];
+	elements.forEach(element => element.classList.remove('is-active'));
 	ev.stopPropagation();
 }
