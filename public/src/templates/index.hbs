@@ -1,19 +1,29 @@
-{{!-- <header>
-	<nav>
-		<ul>
-			{{#each slides}}
-			<!-- <li>
+<html>
+
+<head>
+	<title>Gergely Dániel</title>
+</head>
+
+<body>
+	{{!--
+	<header>
+		<nav>
+			<ul>
+				{{#each slides}}
+				<li>
 					<img src="/icons/{{icon}}" title="{{name}}" alt="{{name}}" />
 					<h3>{{name}}</h3>
-				</li> -->
-			{{/each}}
-		</ul>
-	</nav>
-</header> --}}
-<section>
-	<div id="slide-container">
-		{{!-- {{> cover}} --}}
-		{{> langs}}
-		{{> projects}}
-	</div>
-</section>
+				</li>
+				{{/each}}
+			</ul>
+		</nav>
+	</header> --}}
+	<section class="ds-parent">
+		<div id="slide-container" class="ds-container">
+			{{> cover}} {{> langs}} {{> projects}}
+		</div>
+	</section>
+
+</body>
+
+</html>

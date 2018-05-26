@@ -384,8 +384,7 @@ module.exports = {
 				'Migrating 19 webservers to Docker platform',
 				'Automatically generated NGINX reverse proxy',
 				'Automatic SSL with Let\'s Encrypt wildcard certificates',
-				'No-downtime deploy with systemd units',
-				'Easy version update for Drupal webservers'
+				'Convenient container management with systemd units',
 			],
 			languages:[{
 				name: 'Linux',

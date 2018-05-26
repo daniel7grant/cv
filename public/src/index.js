@@ -1,9 +1,10 @@
 import 'normalize.css';
 import './style/theme.scss';
 import DoSlide from 'do-slide';
+import 'do-slide/dist/do-slide.min.css';
 
 document.addEventListener('DOMContentLoaded', function () {
-	new DoSlide('#slide-container');
+	var doSlide = new DoSlide('#slide-container');
 	
 	const langRadius = 300, langOffset = Math.PI / 2;		//TODO: Responsive design
 	let langBlobs = Array.from(document.getElementsByClassName('lang-blob'));
