@@ -349,6 +349,10 @@ module.exports = {
 			name: 'FK Tippjáték',
 			cover: 'fk.png',
 			url: 'http://www.fkclub.hu/tippjatek/',
+			client: {
+				name: 'Fűzővel kifelé!',
+				url: 'http://fuzovelkifele.com/'
+			},
 			details:[
 				'1000+ user',
 				'Custom design',
@@ -362,9 +366,13 @@ module.exports = {
 				icon: 'javascript/javascript-original.svg'
 			}]
 		}, {
-			name: 'GSZK Website',
+			name: 'GSZK Homepage',
 			cover: 'gszk.png',
 			url: 'http://gszk.bme.hu/',
+			client: {
+				name: 'Gépész Szakkollégium',
+				url: 'http://gszk.bme.hu/'
+			},
 			details:[
 				'Based on Drupal',
 				'Custom module and theme'
@@ -380,6 +388,10 @@ module.exports = {
 			name: 'KTKSzSz Docker server',
 			cover: 'fk.png',
 			url: '',
+			client: {
+				name: 'Kármán Tódor Kollégium',
+				url: 'http://ktkszsz.ktk.bme.hu'
+			},
 			details:[
 				'Migrating 19 webservers to Docker platform',
 				'Automatically generated NGINX reverse proxy',
@@ -400,6 +412,10 @@ module.exports = {
 			name: 'GSZK Website',
 			cover: 'gszk.png',
 			url: 'http://gszk.bme.hu/',
+			client: {
+				name: 'Fűzővel kifelé!',
+				url: 'http://fuzovelkifele.com/'
+			},
 			details:[
 				'Based on Drupal',
 				'Custom module and theme'
@@ -414,6 +430,10 @@ module.exports = {
 		}, {
 			name: 'FK Tippjáték',
 			cover: 'fk.png',
+			client: {
+				name: 'Fűzővel kifelé!',
+				url: 'http://fuzovelkifele.com/'
+			},
 			url: 'http://www.fkclub.hu/tippjatek/',
 			details:[
 				'1000+ user',

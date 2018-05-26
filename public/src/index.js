@@ -2,8 +2,12 @@ import 'normalize.css';
 import './style/theme.scss';
 import DoSlide from 'do-slide';
 import 'do-slide/dist/do-slide.min.css';
+import ga from './analytics.js';
 
 document.addEventListener('DOMContentLoaded', function () {
+	ga('create', 'UA-XXXXX-Y', 'auto');
+	ga('send', 'pageview');
+	
 	var doSlide = new DoSlide('#slide-container');
 
 	const langRadius = 300, langOffset = Math.PI / 2;		//TODO: Responsive design

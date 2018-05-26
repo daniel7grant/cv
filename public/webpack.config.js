@@ -27,12 +27,14 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: 'hu.html',
+			minify: true,
 			title: 'Gergely Dániel',
 			template: './src/templates/index.hbs',
 			templateParameters: content.hu
 		}),
 		new HtmlWebpackPlugin({
 			filename: 'en.html',
+			minify: true,
 			title: 'Gergely Dániel',
 			template: './src/templates/index.hbs',
 			templateParameters: content.en
