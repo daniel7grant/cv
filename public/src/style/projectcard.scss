@@ -1,103 +1,89 @@
-li.project-card{
-	position: relative;
-	cursor: pointer;
-	width: $card-width;		//TODO: Responsive design
-	height: $card-height;
-	perspective: 1000px;
-	margin-bottom: 8*$spacing;
-
-	&>div{
-		position: absolute;
-		top:0;
-		left:0;
-		width: 100%;
-		height: $card-height;
-		backface-visibility: hidden;
-		transform-origin: 50% 50%;
-
-		a.to-url{
-			position: absolute;
-			top: 2*$spacing;
-			right: 2*$spacing;
-			width: $img-size/3;
-			height: $img-size/3;
-
-			svg{
-				width:100%;
-				height:100%;
-			}
-		}
-	}
-
-	div.project-cover{
-		transform: rotateY(0deg);
-		transition: transform $trans-short;
-
-		img{
-			width:100%;
-			height:$card-height;
-			border-radius: $spacing;
-		}
-	}
-
-	div.project-details{
-		box-sizing: border-box;
-		transform: rotateY(180deg);
-		transition: transform $trans-short;
-		background-color: #202020;
-		border-radius: $spacing;
-		padding: 2*$spacing;
-
-		h3{
-
-		}
-		ul.project-details-list{
-			margin: 2*$spacing 4*$spacing;
-			list-style-type: circle;
-
-			li{
-				margin-bottom: $spacing;
-			}
-		}
-		ul.project-langs{
-			display: flex;
-			margin-top: 2*$spacing;
-
-			li{
-
-				img{
-					margin: 0 2*$spacing;
-				}
-
-				div{
-					margin-top: $spacing;
-					text-align: center;
-				}
-			}
-		}
-	}
-
-	&:hover{
-		div.project-cover{
-			transform: rotateY(-20deg);
-			transition: transform $trans-short;
-		}
-	
-		div.project-details{
-			transform: rotateY(160deg);
-			transition: transform $trans-short;
-		}
-	}
-
-	&.is-active{
-		div.project-cover{
-			transform: rotateY(-180deg);
-			transition: transform $trans-short;
-		}
-	
-		div.project-details{
-			transform: rotateY(0deg);
-			transition: transform $trans-short;
-		}
-	}
+li.project-card {
+    position: relative;
+    cursor: pointer;
+    width: $card-width;
+    height: 3/4*$card-width;
+    perspective: 1000px;
+    margin-bottom: 2*$spacing-big;
+    &>div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transform-origin: 50% 50%;
+        a.to-url {
+            position: absolute;
+            top: 2*$spacing;
+            right: 2*$spacing;
+            width: $icon-size;
+            height: $icon-size;
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    div.project-cover {
+        transform: rotateY(0deg);
+        transition: transform $trans-short;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: $spacing;
+        }
+    }
+    div.project-details {
+        box-sizing: border-box;
+        transform: rotateY(180deg);
+        transition: transform $trans-short;
+        background-color: #202020;
+        border-radius: $spacing;
+        padding: 2*$spacing;
+        h3 {}
+        span.project-client {
+            font-size: 95%;
+        }
+        ul.project-details-list {
+            margin: 2*$spacing $spacing-big;
+            list-style-type: circle;
+            li {
+                margin-bottom: $spacing;
+            }
+        }
+        ul.project-langs {
+            display: flex;
+            margin-top: 2*$spacing;
+            li {
+                img {
+                    margin: 0 2*$spacing;
+                }
+                div {
+                    margin-top: $spacing;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    &:hover {
+        div.project-cover {
+            transform: rotateY(-20deg);
+            transition: transform $trans-short;
+        }
+        div.project-details {
+            transform: rotateY(160deg);
+            transition: transform $trans-short;
+        }
+    }
+    &.is-active {
+        div.project-cover {
+            transform: rotateY(-180deg);
+            transition: transform $trans-short;
+        }
+        div.project-details {
+            transform: rotateY(0deg);
+            transition: transform $trans-short;
+        }
+    }
 }

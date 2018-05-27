@@ -1,117 +1,117 @@
-li.lang-blob{
-	position: absolute;
-	max-width: $img-size;
-	transition: $trans-short;
-	top: 50vh;
-	left: 50%;
-	margin-left:-$img-size/2;
-	
-	div.lang-title{
-		display:flex;
-		align-items: center;
-		overflow: hidden;
-		cursor: pointer;
-		transition: $trans-short;
-
-		img{
-			flex: 0 1 auto;
-			margin-right: 2*$spacing;
-		}
-		h3{
-			margin:0;
-			flex: 1 0 auto;
-			white-space: nowrap;
-			visibility:hidden;
-			opacity: 0;
-			transition: $trans-short/2 $trans-short;
-		}
-		div.lang-level{
-			display:flex;
-			flex-direction: column;
-			justify-content: space-around;
-			visibility:hidden;
-			opacity: 0;
-			transition: $trans-short/2 $trans-short;
-			flex: 0 1 auto;
-			height: 100%;
-			max-height: 100%;
-			text-align:center;
-			text-transform: uppercase;
-			margin:0 $spacing;
-
-			h4{
-				font-size:1.66rem;
-				margin:0;
-			}
-			div{
-				font-size:0.66rem;
-			}
-		}
-		img.close{
-			margin:0;
-			visibility:hidden;
-			opacity: 0;
-			transition: $trans-short/2 $trans-short;
-		}
-	}
-	hr{
-		height: 0;
-		border-bottom: 1px solid $fgcolor;
-		transition: $trans-short;
-	}
-	div.lang-description{
-		visibility:hidden;
-		opacity: 0;
-		height: 0;
-		transition: $trans-short/2 $trans-short;
-		margin-top: 2*$spacing;
-		margin-left: $img-size + 2*$spacing;
-		overflow: hidden;
-		width: $lang-width - ($img-size + 2*$spacing);
-
-		ul.lang-modules{
-			display: flex;
-			margin-top: 2*$spacing;
-
-			li{
-
-				img{
-					margin: 0 2*$spacing;
-				}
-
-				div{
-					margin-top: $spacing;
-					text-align: center;
-				}
-			}
-		}
-	}
-
-	&.is-active{
-		max-width: $lang-width;
-		transform: translate(-$lang-width/2, -$lang-radius/2) !important; //I don't usually do this I swear
-		margin-left:0;
-
-		div.lang-title{
-
-			h3,div.lang-level,img.close{
-				visibility:visible;
-				opacity: 1;
-				transition: $trans-short/2 $trans-short;
-			}
-		}
-		div.lang-description{
-			height:auto;
-			visibility:visible;
-			opacity: 1;
-			transition: $trans-short/2 $trans-short;
-		}
-	}
-
-	&:not(.is-active):hover{
-		div.lang-title, hr{
-			transition: $trans-short;
-			transform: scale(1.2);
-		}
-	}
+li.lang-blob {
+    position: absolute;
+    width: $img-size;
+    transition: $trans-short;
+    top: 50vh;
+    left: 50%;
+    margin-left: -$img-size/2;
+    div.lang-title {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+        transition: $trans-short;
+        img {
+            flex: 0 1 auto;
+            margin-right: 2*$spacing;
+        }
+        h3 {
+            margin: 0;
+            flex: 1 0 auto;
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: $trans-short/2 $trans-short;
+        }
+        div.lang-level {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            visibility: hidden;
+            opacity: 0;
+            transition: $trans-short/2 $trans-short;
+            flex: 0 1 auto;
+            height: 100%;
+            max-height: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 $spacing;
+            h4 {
+                font-size: $h3-size*2/3;
+                margin: 0;
+            }
+            div {
+                font-size: $h3-size/3;
+            }
+        }
+        img.close {
+            margin: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: $trans-short/2 $trans-short;
+        }
+    }
+    hr {
+        height: 0;
+        border-bottom: 1px solid $fgcolor;
+        transition: $trans-short;
+    }
+    div.lang-description {
+        box-sizing: border-box;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: $trans-short/2 $trans-short;
+        margin-top: 2*$spacing;
+        padding-left: $img-size + 2*$spacing;
+        overflow: hidden;
+        width: 100%;
+        ul.lang-modules {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 2*$spacing;
+            li {
+                img {
+                    margin: 0 2*$spacing;
+                }
+                div {
+                    margin-top: $spacing;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    &.is-active {
+        width: $lang-width;
+        transform: translate(-$lang-width/2, -$lang-radius/2) !important; //I don't usually do this I swear
+        // TODO: Yikes, confronts with js
+        @media screen and (max-width: $lang-width) {
+            width: $lang-width-s;
+            transform: translate(-$lang-width-s/2, -$lang-radius/2) !important; //I don't usually do this I swear
+            // TODO: Yikes, confronts with js
+        }
+        margin-left:0;
+        div.lang-title {
+            h3,
+            div.lang-level,
+            img.close {
+                visibility: visible;
+                opacity: 1;
+                transition: $trans-short/2 $trans-short;
+            }
+        }
+        div.lang-description {
+            height: auto;
+            visibility: visible;
+            opacity: 1;
+            transition: $trans-short/2 $trans-short;
+        }
+    }
+    &:not(.is-active):hover {
+        div.lang-title,
+        hr {
+            transition: $trans-short;
+            transform: scale(1.2);
+        }
+    }
 }

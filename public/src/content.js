@@ -142,11 +142,11 @@ module.exports = {
 				'Without any PHP or JS frameworks'
 			],
 			languages:[{
-				name: "PHP",
-				icon: "php/php-original.svg"
+				name: 'PHP',
+				icon: 'php/php-original.svg'
 			}, {
-				name: "JavaScript",
-				icon: "javascript/javascript-original.svg"
+				name: 'JavaScript',
+				icon: 'javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'GSZK Website',
@@ -157,11 +157,11 @@ module.exports = {
 				'Custom module and theme'
 			],
 			languages:[{
-				name: "Drupal",
-				icon: "drupal/drupal-original.svg"
+				name: 'Drupal',
+				icon: 'drupal/drupal-original.svg'
 			}, {
-				name: "JavaScript",
-				icon: "javascript/javascript-original.svg"
+				name: 'JavaScript',
+				icon: 'javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'FK Tippjáték',
@@ -173,11 +173,11 @@ module.exports = {
 				'Without any PHP or JS frameworks'
 			],
 			languages:[{
-				name: "PHP",
-				icon: "php/php-original.svg"
+				name: 'PHP',
+				icon: 'php/php-original.svg'
 			}, {
-				name: "JavaScript",
-				icon: "javascript/javascript-original.svg"
+				name: 'JavaScript',
+				icon: 'javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'GSZK Website',
@@ -188,11 +188,11 @@ module.exports = {
 				'Custom module and theme'
 			],
 			languages:[{
-				name: "PHP",
-				icon: "php/php-original.svg"
+				name: 'PHP',
+				icon: 'php/php-original.svg'
 			}, {
-				name: "JavaScript",
-				icon: "javascript/javascript-original.svg"
+				name: 'JavaScript',
+				icon: 'javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'FK Tippjáték',
@@ -204,11 +204,11 @@ module.exports = {
 				'Without any PHP or JS frameworks'
 			],
 			languages:[{
-				name: "PHP",
-				icon: "php/php-original.svg"
+				name: 'PHP',
+				icon: 'php/php-original.svg'
 			}, {
-				name: "JavaScript",
-				icon: "javascript/javascript-original.svg"
+				name: 'JavaScript',
+				icon: 'javascript/javascript-original.svg'
 			}]
 		}]
 	},
@@ -281,7 +281,7 @@ module.exports = {
 				}]
 			}, {
 				id: 'db',
-				name: 'Database Management',
+				name: 'DB Management',
 				icon: 'mysql/mysql-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',

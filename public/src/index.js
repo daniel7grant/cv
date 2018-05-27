@@ -5,12 +5,12 @@ import 'do-slide/dist/do-slide.min.css';
 import ga from './analytics.js';
 
 document.addEventListener('DOMContentLoaded', function () {
-	ga('create', 'UA-XXXXX-Y', 'auto');
+	ga('create', 'UA-119869193-1', 'auto');
 	ga('send', 'pageview');
-	
+
 	var doSlide = new DoSlide('#slide-container');
 
-	const langRadius = 300, langOffset = Math.PI / 2;		//TODO: Responsive design
+	const langRadius = calculateRadius(), langOffset = Math.PI / 2;		//TODO: Responsive design
 	let langBlobs = Array.from(document.getElementsByClassName('lang-blob'));
 	positionLangs(langBlobs, langRadius, langOffset);
 
@@ -26,6 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		.forEach(element => element.addEventListener('click', deactivateElements));
 
 });
+
+export function calculateRadius() {
+	if (window.matchMedia('(min-width: 800px) and (min-height: 800px)').matches) {
+		return 300;
+	} else {
+		return Math.min(window.innerWidth, window.innerHeight) * 0.5 * 0.8;
+	}
+}
 
 export function positionLangs(blobs, radius = 300, offset = 0) {
 	blobs.forEach((element, index) => {
