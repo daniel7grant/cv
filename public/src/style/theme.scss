@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 // GENERAL VARIABLES
 $bgcolor: #060606;
+$selectcolor: #808080;
 $fgcolor: #dddddd;
 $acolor: #a0a0a0;
 $spacing: 1rem/3;
@@ -61,7 +62,13 @@ body {
         height: $img-size;
         width: auto;
         transition: $trans-short;
-    }
+	}
+	*::selection{
+		background-color: $selectcolor;
+	}
+	*::-moz-selection{
+		background-color: $selectcolor;
+	}
     section.ds-parent {
         display: block;
         position: absolute;
@@ -118,6 +125,42 @@ body {
                     flex-wrap: wrap;
                     justify-content: space-around;
                     @import 'projectcard';
+                }
+            }
+            &.contact {
+                padding-top: $h1-size/2;
+                margin: auto;
+                text-align: center;
+				width: $lang-width;
+				@media screen and (max-width: $lang-width) {
+					width: $lang-width-s;
+				}
+                h2 {
+                    margin-top: 0;
+                }
+                &>div {
+                    margin-bottom: $spacing-big;
+                }
+                input {
+                    width: 100%;
+                    text-align: center;
+                    border-radius: $spacing;
+                    padding: $spacing;
+                    font-size: $h1-size/5;
+                }
+                div.contact-buttons {
+                    display: flex;
+                    a {
+                        flex: 1 0 auto;
+                        padding: $spacing;
+                        margin: $spacing 0;
+                        background-color: $acolor;
+                        color: $bgcolor;
+						text-decoration: none;
+                        &:hover {
+							background-color: $selectcolor;
+						}
+                    }
                 }
             }
         }

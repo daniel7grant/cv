@@ -1,6 +1,8 @@
 module.exports = {
 	hu: {
 		name: 'Gergely Dániel',
+		email: '',
+		github: '',
 		slides: [{
 			name: 'Cover',
 			type: 'cover',
@@ -214,6 +216,8 @@ module.exports = {
 	},
 	en: {
 		name: 'Gergely Dániel',
+		email: 'daniel7grant@gmail.com',
+		github: 'https://github.com/daniel7grant/',
 		slides: [{
 			name: 'Cover',
 			type: 'cover',

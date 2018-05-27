@@ -1,14 +1,16 @@
 import 'normalize.css';
 import './style/theme.scss';
-import DoSlide from 'do-slide';
 import 'do-slide/dist/do-slide.min.css';
+import DoSlide from 'do-slide';
+import Clipboard from 'clipboard';
 import ga from './analytics.js';
 
 document.addEventListener('DOMContentLoaded', function () {
 	ga('create', 'UA-119869193-1', 'auto');
 	ga('send', 'pageview');
 
-	var doSlide = new DoSlide('#slide-container');
+	new DoSlide('#slide-container');
+	new Clipboard('a.copy');
 
 	const langRadius = calculateRadius(), langOffset = Math.PI / 2;		//TODO: Responsive design
 	let langBlobs = Array.from(document.getElementsByClassName('lang-blob'));
@@ -24,6 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	Array.from(document.getElementsByClassName('close')).concat([document.body])
 		.forEach(element => element.addEventListener('click', deactivateElements));
+
+	Array.from(document.querySelectorAll('input.contact-input'))
+		.forEach(element => element.addEventListener('click', (ev) => {
+			ev.target.focus();
+			ev.target.select();
+		}));
+
+	Array.from(document.querySelectorAll('a.copy'))
+		.forEach(element => element.addEventListener('click', ev => ev.stopPropagation));
 
 });
 
