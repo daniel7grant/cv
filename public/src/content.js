@@ -136,14 +136,14 @@ module.exports = {
 		],
 		projects: [{
 			name: 'FK Tippjáték',
-			cover: 'fk.png',
+			cover: { png: 'fk.png', webp: 'fk.webp' },
 			url: 'http://www.fkclub.hu/tippjatek/',
-			details:[
+			details: [
 				'1000+ user',
 				'Custom design',
 				'Without any PHP or JS frameworks'
 			],
-			languages:[{
+			languages: [{
 				name: 'PHP',
 				icon: 'php/php-original.svg'
 			}, {
@@ -152,13 +152,13 @@ module.exports = {
 			}]
 		}, {
 			name: 'GSZK Website',
-			cover: 'gszk.png',
+			cover: { png: 'gszk.png', webp: 'gszk.webp' },
 			url: 'http://gszk.bme.hu/',
-			details:[
+			details: [
 				'Based on Drupal',
 				'Custom module and theme'
 			],
-			languages:[{
+			languages: [{
 				name: 'Drupal',
 				icon: 'drupal/drupal-original.svg'
 			}, {
@@ -167,14 +167,14 @@ module.exports = {
 			}]
 		}, {
 			name: 'FK Tippjáték',
-			cover: 'fk.png',
+			cover: { png: 'fk.png', webp: 'fk.webp' },
 			url: 'http://www.fkclub.hu/tippjatek/',
-			details:[
+			details: [
 				'1000+ user',
 				'Custom design',
 				'Without any PHP or JS frameworks'
 			],
-			languages:[{
+			languages: [{
 				name: 'PHP',
 				icon: 'php/php-original.svg'
 			}, {
@@ -183,13 +183,13 @@ module.exports = {
 			}]
 		}, {
 			name: 'GSZK Website',
-			cover: 'gszk.png',
+			cover: { png: 'gszk.png', webp: 'gszk.webp' },
 			url: 'http://gszk.bme.hu/',
-			details:[
+			details: [
 				'Based on Drupal',
 				'Custom module and theme'
 			],
-			languages:[{
+			languages: [{
 				name: 'PHP',
 				icon: 'php/php-original.svg'
 			}, {
@@ -198,14 +198,14 @@ module.exports = {
 			}]
 		}, {
 			name: 'FK Tippjáték',
-			cover: 'fk.png',
+			cover: { png: 'fk.png', webp: 'fk.webp' },
 			url: 'http://www.fkclub.hu/tippjatek/',
-			details:[
+			details: [
 				'1000+ user',
 				'Custom design',
 				'Without any PHP or JS frameworks'
 			],
-			languages:[{
+			languages: [{
 				name: 'PHP',
 				icon: 'php/php-original.svg'
 			}, {
@@ -351,18 +351,18 @@ module.exports = {
 		],
 		projects: [{
 			name: 'FK Tippjáték',
-			cover: 'fk.png',
+			cover: { png: 'fk.png', webp: 'fk.webp' },
 			url: 'http://www.fkclub.hu/tippjatek/',
 			client: {
 				name: 'Fűzővel kifelé!',
 				url: 'http://fuzovelkifele.com/'
 			},
-			details:[
+			details: [
 				'1000+ user',
 				'Custom design',
 				'Without any PHP or JS frameworks'
 			],
-			languages:[{
+			languages: [{
 				name: 'PHP',
 				icon: 'php/php-original.svg'
 			}, {
@@ -371,17 +371,17 @@ module.exports = {
 			}]
 		}, {
 			name: 'GSZK Homepage',
-			cover: 'gszk.png',
+			cover: { png: 'gszk.png', webp: 'gszk.webp' },
 			url: 'http://gszk.bme.hu/',
 			client: {
 				name: 'Gépész Szakkollégium',
 				url: 'http://gszk.bme.hu/'
 			},
-			details:[
+			details: [
 				'Based on Drupal',
 				'Custom module and theme'
 			],
-			languages:[{
+			languages: [{
 				name: 'Drupal',
 				icon: 'drupal/drupal-original.svg'
 			}, {
@@ -390,19 +390,19 @@ module.exports = {
 			}]
 		}, {
 			name: 'KTKSzSz Docker server',
-			cover: 'fk.png',
+			cover: { png: 'fk.png', webp: 'fk.webp' },
 			url: '',
 			client: {
 				name: 'Kármán Tódor Kollégium',
 				url: 'http://ktkszsz.ktk.bme.hu'
 			},
-			details:[
+			details: [
 				'Migrating 19 webservers to Docker platform',
 				'Automatically generated NGINX reverse proxy',
 				'Automatic SSL with Let\'s Encrypt wildcard certificates',
 				'Convenient container management with systemd units',
 			],
-			languages:[{
+			languages: [{
 				name: 'Linux',
 				icon: 'linux/linux-original.svg'
 			}, {
@@ -414,17 +414,17 @@ module.exports = {
 			}]
 		}, {
 			name: 'GSZK Website',
-			cover: 'gszk.png',
+			cover: { png: 'gszk.png', webp: 'gszk.webp' },
 			url: 'http://gszk.bme.hu/',
 			client: {
 				name: 'Fűzővel kifelé!',
 				url: 'http://fuzovelkifele.com/'
 			},
-			details:[
+			details: [
 				'Based on Drupal',
 				'Custom module and theme'
 			],
-			languages:[{
+			languages: [{
 				name: 'PHP',
 				icon: 'php/php-original.svg'
 			}, {
@@ -433,18 +433,18 @@ module.exports = {
 			}]
 		}, {
 			name: 'FK Tippjáték',
-			cover: 'fk.png',
+			cover: { png: 'fk.png', webp: 'fk.webp' },
 			client: {
 				name: 'Fűzővel kifelé!',
 				url: 'http://fuzovelkifele.com/'
 			},
 			url: 'http://www.fkclub.hu/tippjatek/',
-			details:[
+			details: [
 				'1000+ user',
 				'Custom design',
 				'Without any PHP or JS frameworks'
 			],
-			languages:[{
+			languages: [{
 				name: 'PHP',
 				icon: 'php/php-original.svg'
 			}, {

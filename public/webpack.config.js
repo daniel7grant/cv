@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const content = require('./src/content.js');
 
 module.exports = {
@@ -14,11 +15,8 @@ module.exports = {
 			test: /\.js$/,
 			use: 'babel-loader'
 		}, {
-			test: /\.scss$/,
-			use: ['style-loader', 'css-loader', 'sass-loader']
-		}, {
-			test: /\.css$/,
-			use: ['style-loader', 'css-loader']
+			test: /\.s?css$/,
+			use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
 		}, {
 			test: /\.hbs$/,
 			use: 'handlebars-loader'
@@ -38,6 +36,9 @@ module.exports = {
 			title: 'Gergely Dániel',
 			template: './src/templates/index.hbs',
 			templateParameters: content.en
+		}),
+		new MiniCssExtractPlugin({
+			filename: 'theme.css'
 		})
 	]
 };
