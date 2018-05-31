@@ -37,6 +37,13 @@ module.exports = {
 			template: './src/templates/index.hbs',
 			templateParameters: content.en
 		}),
+		new HtmlWebpackPlugin({
+			filename: '404.html',
+			minify: true,
+			title: 'Gergely Dániel',
+			template: './src/templates/404.hbs',
+			templateParameters: {name: '404 - I can\'t find it :('}
+		}),
 		new MiniCssExtractPlugin({
 			filename: 'theme.css'
 		})

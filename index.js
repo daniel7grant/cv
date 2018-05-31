@@ -15,6 +15,14 @@ app.get('/hu', function(req, res){
 	res.sendFile(path.join(__dirname, 'public/dist/hu.html'));
 });
 
+app.get('/404', function(req, res){
+	res.sendFile(path.join(__dirname, 'public/dist/404.html'));
+});
+
+app.get('*', function(req, res){
+	res.redirect('/404');
+})
+
 app.listen(PORT, function(){
 	console.log('cv.danielgrants.com is running on port ' + PORT);
 });
