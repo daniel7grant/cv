@@ -1,6 +1,8 @@
 module.exports = {
 	hu: {
+		language: 'hu',
 		name: 'Gergely Dániel',
+		description: '',
 		email: '',
 		github: '',
 		slides: [{
@@ -20,117 +22,117 @@ module.exports = {
 			{
 				id: 'js',
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg',
+				icon: '/icons/javascript/javascript-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'Node.js',
-					icon: 'nodejs/nodejs-original.svg'
+					icon: '/icons/nodejs/nodejs-original.svg'
 				}, {
 					name: 'Vue.js',
-					icon: 'vuejs/vuejs-original.svg'
+					icon: '/icons/vuejs/vuejs-original.svg'
 				}, {
 					name: 'jQuery',
-					icon: 'jquery/jquery-original.svg'
+					icon: '/icons/jquery/jquery-original.svg'
 				}, {
 					name: 'Webpack',
-					icon: 'webpack/webpack-original.svg'
+					icon: '/icons/webpack/webpack-original.svg'
 				}, {
 					name: 'AJAX',
-					icon: 'javascript/javascript-original.svg'
+					icon: '/icons/javascript/javascript-original.svg'
 				}]
 			}, {
 				id: 'php',
 				name: 'PHP',
-				icon: 'php/php-original.svg',
+				icon: '/icons/php/php-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'Wordpress',
-					icon: 'wordpress/wordpress-plain.svg'
+					icon: '/icons/wordpress/wordpress-plain.svg'
 				}, {
 					name: 'Drupal',
-					icon: 'drupal/drupal-original.svg'
+					icon: '/icons/drupal/drupal-original.svg'
 				}]
 			}, {
 				id: 'webdesign',
 				name: 'Web Design',
-				icon: 'html5/html5-original.svg',
+				icon: '/icons/html5/html5-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'HTML5',
-					icon: 'html5/html5-original.svg'
+					icon: '/icons/html5/html5-original.svg'
 				}, {
 					name: 'CSS3',
-					icon: 'css3/css3-original.svg'
+					icon: '/icons/css3/css3-original.svg'
 				}, {
 					name: 'SCSS',
-					icon: 'sass/sass-original.svg'
+					icon: '/icons/sass/sass-original.svg'
 				}]
 			}, {
 				id: 'db',
 				name: 'Adatbázis-kezelés',
-				icon: 'mysql/mysql-original.svg',
+				icon: '/icons/mysql/mysql-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'MySQL',
-					icon: 'mysql/mysql-original.svg'
+					icon: '/icons/mysql/mysql-original.svg'
 				}, {
 					name: 'SQLite',
-					icon: 'mysql/mysql-original.svg'
+					icon: '/icons/mysql/mysql-original.svg'
 				}, {
 					name: 'MongoDB',
-					icon: 'mongodb/mongodb-original.svg'
+					icon: '/icons/mongodb/mongodb-original.svg'
 				}]
 			}, {
 				id: 'java',
 				name: 'Java',
-				icon: 'java/java-original.svg',
+				icon: '/icons/java/java-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'Android',
-					icon: 'android/android-original.svg'
+					icon: '/icons/android/android-original.svg'
 				}, {
 					name: 'Gradle',
-					icon: 'gradle/gradle-plain-wordmark.svg'
+					icon: '/icons/gradle/gradle-plain-wordmark.svg'
 				}]
 			}, {
 				id: 'c',
 				name: 'C-típusú nyelvek',
-				icon: 'c/c-original.svg',
+				icon: '/icons/c/c-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'C++',
-					icon: 'cplusplus/cplusplus-original.svg'
+					icon: '/icons/cplusplus/cplusplus-original.svg'
 				}, {
 					name: 'C#',
-					icon: 'csharp/csharp-original.svg'
+					icon: '/icons/csharp/csharp-original.svg'
 				}]
 			}, {
 				id: 'devops',
 				name: 'DevOps',
-				icon: 'linux/linux-original.svg',
+				icon: '/icons/linux/linux-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'Linux',
-					icon: 'linux/linux-original.svg',
+					icon: '/icons/linux/linux-original.svg',
 				}, {
 					name: 'Git',
-					icon: 'git/git-original.svg'
+					icon: '/icons/git/git-original.svg'
 				}, {
 					name: 'Docker',
-					icon: 'docker/docker-original.svg'
+					icon: '/icons/docker/docker-original.svg'
 				}, {
 					name: 'Ansible',
-					icon: 'ansible/ansible-original.svg'
+					icon: '/vendor-icons/ansible-black.svg'
 				}, {
 					name: 'Nginx',
-					icon: 'nginx/nginx-original.svg'
+					icon: '/icons/nginx/nginx-original.svg'
 				}]
 			}
 		],
@@ -145,10 +147,10 @@ module.exports = {
 			],
 			languages: [{
 				name: 'PHP',
-				icon: 'php/php-original.svg'
+				icon: '/icons/php/php-original.svg'
 			}, {
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				icon: '/icons/javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'GSZK Website',
@@ -160,10 +162,10 @@ module.exports = {
 			],
 			languages: [{
 				name: 'Drupal',
-				icon: 'drupal/drupal-original.svg'
+				icon: '/icons/drupal/drupal-original.svg'
 			}, {
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				icon: '/icons/javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'FK Tippjáték',
@@ -176,10 +178,10 @@ module.exports = {
 			],
 			languages: [{
 				name: 'PHP',
-				icon: 'php/php-original.svg'
+				icon: '/icons/php/php-original.svg'
 			}, {
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				icon: '/icons/javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'GSZK Website',
@@ -191,10 +193,10 @@ module.exports = {
 			],
 			languages: [{
 				name: 'PHP',
-				icon: 'php/php-original.svg'
+				icon: '/icons/php/php-original.svg'
 			}, {
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				icon: '/icons/javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'FK Tippjáték',
@@ -207,15 +209,17 @@ module.exports = {
 			],
 			languages: [{
 				name: 'PHP',
-				icon: 'php/php-original.svg'
+				icon: '/icons/php/php-original.svg'
 			}, {
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				icon: '/icons/javascript/javascript-original.svg'
 			}]
 		}]
 	},
 	en: {
+		language: 'en',
 		name: 'Gergely Dániel',
+		description: '',
 		email: 'daniel7grant@gmail.com',
 		github: 'https://github.com/daniel7grant/',
 		slides: [{
@@ -235,117 +239,117 @@ module.exports = {
 			{
 				id: 'js',
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg',
+				icon: '/icons/javascript/javascript-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'Node.js',
-					icon: 'nodejs/nodejs-original.svg'
+					icon: '/icons/nodejs/nodejs-original.svg'
 				}, {
 					name: 'Vue.js',
-					icon: 'vuejs/vuejs-original.svg'
+					icon: '/icons/vuejs/vuejs-original.svg'
 				}, {
 					name: 'jQuery',
-					icon: 'jquery/jquery-original.svg'
+					icon: '/icons/jquery/jquery-original.svg'
 				}, {
 					name: 'Webpack',
-					icon: 'webpack/webpack-original.svg'
+					icon: '/icons/webpack/webpack-original.svg'
 				}, {
 					name: 'AJAX',
-					icon: 'javascript/javascript-original.svg'
+					icon: '/icons/javascript/javascript-original.svg'
 				}]
 			}, {
 				id: 'php',
 				name: 'PHP',
-				icon: 'php/php-original.svg',
+				icon: '/icons/php/php-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'Wordpress',
-					icon: 'wordpress/wordpress-plain.svg'
+					icon: '/icons/wordpress/wordpress-plain.svg'
 				}, {
 					name: 'Drupal',
-					icon: 'drupal/drupal-original.svg'
+					icon: '/icons/drupal/drupal-original.svg'
 				}]
 			}, {
 				id: 'webdesign',
 				name: 'Web Design',
-				icon: 'html5/html5-original.svg',
+				icon: '/icons/html5/html5-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!<br/><br/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'HTML5',
-					icon: 'html5/html5-original.svg'
+					icon: '/icons/html5/html5-original.svg'
 				}, {
 					name: 'CSS3',
-					icon: 'css3/css3-original.svg'
+					icon: '/icons/css3/css3-original.svg'
 				}, {
 					name: 'SCSS',
-					icon: 'sass/sass-original.svg'
+					icon: '/icons/sass/sass-original.svg'
 				}]
 			}, {
 				id: 'db',
 				name: 'DB Management',
-				icon: 'mysql/mysql-original.svg',
+				icon: '/icons/mysql/mysql-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'MySQL',
-					icon: 'mysql/mysql-original.svg'
+					icon: '/icons/mysql/mysql-original.svg'
 				}, {
 					name: 'SQLite',
-					icon: 'mysql/mysql-original.svg'
+					icon: '/icons/mysql/mysql-original.svg'
 				}, {
 					name: 'MongoDB',
-					icon: 'mongodb/mongodb-original.svg'
+					icon: '/icons/mongodb/mongodb-original.svg'
 				}]
 			}, {
 				id: 'java',
 				name: 'Java',
-				icon: 'java/java-original.svg',
+				icon: '/icons/java/java-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'Android',
-					icon: 'android/android-original.svg'
+					icon: '/icons/android/android-original.svg'
 				}, {
 					name: 'Gradle',
-					icon: 'gradle/gradle-plain-wordmark.svg'
+					icon: '/icons/gradle/gradle-plain-wordmark.svg'
 				}]
 			}, {
 				id: 'c',
 				name: 'C-family languages',
-				icon: 'c/c-original.svg',
+				icon: '/icons/c/c-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'C++',
-					icon: 'cplusplus/cplusplus-original.svg'
+					icon: '/icons/cplusplus/cplusplus-original.svg'
 				}, {
 					name: 'C#',
-					icon: 'csharp/csharp-original.svg'
+					icon: '/icons/csharp/csharp-original.svg'
 				}]
 			}, {
 				id: 'devops',
 				name: 'DevOps',
-				icon: 'linux/linux-original.svg',
+				icon: '/icons/linux/linux-original.svg',
 				level: 'pro',
 				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio porro ducimus qui. Deleniti unde doloremque similique omnis? Beatae eum alias, illum nemo repellat porro? Voluptates consequatur consectetur accusantium quo!',
 				modules: [{
 					name: 'Linux',
-					icon: 'linux/linux-original.svg',
+					icon: '/icons/linux/linux-original.svg',
 				}, {
 					name: 'Git',
-					icon: 'git/git-original.svg'
+					icon: '/icons/git/git-original.svg'
 				}, {
 					name: 'Docker',
-					icon: 'docker/docker-original.svg'
+					icon: '/icons/docker/docker-original.svg'
 				}, {
 					name: 'Ansible',
-					icon: 'ansible/ansible-original.svg'
+					icon: '/vendor-icons/ansible-black.svg'
 				}, {
 					name: 'Nginx',
-					icon: 'nginx/nginx-original.svg'
+					icon: '/icons/nginx/nginx-original.svg'
 				}]
 			}
 		],
@@ -364,10 +368,10 @@ module.exports = {
 			],
 			languages: [{
 				name: 'PHP',
-				icon: 'php/php-original.svg'
+				icon: '/icons/php/php-original.svg'
 			}, {
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				icon: '/icons/javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'GSZK Homepage',
@@ -383,10 +387,10 @@ module.exports = {
 			],
 			languages: [{
 				name: 'Drupal',
-				icon: 'drupal/drupal-original.svg'
+				icon: '/icons/drupal/drupal-original.svg'
 			}, {
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				icon: '/icons/javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'KTKSzSz Docker server',
@@ -404,13 +408,13 @@ module.exports = {
 			],
 			languages: [{
 				name: 'Linux',
-				icon: 'linux/linux-original.svg'
+				icon: '/icons/linux/linux-original.svg'
 			}, {
 				name: 'Docker',
-				icon: 'docker/docker-original.svg'
+				icon: '/icons/docker/docker-original.svg'
 			}, {
 				name: 'NGINX',
-				icon: 'nginx/nginx-original.svg'
+				icon: '/icons/nginx/nginx-original.svg'
 			}]
 		}, {
 			name: 'GSZK Website',
@@ -426,10 +430,10 @@ module.exports = {
 			],
 			languages: [{
 				name: 'PHP',
-				icon: 'php/php-original.svg'
+				icon: '/icons/php/php-original.svg'
 			}, {
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				icon: '/icons/javascript/javascript-original.svg'
 			}]
 		}, {
 			name: 'FK Tippjáték',
@@ -446,10 +450,10 @@ module.exports = {
 			],
 			languages: [{
 				name: 'PHP',
-				icon: 'php/php-original.svg'
+				icon: '/icons/php/php-original.svg'
 			}, {
 				name: 'JavaScript',
-				icon: 'javascript/javascript-original.svg'
+				icon: '/icons/javascript/javascript-original.svg'
 			}]
 		}]
 	}
