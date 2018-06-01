@@ -4,7 +4,7 @@ li.lang-blob {
     transition: $trans-short;
     top: 50vh;
     left: 50%;
-    margin-left: -$img-size/2;
+	margin-left: -$img-size/2;
     div.lang-title {
         display: flex;
         align-items: center;
@@ -37,11 +37,13 @@ li.lang-blob {
             text-transform: uppercase;
             margin: 0 $spacing;
             h4 {
-                font-size: $h3-size*2/3;
+				font-family: $font-header;
+				font-size: $h3-size*2/3;
                 margin: 0;
             }
             div {
-                font-size: $h3-size/3;
+				font-family: $font-header;
+				font-size: $h3-size/3;
             }
         }
         img.close {

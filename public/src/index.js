@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	ga('create', 'UA-119869193-1', 'auto');
 	ga('send', 'pageview');
 
-	new DoSlide('#slide-container');
+	new DoSlide('#slide-container', {activeClass: 'current-slide'});
 	new Clipboard('a.copy');
 
 	const langRadius = calculateRadius(), langOffset = Math.PI / 2;		//TODO: Responsive design
