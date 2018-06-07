@@ -16,7 +16,7 @@ app.get('/hu', function(req, res){
 });
 
 app.get('/404', function(req, res){
-	res.sendFile(path.join(__dirname, 'public/dist/404.html'));
+	res.status(404).sendFile(path.join(__dirname, 'public/dist/404.html'));
 });
 
 app.get('*', function(req, res){

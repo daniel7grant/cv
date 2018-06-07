@@ -60,7 +60,7 @@ module.exports = {
 				}]
 			}, {
 				id: '3d',
-				name: 'Graphics',
+				name: '3D/Graphics',
 				icon: '/icons/3ds-max.svg',
 				level: 'advanced',
 				description: '<p>Even as a kid, I was thrilled by moving pictures, that\'s why as a hobby I learn 2D and 3D modelling and animation.</p><p>My introduction to graphics was mostly the Gimp image editor. I used it mostly for general photo editing, and created some gifs with hard work.</p><p>At the university, as it is mandatory for engineers, I learnt a CAD software, gaining a decent amount of proficiency with PTC Creo. Later I enrolled in a 3D course, studying 3DS Max and Blender along the way. Nowadays I learn to develop in Unity.</p>',

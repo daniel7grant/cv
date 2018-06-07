@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	ga('create', 'UA-119869193-1', 'auto');
 	ga('send', 'pageview');
 
-	new DoSlide('#slide-container', {activeClass: 'current-slide'});
+	var doSlide = new DoSlide('#slide-container', { activeClass: 'current-slide' });
 	new Clipboard('a.copy');
 
 	const langRadius = calculateRadius(), langOffset = Math.PI / 2;		//TODO: Responsive design
@@ -35,6 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	Array.from(document.querySelectorAll('a.copy'))
 		.forEach(element => element.addEventListener('click', ev => ev.stopPropagation));
+
+	Array.from(document.querySelectorAll('img.arrow'))
+		.forEach(element => element.addEventListener('click', () => {
+			if(element.classList.contains('down')) doSlide.next();
+			else if(element.classList.contains('up')) doSlide.prev();
+		}));
 
 });
 

@@ -173,7 +173,34 @@ body {
                         }
                     }
                 }
-            }
+			}
+			img.arrow{
+				position: absolute;
+				width: $img-size;
+				height: $img-size;
+				left: 50%;
+				margin-left: -$img-size/2;
+				cursor: pointer;
+				transition: $trans-short;
+				opacity: 0.6;
+
+				&.up{
+					top: $spacing-big;
+					&:hover{
+						top: $spacing-big - $spacing;
+						transition: $trans-short;
+						opacity: 1;
+					}
+				}
+				&.down{
+					bottom: $spacing-big;
+					&:hover{
+						bottom: $spacing-big - $spacing;
+						transition: $trans-short;
+						opacity: 1;
+					}
+				}
+			}
         }
     }
 }
