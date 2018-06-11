@@ -6,7 +6,7 @@ const content = require('./src/content.js');
 module.exports = {
 	entry: './src/index.js',
 	output: {
-		path: path.resolve('dist'),
+		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js'
 	},
 	mode: 'development',
