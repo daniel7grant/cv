@@ -14,8 +14,6 @@ $h1-padding: 15%;
 $img-size: 3rem;
 $icon-size: 1rem;
 $lang-radius: 300px; // TODO: Should be removed, intertwines with js
-// RESPONSIVE VARIABLES
-// L					S
 $lang-width: 480px;
 $lang-width-s: 300px;
 $card-width: 400px;
@@ -66,6 +64,9 @@ body {
 		font-size: $h3-size;
         margin: 0;
     }
+	img{
+		color:transparent;
+	}
     img.icon {
         height: $img-size;
         width: auto;
