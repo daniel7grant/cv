@@ -9,7 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	ga('create', 'UA-119869193-1', 'auto');
 	ga('send', 'pageview');
 
-	var doSlide = new DoSlide('#slide-container', { activeClass: 'current-slide' });
+	var slider = new DoSlide('#slide-container', { activeClass: 'current-slide' });
+	if(window.matchMedia('screen and (max-width: 1200px)').matches){
+		var projectSlider = new DoSlide('#slide-projects-list', {
+			horizontal: true,
+			listenUserMouseWheel : false
+		});
+	}
 	new Clipboard('a.copy');
 
 	const langRadius = calculateRadius(), langOffset = Math.PI / 2;		//TODO: Responsive design
@@ -38,8 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	Array.from(document.querySelectorAll('img.arrow'))
 		.forEach(element => element.addEventListener('click', () => {
-			if(element.classList.contains('down')) doSlide.next();
-			else if(element.classList.contains('up')) doSlide.prev();
+			if(element.classList.contains('down')) slider.next();
+			else if(element.classList.contains('up')) slider.prev();
+			else if(element.classList.contains('right')) projectSlider.next();
+			else if(element.classList.contains('left')) projectSlider.prev();
 		}));
 
 });

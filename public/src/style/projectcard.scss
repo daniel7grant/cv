@@ -5,13 +5,8 @@ li.project-card {
     height: 3/4*$card-width;
     perspective: 1000px;
 	margin-bottom: 2*$spacing-big;
-	@media screen and (max-width: 1200px) {
-		width: $card-width-m;
-		height: 3/4*$card-width-m;
-	}
-	@media screen and (max-width: 800px) {
-		width: $card-width-s;
-		height: 3/4*$card-width-s;
+	@media screen and (max-width: 1199px) {
+		margin-bottom: 0;
 	}
     &>div {
         position: absolute;
@@ -49,7 +44,6 @@ li.project-card {
         background-color: #202020;
         border-radius: $spacing;
         padding: 2*$spacing;
-        h3 {}
         span.project-client {
             font-size: 95%;
         }

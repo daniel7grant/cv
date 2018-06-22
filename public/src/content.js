@@ -222,9 +222,9 @@ module.exports = {
 				url: 'http://ktkszsz.ktk.bme.hu'
 			},
 			details: [
-				'Migrating 19 webservers to Docker platform',
-				'Automatically generated NGINX reverse proxy',
-				'Automatic SSL with Let\'s Encrypt wildcard certificates',
+				'Move 19 webservers to Docker platform',
+				'Generated NGINX reverse proxy',
+				'Automatic SSL with wildcard certificates',
 				'Convenient container management with systemd units',
 			],
 			languages: [{

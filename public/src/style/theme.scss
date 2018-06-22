@@ -16,12 +16,10 @@ $icon-size: 1rem;
 $lang-radius: 300px; // TODO: Should be removed, intertwines with js
 $lang-width: 480px;
 $lang-width-s: 300px;
-$card-width: 400px;
-$card-width-m: 250px;
-$card-width-s: 100px;
+$card-width: 22.5rem;
 $font-header: 'Slabo 27px';
 // RESPONSIVELY REDUCE ROOT FONT-SIZE
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 799px) {
     :root {
         font-size: 80%;
     }
@@ -56,7 +54,8 @@ body {
     h2 {
 		font-family: $font-header;
 		font-size: $h1-size/2;
-        margin-top: -$h1-size/4;
+		margin-top: -$h1-size/4;
+		margin-bottom: $h1-size/4;
         text-align: center;
     }
     h3 {
@@ -128,16 +127,53 @@ body {
                 padding-top: $h1-size/2;
                 h2 {
                     margin-top: 0;
-                }
-                ul#slide-projects-list {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                    @media screen and (max-width: 640px) {
-						//flex-wrap: nowrap;
+				}
+				.ds-parent-inner{
+					@media screen and (max-width: 1199px) {
+						margin: 0;
+						padding: 0;
+						overflow-x: hidden;
+						overflow-y: visible;
+						margin:auto;
+						width: $card-width;
+						height: (3/4)*$card-width;
 					}
-                    @import 'projectcard';
-                }
+					ul#slide-projects-list {
+						@media screen and (max-width: 1199px) {
+							width: $card-width;
+							height: (3/4)*$card-width;
+						}
+						@media screen and (min-width: 1200px) {
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: space-around;
+						}
+						@import 'projectcard';
+					}
+				}
+				img.project-switch{
+					@media screen and (min-width: 1200px) {
+						display:none;
+					}
+				}
+				p{
+					margin:$spacing-big;
+					text-align:center;
+					font-size: 90%;
+					color: $acolor;
+					font-style: italic;
+					display:none;
+					@media screen and (max-width: 1199px) and (min-width: 800px) {
+						&.click-on{
+							display: block;
+						}
+					}
+					@media screen and (max-width: 799px) {
+						&.swipe-on{
+							display: block;
+						}
+					}
+				}
             }
             &.contact {
                 padding-top: $h1-size/2;
@@ -197,6 +233,36 @@ body {
 					bottom: $spacing-big;
 					&:hover{
 						bottom: $spacing-big - $spacing;
+						transition: $trans-short;
+						opacity: 1;
+					}
+				}
+				&.left{
+					top: $h1-size/2 + $h1-size/2 + $h1-size/4 + 3/4/2*$card-width - $img-size/2;
+					margin-left: -($card-width / 2 + $spacing-big) - $img-size/2;
+					@media screen and (max-width: 359px){
+						margin-left: -($card-width / 2 - $spacing-big) - $img-size/2;
+					}
+					&:hover{
+						margin-left: -($card-width / 2 + $spacing-big + $spacing) - $img-size/2;
+						@media screen and (max-width: 359px){
+							margin-left: -($card-width / 2 - $spacing-big) - $img-size/2;
+						}
+						transition: $trans-short;
+						opacity: 1;
+					}
+				}
+				&.right{
+					top: $h1-size/2 + $h1-size/2 + $h1-size/4 + 3/4/2*$card-width - $img-size/2;
+					margin-left: $card-width / 2 + $spacing-big - $img-size/2;
+					@media screen and (max-width: 359px){
+						margin-left: $card-width / 2 - $spacing-big - $img-size/2;
+					}
+					&:hover{
+						margin-left: $card-width / 2 + $spacing-big + $spacing - $img-size/2;
+						@media screen and (max-width: 359px){
+							margin-left: $card-width / 2 - $spacing-big - $img-size/2;
+						}
 						transition: $trans-short;
 						opacity: 1;
 					}
