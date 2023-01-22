@@ -30,8 +30,8 @@ module.exports = {
 					icon: '/icons/express/express-original.svg'
 				}]
 			}, {
-				id: 'webdesign',
-				name: 'Web Design',
+				id: 'sitebuilding',
+				name: 'Sitebuilding',
 				icon: '/icons/html5/html5-original.svg',
 				level: 'expert',
 				description: '<p>I worked with HTML and CSS for more than I could remember. I started with the usual middle-school treatment, creating my best 90\'s website impression. Soon I became familiar with CSS, and been fascinated by the shadows, gradients and animations. I learnt many of the quirks of the CSS, I even centered divs vertically some times (with flex, but still counts).</p><p>I\'ve recently discovered SCSS and now I can write CSS more elegantly, maintanably and easily than ever before.</p>',
@@ -55,27 +55,8 @@ module.exports = {
 					name: 'Wordpress',
 					icon: '/icons/wordpress/wordpress-plain-light.svg'
 				}, {
-					name: 'Drupal',
-					icon: '/icons/drupal/drupal-original.svg'
-				}]
-			}, {
-				id: '3d',
-				name: '3D/Graphics',
-				icon: '/icons/3ds-max.svg',
-				level: 'advanced',
-				description: '<p>Even as a kid, I was thrilled by moving pictures, that\'s why I run on 2D and 3D modelling and animation as a hobby.</p><p>My first introduction to graphics was the Gimp image editor. I used it mostly for general photo editing, and also created a couple of gifs with hard manual work.</p><p>As a default course at the university for engineers, I got familiar with a CAD software, gaining a decent amount of proficiency with PTC Creo. Later  on I took a 3D course, studying 3DS Max and Blender along the way. Nowadays I learn to develop in Unity.</p>',
-				modules: [{
-					name: '3DS Max',
-					icon: '/icons/3ds-max.svg'
-				}, {
-					name: 'PTC Creo',
-					icon: '/creologo.png'
-				}, {
-					name: 'Blender',
-					icon: '/icons/blender-logo-no-text.svg'
-				}, {
-					name: 'Gimp',
-					icon: '/icons/gimp/gimp-original.svg'
+					name: 'Laravel',
+					icon: '/icons/laravel/laravel-plain.svg'
 				}]
 			}, {
 				id: 'db',
@@ -90,40 +71,50 @@ module.exports = {
 					name: 'MariaDB',
 					icon: '/vendor-icons/mariadb-seal.svg'
 				}, {
-					name: 'SQLite',
-					icon: '/icons/sqlite.svg'
+					name: 'Redis',
+					icon: '/icons/redis/redis-original.svg'
 				}, {
 					name: 'MongoDB',
 					icon: '/icons/mongodb/mongodb-original.svg'
 				}]
 			}, {
-				id: 'java',
-				name: 'Java',
-				icon: '/icons/java/java-original.svg',
-				level: 'capable',
-				description: '<p>At the university I was enrolled in two courses with main focus on Java. In my freshman year, I studied Android programming, resulting in a final project being a custom designed music player, which can decrease volume if it senses the listener falling asleep.</p><p>In a later course we made a turn-based free-for-all game based on space physics. It showed what challenges a group project can yield, even with correct version control.</p><p>Despite my two projects, I feel my Java knowledge is still to be improved, however I am enthusiastic to learn more. Compared to most C-family languages I really liked Java\'s logic and code culture, which emphasizes classes and CleanCode above all.</p>',
-				modules: [{
-					name: 'Android',
-					icon: '/icons/android/android-original.svg'
-				}, {
-					name: 'Gradle',
-					icon: '/icons/gradle/gradle-plain.svg'
-				}, {
-					name: 'Spring Boot',
-					icon: '/icons/spring.svg'
-				}]
-			}, {
 				id: 'c',
-				name: 'C-family',
+				name: 'System prog.',
 				icon: '/icons/c/c-original.svg',
 				level: 'capable',
 				description: '<p>Throughout most of my studies, I were confronted with C-family languages. I started with the incredibly performant albeit primitive structure of C. The lack of security and abstraction makes it really hard to write usable and maintainable code, that\'s why I prefer other languages, like C++, to C.</p><p>C++ was the language I learnt OOP with, it preserved the simplicity of C with enabling abstraction to a high level. I took some time to learn the basics of C#, however haven\'t used it for any larger project.</p><p>Even though I spent most of my time at the university working with C-family langauges, I feel like I\'m still lacking a lot of practical experience. I am eager to expand my knowledge in both C++ and C#.</p>',
 				modules: [{
-					name: 'C++',
-					icon: '/icons/cplusplus/cplusplus-original.svg'
+					name: 'C',
+					icon: '/icons/c/c-original.svg'
 				}, {
-					name: 'C#',
-					icon: '/icons/csharp/csharp-original.svg'
+					name: 'Rust',
+					icon: '/icons/rust/rust-plain.svg'
+				}]
+			}, {
+				id: 'cloud',
+				name: 'Cloud',
+				icon: '/icons/devops.svg',
+				level: 'novice',
+				description: '<p></p>',
+				modules: [{
+					name: 'AWS',
+					icon: '/icons/amazonwebservices/amazonwebservices-original.svg'
+				}]
+			}, {
+				id: 'automation',
+				name: 'Automation',
+				icon: '/icons/devops.svg',
+				level: 'capable',
+				description: '<p></p>',
+				modules: [{
+					name: 'Ansible',
+					icon: '/vendor-icons/ansible-black.svg'
+				}, {
+					name: 'Gitlab',
+					icon: '/icons/gitlab/gitlab-original.svg'
+				}, {
+					name: 'Terraform',
+					icon: '/vendor-icons/terraform.svg'
 				}]
 			}, {
 				id: 'devops',
@@ -132,23 +123,23 @@ module.exports = {
 				level: 'capable',
 				description: '<p>Thankfully I happened to learn Git long before I realized how indispensible it was to handle any larger project. I mostly use it within the terminal which helps me use it to its fullest extent.</p><p>At first I started learning automation to better handle our server stack. We set up a Docker host, which enabled easy control of webservers to large numbers through a Nginx reverse proxy.</p><p>Lately, I used Ansible to handle repetitve tasks in server deployment and maintenance. I prefer it to most other DevOps tools (i.e. Puppet, Chef) because it requires no configuration by working through ssh.</p>',
 				modules: [{
-					name: 'Git',
-					icon: '/icons/git/git-original.svg'
-				}, {
 					name: 'Nginx',
 					icon: '/icons/nginx/nginx-original.svg'
 				}, {
 					name: 'Docker',
 					icon: '/icons/docker/docker-original.svg'
 				}, {
-					name: 'Ansible',
-					icon: '/vendor-icons/ansible-black.svg'
+					name: 'Kubernetes',
+					icon: '/vendor-icons/kubernetes.svg'
+				}, {
+					name: 'ArgoCD',
+					icon: '/icons/argocd/argocd-original.svg'
 				}]
 			}, {
 				id: 'linux',
 				name: 'Linux',
 				icon: '/icons/linux/linux-original.svg',
-				level: 'capable',
+				level: 'expert',
 				description: '<p>When I first got into Linux, I wanted to be able to handle our LAMP stack more efficiently. First I just used scp to copy files, then I started using vim over ssh to quickly edit some files, and ever since I\'ve got more and more used to the Linux terminal.</p><p>The thing I really liked in the Linux shell, is both the simplicity and the power it enables. I enjoy writing my own bash scripts and Makefiles, mostly because of the simple and declarative style of using pipes, which enables to solve the hardest tasks with ease.</p>',
 				modules: [{
 					name: 'Red Hat',
