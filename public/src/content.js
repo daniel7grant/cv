@@ -163,15 +163,136 @@ module.exports = {
 			}
 		],
 		projects: [{
-			name: 'FK Tippjáték',
+			name: 'Tenable.ASM',
+			cover: { png: 'asm.png', webp: 'asm.webp' },
+			url: 'https://bitdiscovery.com/',
+			client: {
+				name: 'Tenable',
+				url: 'https://www.tenable.com/'
+			},
+			details: [
+				'Cybersecurity scanning on a scale',
+				'More than 50 microservice in AWS',
+				'Kubernetes (EKS) and EB management',
+				'Built with ArgoCD, Helm and Terraform'
+			],
+			languages: [{
+				name: 'AWS',
+				icon: '/icons/amazonwebservices/amazonwebservices-original.svg'
+			}, {
+				name: 'Kubernetes',
+				icon: '/vendor-icons/kubernetes.svg'
+			}, {
+				name: 'ArgoCD',
+				icon: '/icons/argocd/argocd-original.svg'
+			}, {
+				name: 'Terraform',
+				icon: '/vendor-icons/terraform.svg'
+			}]
+		}, {
+			name: 'KTK Szobafoglalás',
+			cover: { png: 'kolireg.png', webp: 'kolireg.webp' },
+			url: 'https://szobafoglalas.ktk.bme.hu/',
+			client: {
+				name: 'KTK Számtech Szakosztály',
+				url: 'https://szamtech.ktk.bme.hu/'
+			},
+			details: [
+				'Laravel-based room reservation page',
+				'Optimized for speed: can handle hundreds of concurrent users',
+				'Realtime updates with Websocket'
+			],
+			languages: [{
+				name: 'Laravel',
+				icon: '/icons/laravel/laravel-plain.svg'
+			}, {
+				name: 'Redis',
+				icon: '/icons/redis/redis-original.svg'
+			}, {
+				name: 'Websocket',
+				icon: '/icons/socketio/socketio-original.svg'
+			}]
+		}, {
+			name: 'Activiter',
+			cover: { png: 'activiter.png', webp: 'activiter.webp' },
+			url: 'https://red-staging.playgolfhi.com/',
+			client: {
+				name: 'DONE.',
+				url: 'https://thisisdone.com/'
+			},
+			details: [
+				'Hawaii golf reservation website',
+				'Built with Express and React',
+				'Intricate payment schemes with Stripe: delayed completion, group payments'
+			],
+			languages: [{
+				name: 'Express',
+				icon: '/icons/express/express-original.svg'
+			}, {
+				name: 'React',
+				icon: '/icons/react/react-original.svg'
+			}, {
+				name: 'Stripe',
+				icon: '/stripe.png'
+			}]
+		}, {
+			name: 'KTK infrastructure',
+			cover: { png: 'argo.png', webp: 'argo.webp' },
+			url: '',
+			client: {
+				name: 'KTK Számtech Szakosztály',
+				url: 'https://szamtech.ktk.bme.hu/'
+			},
+			details: [
+				'Move 19 webservers to Docker and later to Kubernetes with ArgoCD',
+				'Dockerize multiple services, including replicated MariaDB and LDAP',
+			],
+			languages: [{
+				name: 'Linux',
+				icon: '/icons/linux/linux-original.svg'
+			}, {
+				name: 'Docker',
+				icon: '/icons/docker/docker-original.svg'
+			}, {
+				name: 'Kubernetes',
+				icon: '/vendor-icons/kubernetes.svg'
+			}, {
+				name: 'ArgoCD',
+				icon: '/icons/argocd/argocd-original.svg'
+			}]
+		}, {
+			name: 'Netprinter editor',
+			cover: { png: 'netprinter.png', webp: 'netprinter.webp' },
+			url: 'https://netprinter.hu/products/vaszonkep',
+			client: {
+				name: 'DONE.',
+				url: 'https://thisisdone.com/'
+			},
+			details: [
+				'Image editor built entirely in React',
+				'Can resize, rotate and recolor images',
+				'Calcute total from sizes, quality and addons, send to the backend'
+			],
+			languages: [{
+				name: 'React',
+				icon: '/icons/react/react-original.svg'
+			}, {
+				name: 'Redux',
+				icon: '/icons/redux/redux-original.svg'
+			}, {
+				name: 'CSS',
+				icon: '/icons/css3/css3-original.svg'
+			}]
+		}, {
+			name: 'FK! Tippjáték',
 			cover: { png: 'fk.png', webp: 'fk.webp' },
-			url: 'http://www.fkclub.hu/tippjatek/',
+			url: 'https://www.fkclub.hu/tippjatek/',
 			client: {
 				name: 'Fűzővel kifelé!',
 				url: 'http://fuzovelkifele.com/'
 			},
 			details: [
-				'1000+ registered user',
+				'1000+ registered users',
 				'Without any PHP or JS frameworks',
 				'Email and Facebook SDK authentication',
 				'Custom design with 3D transitions'
@@ -190,81 +311,6 @@ module.exports = {
 				icon: '/icons/mysql/mysql-original.svg'
 			}]
 		}, {
-			name: 'GSZK Homepage',
-			cover: { png: 'gszk.png', webp: 'gszk.webp' },
-			url: 'http://gszk.bme.hu/',
-			client: {
-				name: 'Gépész Szakkollégium',
-				url: 'http://gszk.bme.hu/'
-			},
-			details: [
-				'Based on Drupal',
-				'Specific pages for every group',
-				'Calendar module with own content types',
-				'Custom theme with header animation'
-			],
-			languages: [{
-				name: 'Drupal',
-				icon: '/icons/drupal/drupal-original.svg'
-			}, {
-				name: 'JavaScript',
-				icon: '/icons/javascript/javascript-original.svg'
-			}, {
-				name: 'CSS',
-				icon: '/icons/css3/css3-original.svg'
-			}]
-		}, {
-			name: 'KTKSzSz Docker server',
-			cover: { png: 'party.png', webp: 'party.webp' },
-			url: '',
-			client: {
-				name: 'Kármán Tódor Kollégium',
-				url: 'http://ktkszsz.ktk.bme.hu'
-			},
-			details: [
-				'Move 19 webservers to Docker platform',
-				'Generated NGINX reverse proxy',
-				'Automatic SSL with wildcard certificates',
-				'Convenient container management with systemd units',
-			],
-			languages: [{
-				name: 'Linux',
-				icon: '/icons/linux/linux-original.svg'
-			}, {
-				name: 'Docker',
-				icon: '/icons/docker/docker-original.svg'
-			}, {
-				name: 'NGINX',
-				icon: '/icons/nginx/nginx-original.svg'
-			}]
-		}, {
-			name: 'Game Without a Name',
-			cover: { png: 'gwn.png', webp: 'gwn.webp' },
-			client: {
-				name: 'BME AUT',
-				url: 'https://www.aut.bme.hu/'
-			},
-			url: 'https://github.com/daniel7grant/game-without-a-name',
-			details: [
-				'Free-for-all space strategy game',
-				'Spring Boot web application',
-				'Using websockets for communication',
-				'Custom graphics with SVG icons'
-			],
-			languages: [{
-				name: 'Java',
-				icon: '/icons/java/java-original.svg'
-			}, {
-				name: 'Spring Boot',
-				icon: '/icons/spring.svg'
-			}, {
-				name: 'Gradle',
-				icon: '/icons/gradle/gradle-plain-light.svg'
-			}, {
-				name: 'JavaScript',
-				icon: '/icons/javascript/javascript-original.svg'
-			}]
-		}, {
 			name: 'This CV',
 			cover: { png: 'cv.png', webp: 'cv.webp' },
 			url: 'https://github.com/daniel7grant/cv.git',
@@ -273,9 +319,8 @@ module.exports = {
 				url: 'https://cv.danielgrants.com'
 			},
 			details: [
-				'Bundled together with webpack',
-				'Built with modern technologies, including ES6, SCSS and Handlebars',
-				'Node.js based Express backend'
+				'Built without any frameworks, only using Handlebars and webpack',
+				'Dynamically generated from a JSON file'
 			],
 			languages: [{
 				name: 'Webpack',
@@ -287,8 +332,8 @@ module.exports = {
 				name: 'SCSS',
 				icon: '/icons/sass/sass-original.svg'
 			}, {
-				name: 'Node.js',
-				icon: '/icons/nodejs/nodejs-original.svg'
+				name: 'Handlebars',
+				icon: '/icons/handlebars/handlebars-original.svg'
 			}]
 		}]
 	}
