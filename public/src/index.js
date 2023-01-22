@@ -3,12 +3,8 @@ import './style/theme.scss';
 import 'do-slide/dist/do-slide.min.css';
 import DoSlide from 'do-slide';
 import Clipboard from 'clipboard';
-import ga from './analytics.js';
 
 document.addEventListener('DOMContentLoaded', function () {
-	ga('create', 'UA-119869193-1', 'auto');
-	ga('send', 'pageview');
-
 	var slider = new DoSlide('#slide-container', { activeClass: 'current-slide' });
 	if(window.matchMedia('screen and (max-width: 1200px)').matches){
 		var projectSlider = new DoSlide('#slide-projects-list', {

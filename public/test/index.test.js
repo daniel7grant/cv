@@ -1,10 +1,8 @@
 import { positionLangs, activateElements, toggleElement, deactivateElements, calculateRadius } from '../src/index.js';
 import DoSlide from 'do-slide';
 import Clipboard from 'clipboard';
-import ga from '../src/analytics.js'
 jest.mock('do-slide');
 jest.mock('clipboard');
-jest.mock('../src/analytics.js');
 
 describe('positioning elements circularly', () => {
 	test('all elements gain a css transform', () => {
