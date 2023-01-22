@@ -4,7 +4,7 @@ module.exports = {
 		language: 'en',
 		name: 'Gergely Dániel',
 		description: '',
-		email: 'daniel7grant@gmail.com',
+		email: 'grant@d7gr.net',
 		github: 'https://github.com/daniel7grant/',
 		languages: [
 			{
