@@ -162,11 +162,12 @@ describe('radius calculation', () => {
 
 	beforeAll(() => {
 		Object.defineProperty(window, 'matchMedia', {
+			writable: true,
 			value: jest.fn((q) => { return { matches: true } })
 		});
 
-		Object.defineProperty(window, 'innerWidth', { value: 600 });
-		Object.defineProperty(window, 'innerHeight', { value: 500 });
+		Object.defineProperty(window, 'innerWidth', { writable: true, value: 600 });
+		Object.defineProperty(window, 'innerHeight', { writable: true, value: 500 });
 	});
 
 	test('maxes with 300 if window larger than 800x800', () => {
@@ -187,10 +188,12 @@ describe('DOMContentLoaded event', () => {
 
 	beforeAll(() => {
 		Object.defineProperty(window, 'matchMedia', {
+			writable: true,
 			value: jest.fn((q) => { return { matches: true } })
 		});
 
 		Object.defineProperty(document, 'getElementsByClassName', {
+			writable: true,
 			value: (name) => {
 				return [{
 					className: name,
@@ -201,6 +204,7 @@ describe('DOMContentLoaded event', () => {
 		});
 
 		Object.defineProperty(document, 'querySelectorAll', {
+			writable: true,
 			value: (name) => {
 				return [{
 					className: name,
