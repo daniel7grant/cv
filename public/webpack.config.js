@@ -1,14 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const content = require('./src/content.js');
 
 module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'bundle.[hash].js'
+		filename: 'bundle.[chunkhash].js'
 	},
 	mode: 'development',
 	module: {
@@ -24,7 +24,7 @@ module.exports = {
 		}]
 	},
 	plugins: [
-		new CleanWebpackPlugin(['dist']),
+		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			filename: 'hu.html',
 			minify: true,
@@ -47,7 +47,7 @@ module.exports = {
 			templateParameters: {name: 'I can\'t find it :('}
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'theme.[hash].css'
+			filename: 'theme.[chunkhash].css'
 		})
 	]
 };
