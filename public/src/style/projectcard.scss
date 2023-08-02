@@ -7,6 +7,7 @@ li.project-card {
 	margin-bottom: 2 * $spacing-big;
 	@media screen and (max-width: 1199px) {
 		margin-bottom: 0;
+        overflow: hidden;
 	}
     &>div {
         position: absolute;
@@ -69,13 +70,15 @@ li.project-card {
         }
     }
     &:hover {
-        div.project-cover {
-            transform: rotateY(-20deg);
-            transition: transform $trans-short;
-        }
-        div.project-details {
-            transform: rotateY(160deg);
-            transition: transform $trans-short;
+        @media screen and (min-width: 1200px) {
+            div.project-cover {
+                transform: rotateY(-20deg);
+                transition: transform $trans-short;
+            }
+            div.project-details {
+                transform: rotateY(160deg);
+                transition: transform $trans-short;
+            }
         }
     }
     &.is-active {
