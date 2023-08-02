@@ -4,8 +4,8 @@ li.lang-blob {
     transition: $trans-short;
     top: 50vh;
     left: 50%;
-	margin-left: -0.5 * $img-size;
-	margin-top: -0.5 * $img-size;
+    margin-left: -0.5 * $img-size;
+    margin-top: -0.5 * $img-size;
     div.lang-title {
         display: flex;
         align-items: center;
@@ -14,7 +14,7 @@ li.lang-blob {
         transition: $trans-short;
         img {
             flex: 0 1 auto;
-            margin-right: 2*$spacing;
+            margin-right: 2 * $spacing;
         }
         h3 {
             margin: 0;
@@ -22,7 +22,7 @@ li.lang-blob {
             white-space: nowrap;
             visibility: hidden;
             opacity: 0;
-            transition: 0.5*$trans-short $trans-short;
+            transition: 0.5 * $trans-short $trans-short;
         }
         div.lang-level {
             display: flex;
@@ -30,7 +30,7 @@ li.lang-blob {
             justify-content: space-around;
             visibility: hidden;
             opacity: 0;
-            transition: 0.5*$trans-short $trans-short;
+            transition: 0.5 * $trans-short $trans-short;
             flex: 0 1 auto;
             height: 100%;
             max-height: 100%;
@@ -38,20 +38,20 @@ li.lang-blob {
             text-transform: uppercase;
             margin: 0 $spacing;
             h4 {
-				font-family: $font-header;
-				font-size: 0.67 * $h3-size;
+                font-family: $font-header;
+                font-size: 0.67 * $h3-size;
                 margin: 0;
             }
             div {
-				font-family: $font-header;
-				font-size: 0.33 * $h3-size;
+                font-family: $font-header;
+                font-size: 0.33 * $h3-size;
             }
         }
         img.close {
             margin: 0;
             visibility: hidden;
             opacity: 0;
-            transition: 0.5*$trans-short $trans-short;
+            transition: 0.5 * $trans-short $trans-short;
         }
     }
     hr {
@@ -64,18 +64,18 @@ li.lang-blob {
         visibility: hidden;
         opacity: 0;
         height: 0;
-        transition: 0.5*$trans-short $trans-short;
-        margin-top: 2*$spacing;
-        padding-left: $img-size + 2*$spacing;
+        transition: 0.5 * $trans-short $trans-short;
+        margin-top: 2 * $spacing;
+        padding-left: $img-size + 2 * $spacing;
         overflow: hidden;
         width: 100%;
         ul.lang-modules {
             display: flex;
             flex-wrap: wrap;
-            margin-top: 2*$spacing;
+            margin-top: 2 * $spacing;
             li {
                 img {
-                    margin: 0 2*$spacing;
+                    margin: 0 2 * $spacing;
                 }
                 div {
                     margin-top: $spacing;
@@ -86,28 +86,34 @@ li.lang-blob {
     }
     &.is-active {
         width: $lang-width;
-        transform: translate(-0.5 * $lang-width, -0.5 * $lang-radius) !important; //I don't usually do this I swear
+        transform: translate(
+            -0.5 * $lang-width,
+            -0.5 * $lang-radius
+        ) !important; //I don't usually do this I swear
         // TODO: Yikes, confronts with js
         @media screen and (max-width: $lang-width) {
             width: $lang-width-s;
-            transform: translate(-0.5 * $lang-width-s, -0.5 * $lang-radius) !important; //I don't usually do this I swear
+            transform: translate(
+                -0.5 * $lang-width-s,
+                -0.5 * $lang-radius
+            ) !important; //I don't usually do this I swear
             // TODO: Yikes, confronts with js
         }
-        margin-left:0;
+        margin-left: 0;
         div.lang-title {
             h3,
             div.lang-level,
             img.close {
                 visibility: visible;
                 opacity: 1;
-                transition: 0.5*$trans-short $trans-short;
+                transition: 0.5 * $trans-short $trans-short;
             }
         }
         div.lang-description {
             height: auto;
             visibility: visible;
             opacity: 1;
-            transition: 0.5*$trans-short $trans-short;
+            transition: 0.5 * $trans-short $trans-short;
         }
     }
     &:not(.is-active):hover {

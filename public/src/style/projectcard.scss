@@ -4,12 +4,12 @@ li.project-card {
     width: $card-width;
     height: 0.75 * $card-width;
     perspective: 1000px;
-	margin-bottom: 2 * $spacing-big;
-	@media screen and (max-width: 1199px) {
-		margin-bottom: 0;
+    margin-bottom: 2 * $spacing-big;
+    @media screen and (max-width: 1199px) {
+        margin-bottom: 0;
         overflow: hidden;
-	}
-    &>div {
+    }
+    & > div {
         position: absolute;
         top: 0;
         left: 0;
@@ -19,8 +19,8 @@ li.project-card {
         transform-origin: 50% 50%;
         a.to-url {
             position: absolute;
-            top: 2*$spacing;
-            right: 2*$spacing;
+            top: 2 * $spacing;
+            right: 2 * $spacing;
             width: $icon-size;
             height: $icon-size;
             svg {
@@ -44,12 +44,12 @@ li.project-card {
         transition: transform $trans-short;
         background-color: #202020;
         border-radius: $spacing;
-        padding: 2*$spacing;
+        padding: 2 * $spacing;
         span.project-client {
             font-size: 95%;
         }
         ul.project-details-list {
-            margin: 2*$spacing $spacing-big;
+            margin: 2 * $spacing $spacing-big;
             list-style-type: circle;
             li {
                 margin-bottom: $spacing;
@@ -57,10 +57,10 @@ li.project-card {
         }
         ul.project-langs {
             display: flex;
-            margin-top: 2*$spacing;
+            margin-top: 2 * $spacing;
             li {
                 img {
-                    margin: 0 2*$spacing;
+                    margin: 0 2 * $spacing;
                 }
                 div {
                     margin-top: $spacing;

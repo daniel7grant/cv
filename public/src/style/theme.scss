@@ -9,7 +9,7 @@ $spacing-big: 1.33rem;
 $trans-short: 0.3s;
 $trans-long: 0.8s;
 $h1-size: 8rem;
-$h3-size: 0.28*$h1-size;
+$h3-size: 0.28 * $h1-size;
 $h1-padding: 15%;
 $img-size: 3rem;
 $icon-size: 1rem;
@@ -28,10 +28,10 @@ $font-header: 'Slabo 27px';
 body {
     background: $bgcolor url('../../static/real-carbon-fibre.png');
     color: $fgcolor;
-	font-family: 'Roboto';
-	p{
-		margin-top: 0;
-	}
+    font-family: 'Roboto';
+    p {
+        margin-top: 0;
+    }
     ul,
     ol {
         list-style-type: none;
@@ -45,27 +45,27 @@ body {
         }
     }
     h1 {
-		font-family: $font-header;
-		font-size: $h1-size;
+        font-family: $font-header;
+        font-size: $h1-size;
         margin-top: -0.5 * $h1-size;
         text-align: center;
         text-shadow: #000000 0px 0px 20px;
     }
     h2 {
-		font-family: $font-header;
-		font-size: 0.5 * $h1-size;
-		margin-top: -0.25 * $h1-size;
-		margin-bottom: 0.25 * $h1-size;
+        font-family: $font-header;
+        font-size: 0.5 * $h1-size;
+        margin-top: -0.25 * $h1-size;
+        margin-bottom: 0.25 * $h1-size;
         text-align: center;
     }
     h3 {
-		font-family: $font-header;
-		font-size: $h3-size;
+        font-family: $font-header;
+        font-size: $h3-size;
         margin: 0;
     }
-	img{
-		color:transparent;
-	}
+    img {
+        color: transparent;
+    }
     img.icon {
         height: $img-size;
         width: auto;
@@ -86,7 +86,7 @@ body {
             position: relative; // width: 100%;
             // height: 100vh;
             &.cover {
-                img{
+                img {
                     height: 100vh;
                     width: auto;
                 }
@@ -113,7 +113,9 @@ body {
                 }
                 &.is-active {
                     h2 {
-                        transform: translateY(-$lang-radius*0.75); // TODO: Yikes, confronts with js
+                        transform: translateY(
+                            -$lang-radius * 0.75
+                        ); // TODO: Yikes, confronts with js
                         transition: $trans-short;
                     }
                     ul {
@@ -125,56 +127,56 @@ body {
                 }
             }
             &.projects {
-                padding: 0.75*$h1-size 0.75*$h1-size 0 0.75*$h1-size;
+                padding: 0.75 * $h1-size 0.75 * $h1-size 0 0.75 * $h1-size;
                 h2 {
                     margin-top: 0;
-				}
-				.ds-parent-inner{
-					@media screen and (max-width: 1199px) {
-						margin: 0;
-						padding: 0;
-						overflow-x: hidden;
-						overflow-y: visible;
-						margin:auto;
-						width: $card-width;
-						height: 0.75 * $card-width;
-					}
-					ul#slide-projects-list {
-						@media screen and (max-width: 1199px) {
-							width: $card-width;
-							height: 0.75 * $card-width;
-						}
-						@media screen and (min-width: 1200px) {
-							display: flex;
-							flex-wrap: wrap;
-							justify-content: space-around;
-						}
-						@import 'projectcard';
-					}
-				}
-				img.project-switch{
-					@media screen and (min-width: 1200px) {
-						display:none;
-					}
-				}
-				p{
-					margin:$spacing-big;
-					text-align:center;
-					font-size: 90%;
-					color: $acolor;
-					font-style: italic;
-					display:none;
-					@media screen and (max-width: 1199px) and (min-width: 800px) {
-						&.click-on{
-							display: block;
-						}
-					}
-					@media screen and (max-width: 799px) {
-						&.swipe-on{
-							display: block;
-						}
-					}
-				}
+                }
+                .ds-parent-inner {
+                    @media screen and (max-width: 1199px) {
+                        margin: 0;
+                        padding: 0;
+                        overflow-x: hidden;
+                        overflow-y: visible;
+                        margin: auto;
+                        width: $card-width;
+                        height: 0.75 * $card-width;
+                    }
+                    ul#slide-projects-list {
+                        @media screen and (max-width: 1199px) {
+                            width: $card-width;
+                            height: 0.75 * $card-width;
+                        }
+                        @media screen and (min-width: 1200px) {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-around;
+                        }
+                        @import 'projectcard';
+                    }
+                }
+                img.project-switch {
+                    @media screen and (min-width: 1200px) {
+                        display: none;
+                    }
+                }
+                p {
+                    margin: $spacing-big;
+                    text-align: center;
+                    font-size: 90%;
+                    color: $acolor;
+                    font-style: italic;
+                    display: none;
+                    @media screen and (max-width: 1199px) and (min-width: 800px) {
+                        &.click-on {
+                            display: block;
+                        }
+                    }
+                    @media screen and (max-width: 799px) {
+                        &.swipe-on {
+                            display: block;
+                        }
+                    }
+                }
             }
             &.contact {
                 padding-top: 0.75 * $h1-size;
@@ -187,7 +189,7 @@ body {
                 h2 {
                     margin-top: 0;
                 }
-                &>div {
+                & > div {
                     margin-bottom: $spacing-big;
                 }
                 input {
@@ -211,64 +213,66 @@ body {
                         }
                     }
                 }
-			}
-			img.arrow{
-				position: absolute;
-				width: $img-size;
-				height: $img-size;
-				left: 50%;
-				margin-left: -0.5 * $img-size;
-				cursor: pointer;
-				transition: $trans-short;
-				opacity: 0.6;
+            }
+            img.arrow {
+                position: absolute;
+                width: $img-size;
+                height: $img-size;
+                left: 50%;
+                margin-left: -0.5 * $img-size;
+                cursor: pointer;
+                transition: $trans-short;
+                opacity: 0.6;
 
-				&.up{
-					top: $spacing-big;
-					&:hover{
-						top: $spacing-big - $spacing;
-						transition: $trans-short;
-						opacity: 1;
-					}
-				}
-				&.down{
-					bottom: $spacing-big;
-					&:hover{
-						bottom: $spacing-big - $spacing;
-						transition: $trans-short;
-						opacity: 1;
-					}
-				}
-				&.left{
-					top: 0.5 * $h1-size + 0.5 * $h1-size + 0.25 * $h1-size + 0.5 * 0.75 * $card-width - 0.5 * $img-size;
-					margin-left: -(0.5 * $card-width + $spacing-big) - 0.5 * $img-size;
-					@media screen and (max-width: 359px){
-						margin-left: -(0.5 * $card-width - $spacing-big) - 0.5 * $img-size;
-					}
-					&:hover{
-						margin-left: -(0.5 * $card-width + $spacing-big + $spacing) - 0.5 * $img-size;
-						@media screen and (max-width: 359px){
-							margin-left: -(0.5 * $card-width - $spacing-big) - 0.5 * $img-size;
-						}
-						transition: $trans-short;
-						opacity: 1;
-					}
-				}
-				&.right{
-					top: 0.5 * $h1-size + 0.5 * $h1-size + 0.25 * $h1-size + 0.5 * 0.75 * $card-width - 0.5 * $img-size;
-					margin-left: 0.5 * $card-width + $spacing-big - 0.5 * $img-size;
-					@media screen and (max-width: 359px){
-						margin-left: 0.5 * $card-width - $spacing-big - 0.5 * $img-size;
-					}
-					&:hover{
-						margin-left: 0.5 * $card-width + $spacing-big + $spacing - 0.5 * $img-size;
-						@media screen and (max-width: 359px){
-							margin-left: 0.5 * $card-width - $spacing-big - 0.5 * $img-size;
-						}
-						transition: $trans-short;
-						opacity: 1;
-					}
-				}
-			}
+                &.up {
+                    top: $spacing-big;
+                    &:hover {
+                        top: $spacing-big - $spacing;
+                        transition: $trans-short;
+                        opacity: 1;
+                    }
+                }
+                &.down {
+                    bottom: $spacing-big;
+                    &:hover {
+                        bottom: $spacing-big - $spacing;
+                        transition: $trans-short;
+                        opacity: 1;
+                    }
+                }
+                &.left {
+                    top: 0.5 * $h1-size + 0.5 * $h1-size + 0.25 * $h1-size + 0.5 * 0.75 *
+                        $card-width - 0.5 * $img-size;
+                    margin-left: -(0.5 * $card-width + $spacing-big) - 0.5 * $img-size;
+                    @media screen and (max-width: 359px) {
+                        margin-left: -(0.5 * $card-width - $spacing-big) - 0.5 * $img-size;
+                    }
+                    &:hover {
+                        margin-left: -(0.5 * $card-width + $spacing-big + $spacing) - 0.5 * $img-size;
+                        @media screen and (max-width: 359px) {
+                            margin-left: -(0.5 * $card-width - $spacing-big) - 0.5 * $img-size;
+                        }
+                        transition: $trans-short;
+                        opacity: 1;
+                    }
+                }
+                &.right {
+                    top: 0.5 * $h1-size + 0.5 * $h1-size + 0.25 * $h1-size + 0.5 * 0.75 *
+                        $card-width - 0.5 * $img-size;
+                    margin-left: 0.5 * $card-width + $spacing-big - 0.5 * $img-size;
+                    @media screen and (max-width: 359px) {
+                        margin-left: 0.5 * $card-width - $spacing-big - 0.5 * $img-size;
+                    }
+                    &:hover {
+                        margin-left: 0.5 * $card-width + $spacing-big + $spacing - 0.5 * $img-size;
+                        @media screen and (max-width: 359px) {
+                            margin-left: 0.5 * $card-width - $spacing-big - 0.5 * $img-size;
+                        }
+                        transition: $trans-short;
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 }
