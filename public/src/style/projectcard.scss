@@ -2,9 +2,9 @@ li.project-card {
     position: relative;
     cursor: pointer;
     width: $card-width;
-    height: 3/4*$card-width;
+    height: 0.75 * $card-width;
     perspective: 1000px;
-	margin-bottom: 2*$spacing-big;
+	margin-bottom: 2 * $spacing-big;
 	@media screen and (max-width: 1199px) {
 		margin-bottom: 0;
 	}
