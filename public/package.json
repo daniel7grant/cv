@@ -4,9 +4,9 @@
   "description": "Website for a CV",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --port 47268",
-    "build": "./node_modules/.bin/webpack --mode production --progress",
-    "test": "./node_modules/.bin/jest test/*.js --color --config jest.config.js"
+    "dev": "webpack-dev-server --port 47268",
+    "build": "webpack --mode production --progress",
+    "test": "jest test/*.js --color --config jest.config.js"
   },
   "author": "Daniel Grant (daniel7grant@gmail.com)",
   "license": "Beerware",
@@ -29,8 +29,9 @@
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "mini-css-extract-plugin": "^2.7.2",
-    "node-sass": "^8.0.0",
     "nyc": "^15.1.0",
+    "prettier": "^3.0.0",
+    "sass": "^1.64.2",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
