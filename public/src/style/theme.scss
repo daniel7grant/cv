@@ -68,7 +68,7 @@ body {
     }
     img.icon {
         height: $img-size;
-        width: auto;
+        width: $img-size;
         transition: $trans-short;
     }
     *::selection {

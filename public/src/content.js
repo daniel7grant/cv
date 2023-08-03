@@ -14,12 +14,14 @@ module.exports = {
                 level: 'expert',
                 description: `
                     <p>
-                        I've started writing JavaScript even before ES6 and React become popular, writing a whole client-side application entirely with jQuery and XHR.
-                        This taught me a lot about technologies that build up the web, but it wasn't very clean, with many intermingling parts.  
+                        I've started writing JavaScript even before ES6 and React become popular, writing a whole client-side application
+                        entirely with jQuery and XHR. This taught me a lot about technologies that build up the web, but it wasn't very clean,
+                        with many intermingling parts.
                     </p>
                     <p>
-                        After joining DONE., I began working on interactive frontends in React, which taught me a lot about organization of code and state-driven applications.
-                        Even after having a little experience with Vue.js, I am still most comfortable while writing JSX. 
+                        After joining DONE., I began working on interactive frontends in React, which taught me a lot about organization
+                        of code and state-driven applications. Even after having a little experience with Vue.js, I am still most comfortable
+                        while writing JSX. I try to keep up with the ever-changing landscape of JavaScript, as well as coding up my own libraries.
                     </p>
                 `,
                 modules: [
@@ -79,10 +81,9 @@ module.exports = {
                 level: 'expert',
                 description: `
                     <p>
-                        I worked with HTML and CSS for more than I could remember. I started with the usual
-                        middle-school treatment, creating my best 90's website impression. Soon I became familiar with CSS
-                        and have been fascinated by the shadows, gradients, and animations. I learnt many of the quirks of the CSS
-                        and built websites out of my own designs in university.
+                        I worked with HTML and CSS for more than I could remember. I started in middle-school,
+                        creating my best 90's website impression. Soon I became familiar with CSS and have been fascinated by the shadows,
+                        gradients, and animations. I started building websites out of my own basic designs in university.
                     </p>
                     <p>
                         When I started working at DONE., the company's main profile was custom-designed WordPress, and it really
@@ -128,7 +129,8 @@ module.exports = {
                     <p>
                         Since then, I learnt how to write PHP the easy way, developing custom Wordpress themes
                         and WooCommerce webshops at DONE., as well as trying my hand at Laravel at my dormitory's websites.
-                        While I recognize the great ecosystem of PHP, it probably wouldn't be my first choice for a new project.
+                        While I recognize the great ecosystem of PHP, it probably still wouldn't be my most comfortable choice
+                        for a new project.
                     </p>
                 `,
                 modules: [
@@ -154,13 +156,13 @@ module.exports = {
                 description: `
                     <p>
                         In most of my jobs, I worked with relational databases, mostly MySQL/MariaDB (the most convenient coming from a PHP background)
-                        and PostgreSQL (great extensibility, for example PostGIS). I also have experience with NoSQL databases, mainly with Redis
+                        and PostgreSQL (great extensibility, e.g. PostGIS). I also have experience with NoSQL databases, mainly with Redis
                         and ElasticSearch. For development I started with writing raw queries, but I worked with query builders (Knex) and
-                        ORMs (Hibernate, Eloquent, Sequelize, TypeORM).
+                        ORMs as well (Hibernate, Eloquent, Sequelize, TypeORM).
                     </p>
                     <p>
-                        I also have some experience with operating MariaDB databases: both in bare-metal, Docker and Kubernetes. In our dormitory
-                        I rewrote our bare-metal MariaDB into a replicated Docker container, complete with a highly available MaxScale load balancer,
+                        I also have experience with operating MariaDB databases: not only bare-metal, but also on Docker and Kubernetes. In our dormitory
+                        I rewrote our bare-metal MariaDB into a replicated Docker container, complete with a highly available MaxScale load balancer
                         and Prometheus monitoring.
                     </p>
                 `,
@@ -184,24 +186,86 @@ module.exports = {
                 ],
             },
             {
+                id: 'system',
+                name: 'CLI',
+                icon: '/icons/terminal.svg',
+                level: 'advanced',
+                description: `
+                    <p>
+                        For a systems programming language, I studied C for multiple years in the university. However I only started
+                        to really appreciate it when I took up a course on Linux programming. I enjoy the simple but powerful abstractions
+                        the language provides, which is great for small and fast CLI programs.
+                    </p>
+                    <p>
+                        Since then, I discovered Rust and its functional-inspired type system clicked for me instantly. As a good Rustacean, I've been
+                        pushing to rewrite all my side-project in Rust. I've been trying to build everything: open-source libraries, web servers and
+                        most of all, CLIs. With the help of the powerful Rust ecosystem, I am able to create safe and expressive command-line interfaces.
+                    </p>
+                `,
+                modules: [
+                    {
+                        name: 'C',
+                        icon: '/icons/c/c-original.svg',
+                    },
+                    {
+                        name: 'Rust',
+                        icon: '/icons/rust/rust-plain.svg',
+                    },
+                ],
+            },
+            {
+                id: 'cloud',
+                name: 'Cloud',
+                icon: '/icons/cloud.svg',
+                level: 'capable',
+                description: `
+                    <p>
+                        I always preferred self-hosting to the cloud. However when I was first exposed to the global cybersecurity scanning
+                        in Tenable.ASM at DONE., I realized that some things are not possible without the power of the cloud. I was tasked
+                        with the cleaning up and management of a service building up from more than 50 microservices, including EKS,
+                        Elastic Beanstalk and terabytes of ElasticSearch data.
+                    </p>
+                    <p>
+                        My job was figuring out ways to make our deployments more reproducible. I migrated our scanning infrastructure
+                        into EKS, deploying it automatically with ArgoCD. I Terraformed many parts of our cloud operations,
+                        including EKS clusters, ElasticSearch domains, IAM permissions and VPCs. The work of our team improved ease-of-use,
+                        monitoring and compliance of the whole operation.
+                    </p>
+                `,
+                modules: [
+                    {
+                        name: 'AWS',
+                        icon: '/icons/aws.svg',
+                    },
+                    {
+                        name: 'ArgoCD',
+                        icon: '/icons/argocd/argocd-original.svg',
+                    },
+                    {
+                        name: 'Terraform',
+                        icon: '/vendor-icons/terraform.svg',
+                    },
+                ],
+            },
+            {
                 id: 'devops',
                 name: 'DevOps',
                 icon: '/icons/devops.svg',
                 level: 'expert',
                 description: `
                     <p>
-                        I started my DevOps career with managing a bunch of web servers scattered around shared hosting and separate VMs.
-                        Back these days, I yearned for a better way to handle a lot of similar hosts, then Docker entered.
+                        I started my DevOps career at the KTK dormitory by managing web servers scattered around shared hosting and separate VMs.
+                        This was a cumbersome and insecure way, so naturally we searched for solutions and found containerization.
                     </p>
                     <p>
-                        Docker really made me fall in love with containerization: I turned dozens of services into minimal Alpine-based
-                        Docker images. These include WordPress, Laravel, OpenLDAP, Bind DNS, and replicated MariaDB. In the span of a few years
-                        we turned the KTK infrastructure from undocumented VMs to mostly containerized.
+                        I turned dozens of services into minimal Alpine-based Docker images: WordPress, Laravel, OpenLDAP, Bind DNS,
+                        and replicated MariaDB. In a few years we turned our infrastructure from undocumented VMs to
+                        mostly containerized single-node workloads.
                     </p>
                     <p>
-                        Docker is great, but it is lacking in orchestrating multiple containers (even with Docker-compose), so recently
-                        I started turning everything to Kubernetes. With its amazing ecosystem and great integration with GitOps, I deploy
-                        most of my new services with Helm and ArgoCD.
+                        As the number of services increased, they started to outgrow the specialized Docker VMs, and we put together a self-hosted
+                        Kubernetes cluster. We manage the networking (MetalLB, Traefik), storage (Ceph) and monitoring (Prometheus),
+                        while everything is deployed with Helm charts, and automatically rolled out by ArgoCD.
                     </p>
                 `,
                 modules: [
@@ -214,79 +278,12 @@ module.exports = {
                         icon: '/vendor-icons/kubernetes.svg',
                     },
                     {
+                        name: 'Helm',
+                        icon: '/icons/helm.svg',
+                    },
+                    {
                         name: 'ArgoCD',
                         icon: '/icons/argocd/argocd-original.svg',
-                    },
-                    {
-                        name: 'Nginx',
-                        icon: '/icons/nginx/nginx-original.svg',
-                    },
-                ],
-            },
-            {
-                id: 'system',
-                name: 'CLI',
-                icon: '/icons/terminal.svg',
-                level: 'advanced',
-                description: `
-                    <p>
-                        Throughout most of my studies, I was confronted with C-family languages. I started with the incredibly performant
-                        albeit primitive structure of C. After a few years, I came back as a Linux developer and realized the power behind
-                        the simple abstractions of C. Writing complicated code really made me appreciate the expressiveness of C.
-                    </p>
-                    <p>
-                        Since then, I discovered Rust and fell in love with its type system. Even though it is still a language that's a bit
-                        rough around the edges (crate structure, async story), I think it has the potential to be the most powerful language.
-                        It is now my go-to language for small binaries, and I try to experiment with its other uses (e.g. web server).
-                    </p>
-                `,
-                modules: [
-                    {
-                        name: 'C',
-                        icon: '/icons/c/c-original.svg',
-                    },
-                    {
-                        name: 'Rust',
-                        icon: '/icons/rust/rust-plain.svg',
-                    },
-                    {
-                        name: 'Go',
-                        icon: '/icons/go/go-original.svg',
-                    },
-                ],
-            },
-            {
-                id: 'cloud',
-                name: 'Cloud',
-                icon: '/icons/cloud.svg',
-                level: 'capable',
-                description: `
-                    <p>
-                        I always preferred self-hosting to the cloud, but especially for Kubernetes (and databases), it is very tough
-                        to do it right. This is the reason we started getting into the cloud, firstly to AWS EKS and Azure AKS. These are
-                        very robust with great features like load balancing and autoscaling. I learnt tons with these technologies.
-                    </p>
-                    <p>
-                        Since then, we expanded our cloud operations to other services, like Elastic Beanstalk and RDS for simpler workloads.
-                        For these, I prefer to use Terraform to deploy them as quickly and safely as I can.
-                    </p>
-                    <p>
-                        Recently I started looking more into serverless technologies, as they play very well with Node.js. I worked on some
-                        Lambdas and Cloudflare Workers and I'd love to learn more about these tools.
-                    </p>
-                `,
-                modules: [
-                    {
-                        name: 'AWS',
-                        icon: '/icons/amazonwebservices/amazonwebservices-original.svg',
-                    },
-                    {
-                        name: 'Azure',
-                        icon: '/icons/azure/azure-original.svg',
-                    },
-                    {
-                        name: 'Terraform',
-                        icon: '/vendor-icons/terraform.svg',
                     },
                 ],
             },
@@ -297,16 +294,16 @@ module.exports = {
                 level: 'expert',
                 description: `
                     <p>
-                        When I first got into Linux, I wanted to be able to handle our LAMP stack more efficiently.
-                        At first I just used scp to copy files, then I started using vim over ssh to quickly edit some files,
-                        and got more and more used to the Linux terminal. Now Linux is the operating system of all of my computers,
-                        and I fell in love with open source.
+                        When I first got into Linux, I wanted to handle our LAMP stack more efficiently.
+                        At first I just used scp to copy files, then I started using vim over ssh, and got more and more
+                        used to the terminal. Now Linux is the operating system on all my computers, and I fell in love
+                        with open source.
                     </p>
                     <p>
-                        The thing I really liked about the Linux shell, is both the simplicity and the power it enables.
+                        The thing I really liked about the Linux shell, is the simplicity and the power it enables.
                         I enjoy writing my quick-and-dirty one-liners and shell scripts, and I learnt to automate
                         every part of my workflow. Now I use Ansible to install and set up my desktop and servers,
-                        and use GitLab or Bitbucket pipelines to automate my deployments.
+                        and use GitHub Actions or GitLab CICD to automate my deployments.
                     </p>
                     <p>
                         I am very thankful for Linux because it started me on the way of open source and taught me
@@ -317,10 +314,6 @@ module.exports = {
                     {
                         name: 'Red Hat',
                         icon: '/icons/redhat/redhat-original.svg',
-                    },
-                    {
-                        name: 'Bash',
-                        icon: '/icons/bash.svg',
                     },
                     {
                         name: 'Vim',
