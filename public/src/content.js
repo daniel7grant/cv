@@ -254,7 +254,7 @@ module.exports = {
                 level: 'expert',
                 description: `
                     <p>
-                        I started my DevOps career at the KTK dormitory by managing web servers scattered around shared hosting and separate VMs.
+                        I started my DevOps career at the dormitory by managing web servers scattered around shared hosting and VMs.
                         This was a cumbersome and insecure way, so naturally we searched for solutions and found containerization.
                     </p>
                     <p>

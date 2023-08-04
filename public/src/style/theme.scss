@@ -19,6 +19,11 @@ $lang-width-s: 300px;
 $card-width: 22.5rem;
 $font-header: 'Slabo 27px';
 // RESPONSIVELY REDUCE ROOT FONT-SIZE
+@media screen and (min-width: 1200px) and (max-width: 1649px) {
+    :root {
+        font-size: 90%;
+    }
+}
 @media screen and (max-width: 799px) {
     :root {
         font-size: 80%;
@@ -70,6 +75,14 @@ body {
         height: $img-size;
         width: $img-size;
         transition: $trans-short;
+    }
+    figure {
+        margin: 0;
+    }
+    figcaption {
+        font-size: 80%;
+        margin-top: $spacing;
+        text-align: center;
     }
     *::selection {
         background-color: $selectcolor;

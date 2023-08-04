@@ -9,10 +9,11 @@ li.project-card {
         // Cards are breaking weirdly in this size, so let's make them smaller
         width: 0.8 * $card-width;
         height: 0.8 * 0.75 * $card-width;
-        font-size: 75%;
+        font-size: 80%;
+        margin-bottom: $spacing-big;
 
         h3 {
-            font-size: 1.65rem;
+            font-size: 0.8 * $h3-size;
         }
     }
     @media screen and (max-width: 1199px) {
@@ -73,10 +74,15 @@ li.project-card {
             li {
                 img {
                     margin: 0 2 * $spacing;
+                    @media screen and (min-width: 1200px) and (max-width: 1649px) {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
                 }
                 div {
                     margin-top: $spacing;
                     text-align: center;
+                    font-size: 80%;
                 }
             }
         }
