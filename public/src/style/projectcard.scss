@@ -5,9 +5,21 @@ li.project-card {
     height: 0.75 * $card-width;
     perspective: 1000px;
     margin-bottom: 2 * $spacing-big;
+    @media screen and (min-width: 1200px) and (max-width: 1649px) {
+        // Cards are breaking weirdly in this size, so let's make them smaller
+        width: 0.8 * $card-width;
+        height: 0.8 * 0.75 * $card-width;
+        font-size: 75%;
+
+        h3 {
+            font-size: 1.65rem;
+        }
+    }
     @media screen and (max-width: 1199px) {
         margin-bottom: 0;
         overflow: hidden;
+        width: $card-width;
+        height: 0.75 * $card-width;
     }
     & > div {
         position: absolute;
