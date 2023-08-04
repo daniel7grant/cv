@@ -59,16 +59,16 @@ export function calculateRadius() {
     if (window.matchMedia('(min-width: 800px) and (min-height: 800px)').matches) {
         return 300;
     } else {
-        return Math.min(window.innerWidth, window.innerHeight) * 0.5 * 0.8;
+        return Math.min(window.innerWidth, window.innerHeight) * 0.5 * 0.7;
     }
 }
 
 export function positionLangs(blobs, radius = 300, offset = 0) {
     blobs.forEach((element, index) => {
-        element.style.transform = `translate(${
-            radius * Math.cos((index * 2 * Math.PI) / blobs.length + offset)
-        }px,
-								${-radius * Math.sin((index * 2 * Math.PI) / blobs.length + offset)}px)`;
+        element.style.transform = `translate(
+            ${radius * Math.cos((index * 2 * Math.PI) / blobs.length + offset)}px,
+			${-radius * Math.sin((index * 2 * Math.PI) / blobs.length + offset)}px
+        )`;
     });
 }
 
