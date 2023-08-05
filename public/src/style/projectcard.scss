@@ -5,7 +5,7 @@ li.project-card {
     height: 0.75 * $card-width;
     perspective: 1000px;
     margin-bottom: 2 * $spacing-big;
-    @media screen and (min-width: 1200px) and (max-width: 1649px) {
+    @include if-laptop {
         // Cards are breaking weirdly in this size, so let's make them smaller
         width: 0.8 * $card-width;
         height: 0.8 * 0.75 * $card-width;
@@ -16,7 +16,7 @@ li.project-card {
             font-size: 0.8 * $h3-size;
         }
     }
-    @media screen and (max-width: 1199px) {
+    @include if-mobile-tablet {
         margin-bottom: 0;
         overflow: hidden;
         width: $card-width;
@@ -68,7 +68,7 @@ li.project-card {
             li {
                 img {
                     margin: 0 2 * $spacing;
-                    @media screen and (min-width: 1200px) and (max-width: 1649px) {
+                    @include if-laptop {
                         width: 1.5rem;
                         height: 1.5rem;
                     }
@@ -82,7 +82,7 @@ li.project-card {
         }
     }
     &:hover {
-        @media screen and (min-width: 1200px) {
+        @include if-desktop {
             div.project-cover {
                 transform: rotateY(-20deg);
                 transition: transform $trans-short;

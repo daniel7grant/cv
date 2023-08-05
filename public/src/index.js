@@ -6,7 +6,7 @@ import Clipboard from 'clipboard';
 
 document.addEventListener('DOMContentLoaded', function () {
     var slider = new DoSlide('#slide-container', { activeClass: 'current-slide' });
-    if (window.matchMedia('screen and (max-width: 1200px)').matches) {
+    if (window.matchMedia('screen and (max-width: 1199px)').matches) {
         var projectSlider = new DoSlide('#slide-projects-list', {
             horizontal: true,
             listenUserMouseWheel: false,
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     new Clipboard('a.copy');
 
     const langRadius = calculateRadius(),
-        langOffset = Math.PI / 2; //TODO: Responsive design
+        langOffset = Math.PI / 2;
     let langBlobs = Array.from(document.getElementsByClassName('lang-blob'));
     positionLangs(langBlobs, langRadius, langOffset);
 

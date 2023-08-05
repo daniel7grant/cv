@@ -86,14 +86,12 @@ li.lang-blob {
             -0.5 * $lang-width,
             -0.5 * $lang-radius
         ) !important; //I don't usually do this I swear
-        // TODO: Yikes, confronts with js
-        @media screen and (max-width: $lang-width) {
+        @include if-mobile {
             width: $lang-width-s;
             transform: translate(
                 -0.5 * $lang-width-s,
                 -0.5 * $lang-radius
             ) !important; //I don't usually do this I swear
-            // TODO: Yikes, confronts with js
         }
         margin-left: 0;
         div.lang-title {

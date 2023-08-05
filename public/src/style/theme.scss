@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px|Roboto');
+@import './mixins.scss';
 // GENERAL VARIABLES
 $bgcolor: #060606;
 $selectcolor: #808080;
@@ -15,18 +16,18 @@ $img-size: 3rem;
 $icon-size: 1rem;
 $career-height: 0.6 * $h1-size;
 $career-circle: 0.75 * $career-height;
-$lang-radius: 300px; // TODO: Should be removed, intertwines with js
+$lang-radius: 300px;
 $lang-width: 480px;
 $lang-width-s: 300px;
 $card-width: 22.5rem;
 $font-header: 'Slabo 27px';
 // RESPONSIVELY REDUCE ROOT FONT-SIZE
-@media screen and (min-width: 1200px) and (max-width: 1649px) {
+@include if-tablet-laptop {
     :root {
         font-size: 90%;
     }
 }
-@media screen and (max-width: 799px) {
+@include if-mobile {
     :root {
         font-size: 80%;
     }
@@ -121,7 +122,7 @@ body {
                     position: absolute;
                     width: 100%;
                     top: 50vh;
-                    @media screen and (min-width: 980px) {
+                    @include if-desktop {
                         padding-left: $h1-padding;
                     }
                 }
@@ -132,15 +133,15 @@ body {
                 max-width: 100%;
                 margin: auto;
 
-                @media screen and (max-width: 799px) {
+                @include if-mobile {
                     padding: 0.5 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
                 }
                 
                 h2 {
-                    @media screen and (min-width: 1200px) and (max-width: 1649px) {
+                    @include if-tablet-laptop {
                         margin-bottom: 0.125 * $h1-size;
                     }
-                    @media screen and (max-width: 799px) {
+                    @include if-mobile {
                         margin-bottom: 0.125 * $h1-size;
                     }
                 }
@@ -156,7 +157,7 @@ body {
                         padding-left: $career-height;
                         padding-bottom: 0.2 * $career-height;
 
-                        @media screen and (max-width: 799px) {
+                        @include if-mobile {
                             padding-left: 0.8 * $career-height;
                             padding-bottom: 0.15 * $career-height;
                         }
@@ -176,7 +177,7 @@ body {
                             background-color: $fgcolor;
                             transform: translateX(-50%);
 
-                            @media screen and (max-width: 799px) {
+                            @include if-mobile {
                                 left: 0.5 * 0.8 * $career-circle;
                             }
                         }
@@ -185,7 +186,7 @@ body {
                             &::before {
                                 height: $career-circle;
 
-                                @media screen and (max-width: 799px) {
+                                @include if-mobile {
                                     height: 0.8 * $career-circle;
                                 }
                             }
@@ -206,7 +207,7 @@ body {
                             height: $career-circle;
                             text-align: center;
 
-                            @media screen and (max-width: 799px) {
+                            @include if-mobile {
                                 font-size: 0.5 * 0.8 * $career-circle;
                                 line-height: 0.8 * $career-circle;
                                 width: 0.8 * $career-circle;
@@ -219,16 +220,20 @@ body {
                             margin-bottom: 1.5 * $spacing;
 
                             h3 {
-                                @media screen and (min-width: 800px) and (max-width: 1649px) {
+                                @include if-tablet-laptop {
                                     font-size: 0.9 * $h3-size;
                                 }
-                                @media screen and (max-width: 799px) {
+                                @include if-mobile {
                                     font-size: 0.9 * $h3-size;
                                 }
                             }
 
                             small {
                                 color: $acolor;
+
+                                @include if-tablet-laptop {
+                                    font-size: 60%;
+                                }
 
                                 &.position {
                                     display: flex;
@@ -244,6 +249,12 @@ body {
                                                 margin: 0 $spacing;
                                                 width: 1.5rem;
                                                 height: 1.5rem;
+
+                                                @include if-tablet-laptop {
+                                                    margin: 0 0.5 * $spacing;
+                                                    width: 1rem;
+                                                    height: 1rem;
+                                                }
                                             }
 
                                             figcaption {
@@ -259,6 +270,12 @@ body {
                                 fill: $acolor;
                                 top: 0;
                                 right: 0;
+                            }
+                        }
+
+                        .career-body {
+                            @include if-tablet-laptop {
+                                font-size: 80%;
                             }
                         }
                     }
@@ -279,7 +296,7 @@ body {
                     h2 {
                         transform: translateY(
                             -$lang-radius * 0.75
-                        ); // TODO: Yikes, confronts with js
+                        );
                         transition: $trans-short;
                     }
                     ul {
@@ -292,17 +309,17 @@ body {
             }
             &.projects {
                 padding: 0.75 * $h1-size 0.75 * $h1-size 0 0.75 * $h1-size;
-                @media screen and (min-width: 800px) and (max-width: 1649px) {
+                @include if-tablet-laptop {
                     padding: 0.5 * $h1-size 0.5 * $h1-size 0 0.5 * $h1-size;
                 }
-                @media screen and (max-width: 799px) {
+                @include if-mobile {
                     padding: 0.75 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
                 }
                 h2 {
                     margin-top: 0;
                 }
                 .ds-parent-inner {
-                    @media screen and (max-width: 1199px) {
+                    @include if-mobile-tablet {
                         margin: 0;
                         padding: 0;
                         overflow-x: hidden;
@@ -312,11 +329,11 @@ body {
                         height: 0.75 * $card-width;
                     }
                     ul#slide-projects-list {
-                        @media screen and (max-width: 1199px) {
+                        @include if-mobile-tablet {
                             width: $card-width;
                             height: 0.75 * $card-width;
                         }
-                        @media screen and (min-width: 1200px) {
+                        @include if-desktop {
                             display: flex;
                             flex-wrap: wrap;
                             justify-content: space-around;
@@ -325,7 +342,7 @@ body {
                     }
                 }
                 img.project-switch {
-                    @media screen and (min-width: 1200px) {
+                    @include if-desktop {
                         display: none;
                     }
                 }
@@ -336,12 +353,12 @@ body {
                     color: $acolor;
                     font-style: italic;
                     display: none;
-                    @media screen and (max-width: 1199px) and (min-width: 800px) {
+                    @include if-tablet {
                         &.click-on {
                             display: block;
                         }
                     }
-                    @media screen and (max-width: 799px) {
+                    @include if-mobile {
                         &.swipe-on {
                             display: block;
                         }
@@ -349,13 +366,19 @@ body {
                 }
             }
             &.contact {
-                padding-top: 0.75 * $h1-size;
+                padding: 0.75 * $h1-size 0 0 0;
                 margin: auto;
                 text-align: center;
                 width: $lang-width;
-                @media screen and (max-width: 480px) {
-                    width: $lang-width-s;
+                max-width: 100%;
+
+                @include if-tablet-laptop {
+                    padding: 0.5 * $h1-size 0.5 * $h1-size 0 0.5 * $h1-size;
                 }
+                @include if-mobile {
+                    padding: 0.75 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
+                }
+
                 h2 {
                     margin-top: 0;
                 }
@@ -414,14 +437,8 @@ body {
                     top: 0.5 * $h1-size + 0.5 * $h1-size + 0.25 * $h1-size + 0.5 * 0.75 *
                         $card-width - 0.5 * $img-size;
                     margin-left: -(0.5 * $card-width + $spacing-big) - 0.5 * $img-size;
-                    @media screen and (max-width: 359px) {
-                        margin-left: -(0.5 * $card-width - $spacing-big) - 0.5 * $img-size;
-                    }
                     &:hover {
                         margin-left: -(0.5 * $card-width + $spacing-big + $spacing) - 0.5 * $img-size;
-                        @media screen and (max-width: 359px) {
-                            margin-left: -(0.5 * $card-width - $spacing-big) - 0.5 * $img-size;
-                        }
                         transition: $trans-short;
                         opacity: 1;
                     }
@@ -430,14 +447,8 @@ body {
                     top: 0.5 * $h1-size + 0.5 * $h1-size + 0.25 * $h1-size + 0.5 * 0.75 *
                         $card-width - 0.5 * $img-size;
                     margin-left: 0.5 * $card-width + $spacing-big - 0.5 * $img-size;
-                    @media screen and (max-width: 359px) {
-                        margin-left: 0.5 * $card-width - $spacing-big - 0.5 * $img-size;
-                    }
                     &:hover {
                         margin-left: 0.5 * $card-width + $spacing-big + $spacing - 0.5 * $img-size;
-                        @media screen and (max-width: 359px) {
-                            margin-left: 0.5 * $card-width - $spacing-big - 0.5 * $img-size;
-                        }
                         transition: $trans-short;
                         opacity: 1;
                     }
