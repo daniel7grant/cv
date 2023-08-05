@@ -1,0 +1,96 @@
+body {
+    background: $bgcolor url('../../static/real-carbon-fibre.png');
+    color: $fgcolor;
+    font-family: $font-body;
+}
+
+// RESPONSIVELY REDUCE ROOT FONT-SIZE
+@include if-tablet-laptop {
+    :root {
+        font-size: 90%;
+    }
+}
+@include if-mobile {
+    :root {
+        font-size: 80%;
+    }
+}
+
+p {
+    margin-top: 0;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: $acolor;
+    &:visited {
+        color: $acolor;
+    }
+}
+
+h1 {
+    font-family: $font-header;
+    font-size: $h1-size;
+    margin-top: -0.5 * $h1-size;
+    text-align: center;
+    text-shadow: #000000 0px 0px 20px;
+}
+
+h2 {
+    font-family: $font-header;
+    font-size: $h2-size;
+    margin-top: 0;
+    margin-bottom: 0.5 * $h2-size;
+    text-align: center;
+}
+
+h3 {
+    font-family: $font-header;
+    font-size: $h3-size;
+    margin: 0;
+}
+
+img {
+    color: transparent;
+}
+
+img.icon {
+    height: $img-size;
+    width: $img-size;
+    transition: $trans-short;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+
+    figcaption {
+        font-size: 80%;
+        margin-top: $spacing;
+    }
+}
+
+a.to-url {
+    width: $icon-size;
+    height: $icon-size;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 0 10px rgb(0 0 0 / 0.4));
+    }
+}
+
+*::selection {
+    background-color: $selectcolor;
+}
+
+*::-moz-selection {
+    background-color: $selectcolor;
+}

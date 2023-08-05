@@ -1,0 +1,33 @@
+// Colors
+$bgcolor: #060606;
+$selectcolor: #808080;
+$fgcolor: #dddddd;
+$acolor: #a0a0a0;
+
+// Fonts
+$font-header: 'Slabo 27px', serif;
+$font-body: 'Roboto', sans;
+
+// Headers
+$h1-size: 8rem;
+$h2-size: 0.5 * $h1-size;
+$h3-size: 0.28 * $h1-size;
+$h1-padding: 15%;
+
+// Spacings
+$spacing: 0.33rem;
+$spacing-big: 1.33rem;
+
+// Image sizes
+$img-size: 3rem;
+$icon-size: 1rem;
+
+// Transition timing
+$trans-short: 0.3s;
+
+$lang-radius: 300px;
+$lang-width: 480px;
+$lang-width-s: 300px;
+$card-width: 22.5rem;
+$career-height: 0.6 * $h1-size;
+$career-circle: 0.75 * $career-height;

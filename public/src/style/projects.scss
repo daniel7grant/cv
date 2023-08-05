@@ -1,0 +1,59 @@
+
+& {
+    padding: 0.75 * $h1-size 0.75 * $h1-size 0 0.75 * $h1-size;
+    @include if-tablet-laptop {
+        padding: 0.5 * $h1-size 0.5 * $h1-size 0 0.5 * $h1-size;
+    }
+    @include if-mobile {
+        padding: 0.75 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
+    }
+    h2 {
+        margin-top: 0;
+    }
+    .ds-parent-inner {
+        @include if-mobile-tablet {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: visible;
+            margin: auto;
+            width: $card-width;
+            height: 0.75 * $card-width;
+        }
+        ul#slide-projects-list {
+            @include if-mobile-tablet {
+                width: $card-width;
+                height: 0.75 * $card-width;
+            }
+            @include if-desktop {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            @import 'projectcard';
+        }
+    }
+    img.project-switch {
+        @include if-desktop {
+            display: none;
+        }
+    }
+    p {
+        margin: $spacing-big;
+        text-align: center;
+        font-size: 90%;
+        color: $acolor;
+        font-style: italic;
+        display: none;
+        @include if-tablet {
+            &.click-on {
+                display: block;
+            }
+        }
+        @include if-mobile {
+            &.swipe-on {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+& {
+    img:not(.arrow) {
+        height: 100vh;
+        width: auto;
+    }
+    h1 {
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        top: 50vh;
+        @include if-desktop {
+            padding-left: $h1-padding;
+        }
+    }
+}

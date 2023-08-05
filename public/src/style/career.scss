@@ -1,0 +1,157 @@
+& {
+    padding: 0.75 * $h1-size 0 0 0;
+    width: $lang-width;
+    max-width: 100%;
+    margin: auto;
+
+    @include if-tablet-laptop {
+        padding: 0.5 * $h1-size 0 0 0;
+    }
+    @include if-mobile {
+        padding: 0.5 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
+    }
+
+    h2 {
+        @include if-tablet-laptop {
+            margin-bottom: 0.125 * $h1-size;
+        }
+        @include if-mobile {
+            margin-bottom: 0.125 * $h1-size;
+        }
+    }
+
+    ol.career-timeline {
+        counter-reset: career-counter;
+
+        & > li {
+            counter-increment: career-counter;
+            display: block;
+            position: relative;
+            min-height: $career-height;
+            padding-left: $career-height;
+            padding-bottom: 0.2 * $career-height;
+
+            @include if-mobile {
+                padding-left: 0.8 * $career-height;
+                padding-bottom: 0.15 * $career-height;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+
+            &::before {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0.5 * $career-circle;
+                width: 2px;
+                height: 100%;
+                background-color: $fgcolor;
+                transform: translateX(-50%);
+
+                @include if-mobile {
+                    left: 0.5 * 0.8 * $career-circle;
+                }
+            }
+
+            &:last-child {
+                &::before {
+                    height: $career-circle;
+
+                    @include if-mobile {
+                        height: 0.8 * $career-circle;
+                    }
+                }
+            }
+
+            &::after {
+                content: counter(career-counter);
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: $career-circle;
+                background-color: $fgcolor;
+                color: $bgcolor;
+                font-size: 0.5 * $career-circle;
+                line-height: $career-circle;
+                width: $career-circle;
+                height: $career-circle;
+                text-align: center;
+
+                @include if-mobile {
+                    font-size: 0.5 * 0.8 * $career-circle;
+                    line-height: 0.8 * $career-circle;
+                    width: 0.8 * $career-circle;
+                    height: 0.8 * $career-circle;
+                }
+            }
+
+            .career-header {
+                position: relative;
+                margin-bottom: 1.5 * $spacing;
+
+                h3 {
+                    @include if-tablet-laptop {
+                        font-size: 0.9 * $h3-size;
+                    }
+                    @include if-mobile {
+                        font-size: 0.9 * $h3-size;
+                    }
+                }
+
+                small {
+                    color: $acolor;
+
+                    @include if-tablet-laptop {
+                        font-size: 60%;
+                    }
+
+                    &.position {
+                        display: flex;
+                        align-items: center;
+                        text-transform: uppercase;
+
+                        ul.career-langs {
+                            display: flex;
+                            margin-left: auto;
+
+                            li {
+                                img {
+                                    margin: 0 $spacing;
+                                    width: 1.5rem;
+                                    height: 1.5rem;
+
+                                    @include if-tablet-laptop {
+                                        margin: 0 0.5 * $spacing;
+                                        width: 1rem;
+                                        height: 1rem;
+                                    }
+                                }
+
+                                figcaption {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                a.to-url {
+                    position: absolute;
+                    fill: $acolor;
+                    top: 0;
+                    right: 0;
+                }
+            }
+
+            .career-body {
+                @include if-tablet-laptop {
+                    font-size: 80%;
+                }
+            }
+        }
+    }
+}
