@@ -6,6 +6,100 @@ module.exports = {
         description: '',
         email: 'grant@d7gr.net',
         github: 'https://github.com/daniel7grant/',
+        career: [
+            {
+                name: 'Fűzővel Kifelé!',
+                description: 'My first contract was by an American football blog to create a game to predict the results of matches.',
+                url: 'http://fuzovelkifele.com/',
+                years: '2016',
+                position: "Web Developer",
+                languages: [
+                    {
+                        name: 'PHP',
+                        icon: '/icons/php/php-original.svg',
+                    },
+                    {
+                        name: 'JavaScript',
+                        icon: '/icons/javascript/javascript-original.svg',
+                    },
+                    {
+                        name: 'CSS',
+                        icon: '/icons/css3/css3-original.svg',
+                    }
+                ],
+            },
+            {
+                name: 'Kármán Tódor Dormitory',
+                description: 'At the university, I was the leader of a student group that maintains the network and web servers in a 1000-seat dormitory.',
+                url: 'https://szamtech.ktk.bme.hu/',
+                years: '2016 - 2021',
+                position: 'Leader (Web & DevOps)',
+                languages: [
+                    {
+                        name: 'Laravel',
+                        icon: '/icons/laravel/laravel-plain.svg',
+                    },
+                    {
+                        name: 'Linux',
+                        icon: '/icons/linux/linux-original.svg',
+                    },
+                    {
+                        name: 'Docker',
+                        icon: '/icons/docker/docker-original.svg',
+                    },
+                    {
+                        name: 'Kubernetes',
+                        icon: '/vendor-icons/kubernetes.svg',
+                    },
+                ],
+            },
+            {
+                name: 'DONE. Digital',
+                description: 'I started web development as a job at the DONE. agency, building WordPress and full stack JavaScript websites.',
+                url: 'https://thisisdone.com/',
+                years: '2018 - ',
+                position: 'Full stack Engineer',
+                languages: [
+                    {
+                        name: 'WordPress',
+                        icon: '/icons/wordpress/wordpress-plain-light.svg',
+                    },
+                    {
+                        name: 'Express',
+                        icon: '/icons/express/express-original.svg',
+                    },
+                    {
+                        name: 'React',
+                        icon: '/icons/react/react-original.svg',
+                    }
+                ],
+            },
+            {
+                name: 'Tenable.ASM',
+                description: 'DONE. worked as a contractor for Tenable.ASM (previously Bit Discovery), and I maintained the DevOps side of our cybersecurity scanning infrastructure.',
+                url: 'https://bitdiscovery.com/',
+                years: '2022 - ',
+                position: 'DevOps Engineer',
+                languages: [
+                    {
+                        name: 'AWS',
+                        icon: '/icons/aws.svg',
+                    },
+                    {
+                        name: 'Kubernetes',
+                        icon: '/vendor-icons/kubernetes.svg',
+                    },
+                    {
+                        name: 'ArgoCD',
+                        icon: '/icons/argocd/argocd-original.svg',
+                    },
+                    {
+                        name: 'Terraform',
+                        icon: '/vendor-icons/terraform.svg',
+                    }
+                ],
+            },
+        ],
         languages: [
             {
                 id: 'js',
@@ -348,7 +442,7 @@ module.exports = {
                 languages: [
                     {
                         name: 'AWS',
-                        icon: '/icons/amazonwebservices/amazonwebservices-original.svg',
+                        icon: '/icons/aws.svg',
                     },
                     {
                         name: 'Kubernetes',
@@ -365,11 +459,11 @@ module.exports = {
                 ],
             },
             {
-                name: 'KTK Szobafoglalás',
+                name: 'Dorm room reservation',
                 cover: { png: 'kolireg.png', webp: 'kolireg.webp' },
                 url: 'https://szobafoglalas.ktk.bme.hu/',
                 client: {
-                    name: 'KTK Számtech Szakosztály',
+                    name: 'Kármán Tódor Dormitory',
                     url: 'https://szamtech.ktk.bme.hu/',
                 },
                 details: [
@@ -425,7 +519,7 @@ module.exports = {
                 cover: { png: 'argo.png', webp: 'argo.webp' },
                 url: '',
                 client: {
-                    name: 'KTK Számtech Szakosztály',
+                    name: 'Kármán Tódor Dormitory',
                     url: 'https://szamtech.ktk.bme.hu/',
                 },
                 details: [

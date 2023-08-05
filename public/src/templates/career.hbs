@@ -1,0 +1,27 @@
+<article class="slide career">
+    <h2>Career</h2>
+    <ol class="career-timeline">
+        {{#each career }}
+        <li>
+            <div class="career-header">
+                <small class="years">
+                    {{ years }}
+                </small>
+                {{> to-url }}
+                <h3>{{ name }}</h3>
+                <small class="position">
+                    <span>{{ position }}</span>
+                    <ul class="career-langs">
+                        {{#each languages}}
+                        {{> icon }}
+                        {{/each}}
+                    </ul>
+                </small>
+            </div>
+            <div class="career-body">{{ description }}</div>
+        </li>
+        {{/each }}
+    </ol>
+    <img class="arrow up" src="/icons/angle-double-up.svg" alt="Up arrow for navigation"/>
+    <img class="arrow down" src="/icons/angle-double-down.svg" alt="Down arrow for navigation"/>
+</article>

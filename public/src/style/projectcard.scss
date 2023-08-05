@@ -34,12 +34,6 @@ li.project-card {
             position: absolute;
             top: 2 * $spacing;
             right: 2 * $spacing;
-            width: $icon-size;
-            height: $icon-size;
-            svg {
-                width: 100%;
-                height: 100%;
-            }
         }
     }
     div.project-cover {

@@ -13,6 +13,8 @@ $h3-size: 0.28 * $h1-size;
 $h1-padding: 15%;
 $img-size: 3rem;
 $icon-size: 1rem;
+$career-height: 0.6 * $h1-size;
+$career-circle: 0.75 * $career-height;
 $lang-radius: 300px; // TODO: Should be removed, intertwines with js
 $lang-width: 480px;
 $lang-width-s: 300px;
@@ -59,7 +61,7 @@ body {
     h2 {
         font-family: $font-header;
         font-size: 0.5 * $h1-size;
-        margin-top: -0.25 * $h1-size;
+        margin-top: 0;
         margin-bottom: 0.25 * $h1-size;
         text-align: center;
     }
@@ -78,11 +80,22 @@ body {
     }
     figure {
         margin: 0;
-    }
-    figcaption {
-        font-size: 80%;
-        margin-top: $spacing;
         text-align: center;
+
+        figcaption {
+            font-size: 80%;
+            margin-top: $spacing;
+        }
+    }
+    a.to-url {
+        width: $icon-size;
+        height: $icon-size;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 10px rgb(0 0 0 / 0.4));
+        }
     }
     *::selection {
         background-color: $selectcolor;
@@ -110,6 +123,144 @@ body {
                     top: 50vh;
                     @media screen and (min-width: 980px) {
                         padding-left: $h1-padding;
+                    }
+                }
+            }
+            &.career {
+                padding: 0.5 * $h1-size 0 0.5 * $h1-size 0;
+                width: $lang-width;
+                max-width: 100%;
+                margin: auto;
+
+                @media screen and (max-width: 799px) {
+                    padding: 0.5 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
+                }
+                
+                h2 {
+                    @media screen and (min-width: 1200px) and (max-width: 1649px) {
+                        margin-bottom: 0.125 * $h1-size;
+                    }
+                    @media screen and (max-width: 799px) {
+                        margin-bottom: 0.125 * $h1-size;
+                    }
+                }
+
+                ol.career-timeline {
+                    counter-reset: career-counter;
+
+                    & > li {
+                        counter-increment: career-counter;
+                        display: block;
+                        position: relative;
+                        min-height: $career-height;
+                        padding-left: $career-height;
+                        padding-bottom: 0.2 * $career-height;
+
+                        @media screen and (max-width: 799px) {
+                            padding-left: 0.8 * $career-height;
+                            padding-bottom: 0.15 * $career-height;
+                        }
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+
+                        &::before {
+                            content: '';
+                            display: inline-block;
+                            position: absolute;
+                            top: 0;
+                            left: 0.5 * $career-circle;
+                            width: 2px;
+                            height: 100%;
+                            background-color: $fgcolor;
+                            transform: translateX(-50%);
+
+                            @media screen and (max-width: 799px) {
+                                left: 0.5 * 0.8 * $career-circle;
+                            }
+                        }
+
+                        &:last-child {
+                            &::before {
+                                height: $career-circle;
+
+                                @media screen and (max-width: 799px) {
+                                    height: 0.8 * $career-circle;
+                                }
+                            }
+                        }
+
+                        &::after {
+                            content: counter(career-counter);
+                            display: inline-block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            border-radius: $career-circle;
+                            background-color: $fgcolor;
+                            color: $bgcolor;
+                            font-size: 0.5 * $career-circle;
+                            line-height: $career-circle;
+                            width: $career-circle;
+                            height: $career-circle;
+                            text-align: center;
+
+                            @media screen and (max-width: 799px) {
+                                font-size: 0.5 * 0.8 * $career-circle;
+                                line-height: 0.8 * $career-circle;
+                                width: 0.8 * $career-circle;
+                                height: 0.8 * $career-circle;
+                            }
+                        }
+
+                        .career-header {
+                            position: relative;
+                            margin-bottom: 1.5 * $spacing;
+
+                            h3 {
+                                @media screen and (min-width: 800px) and (max-width: 1649px) {
+                                    font-size: 0.9 * $h3-size;
+                                }
+                                @media screen and (max-width: 799px) {
+                                    font-size: 0.9 * $h3-size;
+                                }
+                            }
+
+                            small {
+                                color: $acolor;
+
+                                &.position {
+                                    display: flex;
+                                    align-items: center;
+                                    text-transform: uppercase;
+
+                                    ul.career-langs {
+                                        display: flex;
+                                        margin-left: auto;
+
+                                        li {
+                                            img {
+                                                margin: 0 $spacing;
+                                                width: 1.5rem;
+                                                height: 1.5rem;
+                                            }
+
+                                            figcaption {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            a.to-url {
+                                position: absolute;
+                                fill: $acolor;
+                                top: 0;
+                                right: 0;
+                            }
+                        }
                     }
                 }
             }
@@ -141,8 +292,11 @@ body {
             }
             &.projects {
                 padding: 0.75 * $h1-size 0.75 * $h1-size 0 0.75 * $h1-size;
+                @media screen and (min-width: 800px) and (max-width: 1649px) {
+                    padding: 0.5 * $h1-size 0.5 * $h1-size 0 0.5 * $h1-size;
+                }
                 @media screen and (max-width: 799px) {
-                    padding: 0.25 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
+                    padding: 0.75 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
                 }
                 h2 {
                     margin-top: 0;
