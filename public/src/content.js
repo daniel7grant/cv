@@ -3,7 +3,7 @@ module.exports = {
     en: {
         language: 'en',
         name: 'Gergely Dániel',
-        description: '',
+        description: "Gergely Dániel's CV website",
         email: 'grant@d7gr.net',
         github: 'https://github.com/daniel7grant/',
         career: [
@@ -606,7 +606,7 @@ module.exports = {
                 ],
             },
             {
-                name: 'FK! Tippjáték',
+                name: 'FK! guessing game',
                 cover: { png: 'fk.png', webp: 'fk.webp' },
                 url: 'https://www.fkclub.hu/tippjatek/',
                 client: {
