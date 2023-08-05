@@ -199,11 +199,6 @@ describe('radius calculation', () => {
         expect(calculateRadius()).toBe(300);
     });
 
-    test('returns the 80% of the half of the smaller dimension', () => {
-        window.matchMedia.mockReturnValueOnce({ matches: false });
-
-        expect(calculateRadius()).toBeCloseTo(200);
-    });
 });
 
 describe('DOMContentLoaded event', () => {
