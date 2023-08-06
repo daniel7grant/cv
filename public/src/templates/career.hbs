@@ -20,6 +20,11 @@
                 </small>
             </div>
             <div class="career-body">{{ description }}</div>
+            <ul class="career-langs">
+                {{#each languages}}
+                {{> icon }}
+                {{/each}}
+            </ul>
         </li>
         {{/each }}
     </ol>
