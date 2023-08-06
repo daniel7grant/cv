@@ -1,9 +1,12 @@
 & {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: auto;
     padding: 0.75 * $h1-size 0.75 * $h1-size $h1-size 0.75 * $h1-size;
+
+    @include if-desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+    }
 
     @include if-mobile-tablet {
         width: $lang-width;
@@ -21,7 +24,6 @@
     }
 
     ol.career-timeline {
-        counter-reset: career-counter;
         display: flex;
 
         @include if-desktop {
@@ -34,85 +36,33 @@
 
         & > li {
             flex: 1;
-            counter-increment: career-counter;
-            display: block;
-            position: relative;
+            display: flex;
+            flex-direction: column;
             min-height: $career-height;
-            padding: $career-height 0.4 * $career-height 0.2 * $career-height 0.4 * $career-height;
+            padding: 0 0.4 * $career-height 0.2 * $career-height 0.4 * $career-height;
 
             @include if-mobile-tablet {
-                padding: 0 0 0.2 * $career-height $career-height;
-            }
-            @include if-mobile {
-                padding-left: 0.8 * $career-height;
-                padding-bottom: 0.15 * $career-height;
+                flex-direction: row;
+                padding: 0 0 0.2 * $career-height 0;
             }
 
             &:last-child {
                 padding-bottom: 0;
             }
 
-            @include if-mobile-tablet {
-                &::before {
-                    content: '';
-                    display: inline-block;
-                    position: absolute;
-                    background-color: $fgcolor;
-                    top: 0;
-                    left: 0.5 * $career-circle;
-                    width: 2px;
-                    height: 100%;
-                    transform: translateX(-50%);
-
-                    @include if-mobile {
-                        top: 0.1 * $career-height;
-                        left: 0.5 * 0.8 * $career-circle;
-                    }
-                }
-            }
-
-            &:last-child {
-                &::before {
-                    @include if-desktop {
-                        width: $career-circle;
-                    }
-
-                    @include if-mobile-tablet {
-                        height: $career-circle;
-                    }
-
-                    @include if-mobile {
-                        height: 0.8 * $career-circle;
-                    }
-                }
-            }
-
-            &::after {
-                content: counter(career-counter);
-                display: inline-block;
-                position: absolute;
-                top: 0;
-                left: 0.4 * $career-height;
-                border-radius: $career-circle;
-                background-color: $fgcolor;
-                color: $bgcolor;
-                font-size: 0.5 * $career-circle;
-                line-height: $career-circle;
-                width: $career-circle;
-                height: $career-circle;
-                text-align: center;
+            .career-years {
+                font-size: 1.4 * $h3-size;
+                color: $acolor;
+                opacity: 60%;
 
                 @include if-mobile-tablet {
-                    top: 0;
-                    left: 0;
+                    min-width: 80px;
                 }
                 
-                @include if-mobile {
-                    top: 0.1 * $career-height;
-                    font-size: 0.5 * 0.8 * $career-circle;
-                    line-height: 0.8 * $career-circle;
-                    width: 0.8 * $career-circle;
-                    height: 0.8 * $career-circle;
+                @include if-mobile-tablet {
+                    font-size: $h3-size;
+                    padding-right: 2 * $spacing;
+                    min-width: 90px;
                 }
             }
 
@@ -130,21 +80,9 @@
                     color: $acolor;
                     text-transform: uppercase;
 
-                    .years-position {
-                        display: none;
-
-                        @include if-small-height {
-                            display: inline;
-                        }
-                    }
-
                     &.position {
                         display: flex;
                         align-items: center;
-
-                        @include if-small-height {
-                            display: none;
-                        }
 
                         ul.career-langs {
                             display: none;
@@ -152,6 +90,10 @@
 
                             @include if-mobile-tablet {
                                 display: flex;
+                            }
+
+                            @include if-small-height {
+                                display: none;
                             }
                             
                             li {
@@ -177,8 +119,10 @@
                 }
             }
 
-            .career-body {
-                margin-bottom: 2 * $spacing;
+            @include if-desktop {
+                .career-body {
+                    margin-bottom: 2 * $spacing;
+                }
             }
 
             ul.career-langs {

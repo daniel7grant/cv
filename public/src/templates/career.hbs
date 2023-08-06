@@ -3,28 +3,29 @@
     <ol class="career-timeline">
         {{#each career }}
         <li>
-            <div class="career-header">
-                <small class="years">
-                    <span>{{ years }}</span>
-                    <span class="years-position">— {{ position }}</span>
-                </small>
-                {{> to-url }}
-                <h3>{{ name }}</h3>
-                <small class="position">
-                    <span>{{ position }}</span>
-                    <ul class="career-langs">
-                        {{#each languages}}
-                        {{> icon }}
-                        {{/each}}
-                    </ul>
-                </small>
+            <div class="career-years">
+                <span>{{ years }}</span>
             </div>
-            <div class="career-body">{{ description }}</div>
-            <ul class="career-langs">
-                {{#each languages}}
-                {{> icon }}
-                {{/each}}
-            </ul>
+            <div class="career-container">
+                <div class="career-header">
+                    {{> to-url }}
+                    <h3>{{ name }}</h3>
+                    <small class="position">
+                        <span>{{ position }}</span>
+                        <ul class="career-langs">
+                            {{#each languages}}
+                            {{> icon }}
+                            {{/each}}
+                        </ul>
+                    </small>
+                </div>
+                <div class="career-body">{{ description }}</div>
+                <ul class="career-langs">
+                    {{#each languages}}
+                    {{> icon }}
+                    {{/each}}
+                </ul>
+            </div>
         </li>
         {{/each }}
     </ol>

@@ -32,7 +32,7 @@ module.exports = {
                 name: 'Kármán Tódor Dormitory',
                 description: 'At the university, I was the leader of a student group that maintains the network and web servers in a 1000-seat dormitory.',
                 url: 'https://szamtech.ktk.bme.hu/',
-                years: '2016 - 2021',
+                years: '2016-2021',
                 position: 'Leader (Web & DevOps)',
                 languages: [
                     {
@@ -57,7 +57,7 @@ module.exports = {
                 name: 'DONE. Digital',
                 description: 'I started web development as a job at the DONE. agency, building WordPress and full stack JavaScript websites.',
                 url: 'https://thisisdone.com/',
-                years: '2018 - ',
+                years: '2018-',
                 position: 'Full stack Engineer',
                 languages: [
                     {
@@ -78,7 +78,7 @@ module.exports = {
                 name: 'Tenable.ASM',
                 description: 'DONE. worked as a contractor for Tenable.ASM (previously Bit Discovery), and I maintained the DevOps side of our cybersecurity scanning infrastructure.',
                 url: 'https://bitdiscovery.com/',
-                years: '2022 - ',
+                years: '2022-',
                 position: 'DevOps Engineer',
                 languages: [
                     {
