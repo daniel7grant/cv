@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     langBlobs.forEach((element) =>
         element.addEventListener('click', (ev) => {
-            activateElements(ev, [element, document.getElementById('slide-lang')]);
+            if (element.parentElement.querySelector('.is-active') === null) {
+                activateElements(ev, [element, document.getElementById('slide-lang')]);
+            }
             ev.stopPropagation();
         }),
     );
