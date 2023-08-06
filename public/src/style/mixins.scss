@@ -1,3 +1,4 @@
+// RESPONSIVE WIDTH
 @mixin if-mobile {
     @media screen and (max-width: 799px) { @content; }
 }
@@ -15,4 +16,8 @@
 }
 @mixin if-desktop {
     @media screen and (min-width: 1200px) { @content; }
+}
+// RESPONSIVE HEIGHT
+@mixin if-small-height {
+    @media screen and (max-width: 799px) and (max-height: 650px) { @content; }
 }

@@ -31,6 +31,9 @@
             padding-left: $career-height;
             padding-bottom: 0.2 * $career-height;
 
+            @include if-tablet-laptop {
+                padding-bottom: 0.15 * $career-height;
+            }
             @include if-mobile {
                 padding-left: 0.8 * $career-height;
                 padding-bottom: 0.15 * $career-height;
@@ -95,6 +98,10 @@
                 position: relative;
                 margin-bottom: 1.5 * $spacing;
 
+                @include if-tablet-laptop {
+                    margin-bottom: $spacing;
+                }
+
                 h3 {
                     @include if-tablet-laptop {
                         font-size: 0.9 * $h3-size;
@@ -106,15 +113,27 @@
 
                 small {
                     color: $acolor;
+                    text-transform: uppercase;
 
                     @include if-tablet-laptop {
                         font-size: 60%;
                     }
 
+                    .years-position {
+                        display: none;
+
+                        @include if-small-height {
+                            display: inline;
+                        }
+                    }
+
                     &.position {
                         display: flex;
                         align-items: center;
-                        text-transform: uppercase;
+
+                        @include if-small-height {
+                            display: none;
+                        }
 
                         ul.career-langs {
                             display: flex;
