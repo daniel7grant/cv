@@ -16,6 +16,10 @@ body {
     }
 }
 
+* {
+    box-sizing: border-box;
+}
+
 p {
     margin-top: 0;
 }
@@ -74,6 +78,13 @@ figure {
         font-size: 80%;
         margin-top: $spacing;
     }
+}
+
+input {
+    border: 0px solid transparent;
+    border-radius: 0.33rem;
+    padding: 0.33rem;
+    font-size: 1.6rem;
 }
 
 a.to-url {

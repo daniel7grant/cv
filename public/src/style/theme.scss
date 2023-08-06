@@ -12,53 +12,7 @@ section.ds-parent {
     article.slide {
         position: relative;
 
-        img.arrow {
-            position: absolute;
-            width: $img-size;
-            height: $img-size;
-            left: 50%;
-            margin-left: -0.5 * $img-size;
-            cursor: pointer;
-            transition: $trans-short;
-            opacity: 0.6;
-
-            &.up {
-                top: $spacing-big;
-                &:hover {
-                    top: $spacing-big - $spacing;
-                    transition: $trans-short;
-                    opacity: 1;
-                }
-            }
-            &.down {
-                bottom: $spacing-big;
-                &:hover {
-                    bottom: $spacing-big - $spacing;
-                    transition: $trans-short;
-                    opacity: 1;
-                }
-            }
-            &.left {
-                top: 0.5 * $h1-size + 0.5 * $h1-size + 0.25 * $h1-size + 0.5 * 0.75 * $card-width -
-                    0.5 * $img-size;
-                margin-left: -(0.5 * $card-width + $spacing-big) - 0.5 * $img-size;
-                &:hover {
-                    margin-left: -(0.5 * $card-width + $spacing-big + $spacing) - 0.5 * $img-size;
-                    transition: $trans-short;
-                    opacity: 1;
-                }
-            }
-            &.right {
-                top: 0.5 * $h1-size + 0.5 * $h1-size + 0.25 * $h1-size + 0.5 * 0.75 * $card-width -
-                    0.5 * $img-size;
-                margin-left: 0.5 * $card-width + $spacing-big - 0.5 * $img-size;
-                &:hover {
-                    margin-left: 0.5 * $card-width + $spacing-big + $spacing - 0.5 * $img-size;
-                    transition: $trans-short;
-                    opacity: 1;
-                }
-            }
-        }
+        @import './arrow.scss';
 
         &.cover {
             @import './cover.scss';

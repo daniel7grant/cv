@@ -9,7 +9,7 @@ module.exports = {
         career: [
             {
                 name: 'Fűzővel Kifelé!',
-                description: 'My first contract was by an American football blog to create a game to predict the results of matches.',
+                description: 'My first contract was by an American football blog to create a game for predicting the results of matches.',
                 url: 'http://fuzovelkifele.com/',
                 years: '2016',
                 position: "Web Developer",
@@ -523,8 +523,7 @@ module.exports = {
                     url: 'https://github.com/daniel7grant',
                 },
                 details: [
-                    'Rust-based command-line interface to interact with git servers',
-                    'Compatible with GitHub, GitLab, Bitbucket and Gitea',
+                    'Rust-based command-line interface to interact with git servers (compatible with GitHub, GitLab, Bitbucket and Gitea)',
                     'Install with Cargo or NPM',
                 ],
                 languages: [

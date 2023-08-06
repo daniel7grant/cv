@@ -80,6 +80,9 @@ li.project-card {
                 }
             }
         }
+        a.to-url {
+            display: none;
+        }
     }
     &:hover {
         @include if-desktop {
@@ -101,6 +104,10 @@ li.project-card {
         div.project-details {
             transform: rotateY(0deg);
             transition: transform $trans-short;
+
+            a.to-url {
+                display: inline-block;
+            }
         }
     }
 }
