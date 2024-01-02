@@ -57,7 +57,7 @@ module.exports = {
                 name: 'DONE. Digital',
                 description: 'I started web development as a job at the DONE. agency, building WordPress and full stack JavaScript websites.',
                 url: 'https://thisisdone.com/',
-                years: '2018-',
+                years: '2018-2023',
                 position: 'Full stack Engineer',
                 languages: [
                     {
@@ -78,7 +78,7 @@ module.exports = {
                 name: 'Tenable.ASM',
                 description: 'DONE. worked as a contractor for Tenable.ASM (previously Bit Discovery), and I maintained the DevOps side of our cybersecurity scanning infrastructure.',
                 url: 'https://bitdiscovery.com/',
-                years: '2022-',
+                years: '2022-2023',
                 position: 'DevOps Engineer',
                 languages: [
                     {
