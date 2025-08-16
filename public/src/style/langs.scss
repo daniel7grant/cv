@@ -1,4 +1,9 @@
-& {
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@use 'langblob';
+
+@mixin langs {
     h2 {
         position: relative;
         top: 50vh;
@@ -7,7 +12,7 @@
         margin-top: -0.5 * $img-size;
     }
     ul {
-        @import 'langblob';
+        @include langblob.langblob;
     }
     &.is-active {
         h2 {

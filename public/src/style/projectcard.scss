@@ -1,113 +1,118 @@
-li.project-card {
-    position: relative;
-    cursor: pointer;
-    width: $card-width;
-    height: 0.75 * $card-width;
-    perspective: 1000px;
-    margin-bottom: 2 * $spacing-big;
-    @include if-laptop {
-        // Cards are breaking weirdly in this size, so let's make them smaller
-        width: 0.8 * $card-width;
-        height: 0.8 * 0.75 * $card-width;
-        font-size: 80%;
-        margin-bottom: $spacing-big;
+@use 'variables' as *;
+@use 'mixins' as *;
 
-        h3 {
-            font-size: 0.8 * $h3-size;
-        }
-    }
-    @include if-mobile-tablet {
-        margin-bottom: 0;
-        overflow: hidden;
+@mixin projectcard {
+    li.project-card {
+        position: relative;
+        cursor: pointer;
         width: $card-width;
         height: 0.75 * $card-width;
-    }
-    & > div {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        transform-origin: 50% 50%;
-        a.to-url {
-            position: absolute;
-            top: 2 * $spacing;
-            right: 2 * $spacing;
+        perspective: 1000px;
+        margin-bottom: 2 * $spacing-big;
+        @include if-laptop {
+            // Cards are breaking weirdly in this size, so let's make them smaller
+            width: 0.8 * $card-width;
+            height: 0.8 * 0.75 * $card-width;
+            font-size: 80%;
+            margin-bottom: $spacing-big;
+
+            h3 {
+                font-size: 0.8 * $h3-size;
+            }
         }
-    }
-    div.project-cover {
-        transform: rotateY(0deg);
-        transition: transform $trans-short;
-        img {
+        @include if-mobile-tablet {
+            margin-bottom: 0;
+            overflow: hidden;
+            width: $card-width;
+            height: 0.75 * $card-width;
+        }
+        & > div {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            border-radius: $spacing;
-        }
-    }
-    div.project-details {
-        box-sizing: border-box;
-        transform: rotateY(180deg);
-        transition: transform $trans-short;
-        background-color: #202020;
-        border-radius: $spacing;
-        padding: 2 * $spacing;
-        span.project-client {
-            font-size: 95%;
-        }
-        ul.project-details-list {
-            margin: 2 * $spacing $spacing-big;
-            list-style-type: circle;
-            li {
-                margin-bottom: $spacing;
+            backface-visibility: hidden;
+            transform-origin: 50% 50%;
+            a.to-url {
+                position: absolute;
+                top: 2 * $spacing;
+                right: 2 * $spacing;
             }
         }
-        ul.project-langs {
-            display: flex;
-            margin-top: 2 * $spacing;
-            li {
-                img {
-                    margin: 0 2 * $spacing;
-                    @include if-laptop {
-                        width: 1.5rem;
-                        height: 1.5rem;
+        div.project-cover {
+            transform: rotateY(0deg);
+            transition: transform $trans-short;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: $spacing;
+            }
+        }
+        div.project-details {
+            box-sizing: border-box;
+            transform: rotateY(180deg);
+            transition: transform $trans-short;
+            background-color: #202020;
+            border-radius: $spacing;
+            padding: 2 * $spacing;
+            span.project-client {
+                font-size: 95%;
+            }
+            ul.project-details-list {
+                margin: 2 * $spacing $spacing-big;
+                list-style-type: circle;
+                li {
+                    margin-bottom: $spacing;
+                }
+            }
+            ul.project-langs {
+                display: flex;
+                margin-top: 2 * $spacing;
+                li {
+                    img {
+                        margin: 0 2 * $spacing;
+                        @include if-laptop {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+                    }
+                    div {
+                        margin-top: $spacing;
+                        text-align: center;
+                        font-size: 80%;
                     }
                 }
-                div {
-                    margin-top: $spacing;
-                    text-align: center;
-                    font-size: 80%;
+            }
+            a.to-url {
+                display: none;
+            }
+        }
+        &:hover {
+            @include if-desktop {
+                div.project-cover {
+                    transform: rotateY(-20deg);
+                    transition: transform $trans-short;
+                }
+                div.project-details {
+                    transform: rotateY(160deg);
+                    transition: transform $trans-short;
                 }
             }
         }
-        a.to-url {
-            display: none;
-        }
-    }
-    &:hover {
-        @include if-desktop {
+        &.is-active {
             div.project-cover {
-                transform: rotateY(-20deg);
+                transform: rotateY(-180deg);
                 transition: transform $trans-short;
             }
             div.project-details {
-                transform: rotateY(160deg);
+                transform: rotateY(0deg);
                 transition: transform $trans-short;
-            }
-        }
-    }
-    &.is-active {
-        div.project-cover {
-            transform: rotateY(-180deg);
-            transition: transform $trans-short;
-        }
-        div.project-details {
-            transform: rotateY(0deg);
-            transition: transform $trans-short;
 
-            a.to-url {
-                display: inline-block;
+                a.to-url {
+                    display: inline-block;
+                }
             }
-        }
     }
+}
 }

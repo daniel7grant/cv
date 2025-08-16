@@ -1,120 +1,125 @@
-li.lang-blob {
-    position: absolute;
-    width: $img-size;
-    transition: $trans-short;
-    top: 50vh;
-    left: 50%;
-    margin-left: -0.5 * $img-size;
-    margin-top: -0.5 * $img-size;
-    div.lang-title {
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        cursor: pointer;
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin langblob {
+    li.lang-blob {
+        position: absolute;
+        width: $img-size;
         transition: $trans-short;
-        img {
-            flex: 0 1 auto;
-            margin-right: 2 * $spacing;
-        }
-        h3 {
-            margin: 0;
-            flex: 1 0 auto;
-            white-space: nowrap;
-            visibility: hidden;
-            opacity: 0;
-            transition: 0.5 * $trans-short $trans-short;
-        }
-        div.lang-level {
+        top: 50vh;
+        left: 50%;
+        margin-left: -0.5 * $img-size;
+        margin-top: -0.5 * $img-size;
+        div.lang-title {
             display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            visibility: hidden;
-            opacity: 0;
-            transition: 0.5 * $trans-short $trans-short;
-            flex: 0 1 auto;
-            height: 100%;
-            max-height: 100%;
-            text-align: center;
-            text-transform: uppercase;
-            margin: 0 $spacing;
-            h4 {
-                font-family: $font-header;
-                font-size: 0.67 * $h3-size;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: $trans-short;
+            img {
+                flex: 0 1 auto;
+                margin-right: 2 * $spacing;
+            }
+            h3 {
                 margin: 0;
+                flex: 1 0 auto;
+                white-space: nowrap;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5 * $trans-short $trans-short;
             }
-            div {
-                font-family: $font-header;
-                font-size: 0.33 * $h3-size;
+            div.lang-level {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5 * $trans-short $trans-short;
+                flex: 0 1 auto;
+                height: 100%;
+                max-height: 100%;
+                text-align: center;
+                text-transform: uppercase;
+                margin: 0 $spacing;
+                h4 {
+                    font-family: $font-header;
+                    font-size: 0.67 * $h3-size;
+                    margin: 0;
+                }
+                div {
+                    font-family: $font-header;
+                    font-size: 0.33 * $h3-size;
+                }
+            }
+            img.close {
+                margin: 0;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5 * $trans-short $trans-short;
             }
         }
-        img.close {
-            margin: 0;
+        hr {
+            height: 0;
+            border-bottom: 1px solid $fgcolor;
+            transition: $trans-short;
+        }
+        div.lang-description {
+            box-sizing: border-box;
             visibility: hidden;
             opacity: 0;
+            height: 0;
             transition: 0.5 * $trans-short $trans-short;
-        }
-    }
-    hr {
-        height: 0;
-        border-bottom: 1px solid $fgcolor;
-        transition: $trans-short;
-    }
-    div.lang-description {
-        box-sizing: border-box;
-        visibility: hidden;
-        opacity: 0;
-        height: 0;
-        transition: 0.5 * $trans-short $trans-short;
-        margin-top: 2 * $spacing;
-        padding-left: $img-size + 2 * $spacing;
-        overflow: hidden;
-        width: 100%;
-        ul.lang-modules {
-            display: flex;
-            flex-wrap: wrap;
             margin-top: 2 * $spacing;
-            li {
-                img {
-                    margin: 0 2 * $spacing;
+            padding-left: $img-size + 2 * $spacing;
+            overflow: hidden;
+            width: 100%;
+            ul.lang-modules {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 2 * $spacing;
+                li {
+                    img {
+                        margin: 0 2 * $spacing;
+                    }
                 }
             }
         }
-    }
-    &.is-active {
-        width: $lang-width;
-        transform: translate(
-            -0.5 * $lang-width,
-            -0.5 * $lang-radius
-        ) !important; //I don't usually do this I swear
-        @include if-mobile {
-            width: $lang-width-s;
+        &.is-active {
+            width: $lang-width;
             transform: translate(
-                -0.5 * $lang-width-s,
+                -0.5 * $lang-width,
                 -0.5 * $lang-radius
             ) !important; //I don't usually do this I swear
-        }
-        margin-left: 0;
-        div.lang-title {
-            h3,
-            div.lang-level,
-            img.close {
+            margin-left: 0;
+            @include if-mobile {
+                width: $lang-width-s;
+                transform: translate(
+                    -0.5 * $lang-width-s,
+                    -0.5 * $lang-radius
+                ) !important; //I don't usually do this I swear
+            }
+            div.lang-title {
+                h3,
+                div.lang-level,
+                img.close {
+                    visibility: visible;
+                    opacity: 1;
+                    transition: 0.5 * $trans-short $trans-short;
+                }
+            }
+            div.lang-description {
+                height: auto;
                 visibility: visible;
                 opacity: 1;
                 transition: 0.5 * $trans-short $trans-short;
             }
         }
-        div.lang-description {
-            height: auto;
-            visibility: visible;
-            opacity: 1;
-            transition: 0.5 * $trans-short $trans-short;
-        }
-    }
-    &:not(.is-active):hover {
-        div.lang-title,
-        hr {
-            transition: $trans-short;
-            transform: scale(1.2);
+        &:not(.is-active):hover {
+            div.lang-title,
+            hr {
+                transition: $trans-short;
+                transform: scale(1.2);
+            }
         }
     }
 }

@@ -1,4 +1,8 @@
-& {
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'projectcard';
+
+@mixin projects {
     padding: 0.75 * $h1-size 0.75 * $h1-size 0 0.75 * $h1-size;
     @include if-tablet-laptop {
         padding: 0.5 * $h1-size 0.5 * $h1-size 0 0.5 * $h1-size;
@@ -29,7 +33,7 @@
                 flex-wrap: wrap;
                 justify-content: space-around;
             }
-            @import 'projectcard';
+            @include projectcard.projectcard;
         }
     }
     img.project-switch {

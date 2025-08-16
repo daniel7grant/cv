@@ -1,7 +1,16 @@
+@use 'sass:meta';
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'base';
+
+@use 'arrow';
+@use 'cover';
+@use 'career';
+@use 'langs';
+@use 'projects';
+@use 'contact';
+
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px|Roboto');
-@import './variables.scss';
-@import './mixins.scss';
-@import './base.scss';
 
 section.ds-parent {
     display: block;
@@ -11,23 +20,22 @@ section.ds-parent {
 
     article.slide {
         position: relative;
-
-        @import './arrow.scss';
+        @include arrow.arrow;
 
         &.cover {
-            @import './cover.scss';
+            @include cover.cover;
         }
         &.career {
-            @import './career.scss';
+            @include career.career;
         }
         &.langs {
-            @import './langs.scss';
+            @include langs.langs;
         }
         &.projects {
-            @import './projects.scss';
+            @include projects.projects;
         }
         &.contact {
-            @import './contact.scss';
+            @include contact.contact;
         }
     }
 }

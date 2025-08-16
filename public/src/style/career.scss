@@ -1,16 +1,19 @@
-& {
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin career {
     margin: auto;
     padding: 0.75 * $h1-size 0.75 * $h1-size $h1-size 0.75 * $h1-size;
 
     @include if-desktop {
         display: flex;
         flex-direction: column;
-        align-items: center;    
+        align-items: center;
     }
 
     @include if-mobile-tablet {
         width: $lang-width;
-        max-width: 100%;    
+        max-width: 100%;
         padding: 0.5 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
     }
 
@@ -58,7 +61,7 @@
                 @include if-mobile-tablet {
                     min-width: 80px;
                 }
-                
+
                 @include if-mobile-tablet {
                     font-size: $h3-size;
                     padding-right: 2 * $spacing;
@@ -95,7 +98,7 @@
                             @include if-small-height {
                                 display: none;
                             }
-                            
+
                             li {
                                 img {
                                     margin: 0 $spacing;

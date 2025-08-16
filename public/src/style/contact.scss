@@ -1,4 +1,7 @@
-& {
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin contact {
     padding: 0.75 * $h1-size 0 0 0;
     margin: auto;
     text-align: center;

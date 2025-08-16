@@ -1,4 +1,7 @@
-& {
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin cover {
     img:not(.arrow) {
         height: 100vh;
         width: auto;
