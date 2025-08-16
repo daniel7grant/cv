@@ -5,7 +5,6 @@ import content from './src/content.js';
 
 export default defineConfig({
     root: './src',
-
     build: {
         outDir: resolve(__dirname, 'dist'),
         emptyOutDir: true, // equivalent to CleanWebpackPlugin
