@@ -58,7 +58,7 @@ module.exports = {
                 description: 'I started web development as a job at the DONE. agency, building WordPress and full stack JavaScript websites.',
                 url: 'https://thisisdone.com/',
                 years: '2018-2023',
-                position: 'Full stack Engineer',
+                position: 'Full Stack Engineer',
                 languages: [
                     {
                         name: 'WordPress',
@@ -96,6 +96,52 @@ module.exports = {
                     {
                         name: 'Terraform',
                         icon: '/vendor-icons/terraform.svg',
+                    }
+                ],
+            },
+            {
+                name: 'Alias Innovations',
+                description: '',
+                url: 'https://aliasinnov.com/',
+                years: '2024-',
+                position: 'Full Stack Engineer',
+                languages: [
+                    {
+                        name: 'Express',
+                        icon: '/icons/express/express-original.svg',
+                    },
+                    {
+                        name: 'TypeScript',
+                        icon: '/icons/typescript/typescript-original.svg',
+                    },
+                    {
+                        name: 'React',
+                        icon: '/icons/react/react-original.svg',
+                    },
+                    {
+                        name: 'Rust',
+                        icon: '/icons/rust/rust-plain.svg',
+                    },
+                ],
+            },
+            {
+                name: 'Tesla Gigafactory Berlin',
+                description: 'I worked out-sourced to ',
+                url: 'https://www.tesla.com/giga-berlin',
+                years: '2025-',
+                position: 'Full Stack Engineer',
+                languages: [
+                    {
+                        name: 'Nestjs',
+                        icon: '/icons/nestjs/nestjs-plain.svg',
+                    },
+                    {
+                        name: 'TypeScript',
+                        icon: '/icons/typescript/typescript-original.svg',
+                    },
+                    {
+                        name: 'React',
+                        icon: '/icons/react/react-original.svg',
                     }
                 ],
             },
@@ -646,13 +692,13 @@ module.exports = {
                     url: 'https://cv.danielgrants.com',
                 },
                 details: [
-                    'Built without any frameworks, only using Handlebars and webpack',
+                    'Built without any frameworks, only using Handlebars and vite',
                     'Dynamically generated from a JSON file',
                 ],
                 languages: [
                     {
-                        name: 'Webpack',
-                        icon: '/icons/webpack/webpack-original.svg',
+                        name: 'Vite',
+                        icon: '/icons/vitejs/vitejs-original.svg',
                     },
                     {
                         name: 'JavaScript',
