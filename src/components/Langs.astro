@@ -15,55 +15,55 @@ const { languages } = Astro.props;
     <ul>
         {languages.map((language) => <LangBlob {...language} />)}
     </ul>
-</Slide>
 
-<script>
-    function calculateRadius() {
-        if (window.matchMedia('(min-width: 800px) and (min-height: 800px)').matches) {
-            return 300;
-        } else {
-            return Math.min(window.innerWidth, window.innerHeight) * 0.5 * 0.7;
+    <script>
+        function calculateRadius() {
+            if (window.matchMedia('(min-width: 800px) and (min-height: 800px)').matches) {
+                return 300;
+            } else {
+                return Math.min(window.innerWidth, window.innerHeight) * 0.5 * 0.7;
+            }
         }
-    }
 
-    function activateElements(elements: (HTMLElement | null)[]) {
-        elements.forEach((element) => element?.classList.add('is-active'));
-    }
+        function activateElements(elements: (HTMLElement | null)[]) {
+            elements.forEach((element) => element?.classList.add('is-active'));
+        }
 
-    function deactivateElements(ev: Event) {
-        const elements = Array.from(
-            document.querySelectorAll('#slide-lang,.lang-blob,.project-card'),
-        );
-        elements.forEach((element) => element.classList.remove('is-active'));
-        ev.stopPropagation();
-    }
+        function deactivateElements(ev: Event) {
+            const elements = Array.from(
+                document.querySelectorAll('#slide-lang,.lang-blob,.project-card'),
+            );
+            elements.forEach((element) => element.classList.remove('is-active'));
+            ev.stopPropagation();
+        }
 
-    const radius = calculateRadius();
-    const offset = Math.PI / 2;
-    let langBlobs = Array.from(document.getElementsByClassName('lang-blob')) as HTMLLIElement[];
+        const radius = calculateRadius();
+        const offset = Math.PI / 2;
+        let langBlobs = Array.from(document.getElementsByClassName('lang-blob')) as HTMLLIElement[];
 
-    langBlobs.forEach((element, index) => {
-        element.style.transform = `translate(
+        langBlobs.forEach((element, index) => {
+            element.style.transform = `translate(
             ${radius * Math.cos((index * 2 * Math.PI) / langBlobs.length + offset)}px,
 			${-radius * Math.sin((index * 2 * Math.PI) / langBlobs.length + offset)}px
         )`;
-    });
+        });
 
-    langBlobs.forEach((element) =>
-        element.addEventListener('click', (ev) => {
-            if (element.parentElement?.querySelector('.is-active') === null) {
-                activateElements([element, document.getElementById('slide-lang')]);
-            }
-            ev.stopPropagation();
-        }),
-    );
-
-    Array.from(document.getElementsByClassName('close'))
-        .concat([document.body])
-        .forEach((element) =>
-            (element as HTMLDivElement).addEventListener('click', deactivateElements),
+        langBlobs.forEach((element) =>
+            element.addEventListener('click', (ev) => {
+                if (element.parentElement?.querySelector('.is-active') === null) {
+                    activateElements([element, document.getElementById('slide-lang')]);
+                }
+                ev.stopPropagation();
+            }),
         );
-</script>
+
+        Array.from(document.getElementsByClassName('close'))
+            .concat([document.body])
+            .forEach((element) =>
+                (element as HTMLDivElement).addEventListener('click', deactivateElements),
+            );
+    </script>
+</Slide>
 
 <style lang="scss">
     @use '../style/variables.scss' as *;

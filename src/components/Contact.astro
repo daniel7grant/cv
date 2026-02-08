@@ -44,20 +44,20 @@ const { email, github } = Astro.props;
             <a class="github-url" href={github} target="_blank" rel="noopener">Open Github</a>
         </div>
     </div>
-</Slide>
+    <script>
+        import Clipboard from 'clipboard';
+        new Clipboard('a.copy');
 
-<script>
-    import Clipboard from 'clipboard';
-    new Clipboard('a.copy');
-
-    (Array.from(document.querySelectorAll('input.contact-input')) as HTMLInputElement[]).forEach(
-        (element) =>
+        (
+            Array.from(document.querySelectorAll('input.contact-input')) as HTMLInputElement[]
+        ).forEach((element) =>
             element.addEventListener('click', (ev) => {
                 element.focus();
                 element.select();
             }),
-    );
-</script>
+        );
+    </script>
+</Slide>
 
 <style lang="scss">
     @use '../style/variables.scss' as *;
