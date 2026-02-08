@@ -1,0 +1,41 @@
+@use 'sass:meta';
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'base';
+
+@use 'arrow';
+@use 'cover';
+@use 'career';
+@use 'langs';
+@use 'projects';
+@use 'contact';
+
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px|Roboto');
+
+section.ds-parent {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    article.slide {
+        position: relative;
+        @include arrow.arrow;
+
+        &.cover {
+            @include cover.cover;
+        }
+        &.career {
+            @include career.career;
+        }
+        &.langs {
+            @include langs.langs;
+        }
+        &.projects {
+            @include projects.projects;
+        }
+        &.contact {
+            @include contact.contact;
+        }
+    }
+}

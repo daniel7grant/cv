@@ -1,0 +1,40 @@
+---
+import type { Client, Cover, ShortLanguage } from '../types';
+import Icon from './Icon.astro';
+import ToUrl from './ToUrl.astro';
+
+interface Props {
+    name: string;
+    cover: Cover;
+    url: string;
+    client: Client;
+    details: string[];
+    languages: ShortLanguage[];
+}
+
+const { name, cover, url, client, details, languages } = Astro.props;
+---
+
+<li class="project-card">
+    <div class="project-cover">
+        <picture>
+            <source srcset={`/${cover.webp}`} type="image/webp" />
+            <source srcset={`/${cover.png}`} type="image/png" />
+            <img src={`/${cover.png}`} alt={name} />
+        </picture>
+        <ToUrl name={name} url={url} />
+    </div>
+    <div class="project-details">
+        <h3>{name}</h3>
+        <span class="project-client"
+            >for <a href={client.url} target="_blank" rel="noopener">{client.name}</a></span
+        >
+        <ul class="project-details-list">
+            {details.map((detail) => <li>{detail}</li>)}
+        </ul>
+        <ul class="project-langs">
+            {languages.map((language) => <Icon {...language} />)}
+        </ul>
+        <ToUrl name={name} url={url} />
+    </div>
+</li>

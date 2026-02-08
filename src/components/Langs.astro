@@ -1,0 +1,19 @@
+---
+import type { Language } from '../types';
+import LangBlob from './LangBlob.astro';
+
+interface Props {
+    languages: Language[];
+}
+
+const { languages } = Astro.props;
+---
+
+<article class="slide langs" id="slide-lang">
+    <h2 id="slide-lang-title">Skills</h2>
+    <ul>
+        {languages.map((language) => <LangBlob {...language} />)}
+    </ul>
+    <img class="arrow up" src="/icons/angle-double-up.svg" alt="Up arrow for navigation" />
+    <img class="arrow down" src="/icons/angle-double-down.svg" alt="Down arrow for navigation" />
+</article>

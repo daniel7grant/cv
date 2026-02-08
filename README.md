@@ -17,6 +17,7 @@ The images are mine, including the overfiltered cover image. You can create your
 ### Installation
 
 After you cloned the repository, you have to install both server-side and client-side packages (you have to have `node` installed on your computer).
+
 ```bash
 npm install
 cd public
@@ -26,11 +27,13 @@ npm install
 ### Running
 
 For running you have to compile the sources to the `dist/` folder.
+
 ```bash
 webpack -p --progress
 ```
 
 Then you just run the `index.js` with node. You can change ports with the PORT environmental variable, if you want it (default is 8082).
+
 ```bash
 node index.js
 PORT=80 node index.js	# Might differ depending on the OS

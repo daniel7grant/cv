@@ -1,0 +1,34 @@
+---
+import type { Module } from '../types';
+import Icon from './Icon.astro';
+
+interface Props {
+    id: string;
+    icon: string;
+    name: string;
+    level: string;
+    description: string;
+    modules: Module[];
+}
+
+const { id, icon, name, level, description, modules } = Astro.props;
+---
+
+<li id={`lang-${id}`} class="lang-blob">
+    <div class="lang-title">
+        <img class="icon" src={icon} alt={name} />
+        <h3>{name}</h3>
+        <div class="lang-level">
+            <h4>{level}</h4>
+            <div>Level</div>
+        </div>
+        <img class="close" src="/icons/close.svg" />
+    </div>
+    <hr />
+    <div class="lang-description">
+        {description}
+        <ul class="lang-modules">
+            {modules.map((module) => <Icon {...module} />)}
+        </ul>
+    </div>
+</li>

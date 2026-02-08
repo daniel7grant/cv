@@ -1,0 +1,48 @@
+---
+import type { Career } from '../types';
+import Icon from './Icon.astro';
+import ToUrl from './ToUrl.astro';
+
+interface Props {
+    careers: Career[];
+}
+
+const { careers } = Astro.props;
+---
+
+<article class="slide career">
+    <h2>Career</h2>
+    <ol class="career-timeline">
+        {
+            careers.map((career) => (
+                <li>
+                    <div class="career-years">
+                        <span>{career.years}</span>
+                    </div>
+                    <div class="career-container">
+                        <div class="career-header">
+                            <ToUrl name={career.name} url={career.url} />
+                            <h3>{career.name}</h3>
+                            <small class="position">
+                                <span>{career.position}</span>
+                                <ul class="career-langs">
+                                    {career.languages.map((language) => (
+                                        <Icon {...language} />
+                                    ))}
+                                </ul>
+                            </small>
+                        </div>
+                        <div class="career-body">{career.description}</div>
+                        <ul class="career-langs">
+                            {career.languages.map((language) => (
+                                <Icon {...language} />
+                            ))}
+                        </ul>
+                    </div>
+                </li>
+            ))
+        }
+    </ol>
+    <img class="arrow up" src="/icons/angle-double-up.svg" alt="Up arrow for navigation" />
+    <img class="arrow down" src="/icons/angle-double-down.svg" alt="Down arrow for navigation" />
+</article>

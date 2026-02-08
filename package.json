@@ -1,18 +1,24 @@
 {
-	"name": "cv-website",
-	"version": "0.0.0",
-	"description": "Website for a CV",
-	"main": "index.js",
-	"scripts": {
-		"start": "node index.js"
-	},
-	"author": "Daniel Grant (daniel7grant@gmail.com)",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/daniel7grant/cv.git"
-	},
-	"dependencies": {
-		"express": "^5.2.1"
-	}
+    "name": "astro",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "astro": "^5.17.1",
+        "clipboard": "^2.0.11",
+        "do-slide": "^1.1.4",
+        "normalize.css": "^8.0.1",
+        "sass": "^1.97.3"
+    },
+    "devDependencies": {
+        "@typescript-eslint/parser": "^8.54.0",
+        "eslint": "^9.39.2",
+        "eslint-plugin-astro": "^1.5.0",
+        "prettier": "^3.8.1"
+    }
 }
