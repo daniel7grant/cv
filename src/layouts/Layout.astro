@@ -2,6 +2,7 @@
 import 'normalize.css';
 import '../style/theme.scss';
 import 'do-slide/dist/do-slide.min.css';
+import Slides from '../components/Slides.astro';
 
 interface Props {
     name: string;
@@ -25,14 +26,21 @@ const { name, description, language } = Astro.props;
         <meta property="og:url" content={`${Astro.site}/{{language}}/`} />
         <meta property="og:image" content={`${Astro.site}/olti-dark.png`} />
         <meta property="og:description" content={description} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
     </head>
-
     <body>
-        <section class="ds-parent">
-            <div id="slide-container" class="ds-container">
-                <slot />
-            </div>
-        </section>
+        <Slides>
+            <slot />
+        </Slides>
         <script src="../scripts/index.js"></script>
     </body>
 </html>

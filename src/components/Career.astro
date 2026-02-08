@@ -1,6 +1,7 @@
 ---
 import type { Career } from '../types';
 import Icon from './Icon.astro';
+import Slide from './Slide.astro';
 import ToUrl from './ToUrl.astro';
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 const { careers } = Astro.props;
 ---
 
-<article class="slide career">
+<Slide class="career">
     <h2>Career</h2>
     <ol class="career-timeline">
         {
@@ -43,6 +44,156 @@ const { careers } = Astro.props;
             ))
         }
     </ol>
-    <img class="arrow up" src="/icons/angle-double-up.svg" alt="Up arrow for navigation" />
-    <img class="arrow down" src="/icons/angle-double-down.svg" alt="Down arrow for navigation" />
-</article>
+</Slide>
+
+<style lang="scss">
+    @use '../style/variables.scss' as *;
+    @use '../style/mixins.scss' as *;
+
+    .career {
+        margin: auto;
+        padding: 0.75 * $h1-size 0.75 * $h1-size $h1-size 0.75 * $h1-size;
+
+        @include if-desktop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include if-mobile-tablet {
+            width: $lang-width;
+            max-width: 100%;
+            padding: 0.5 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
+        }
+
+        h2 {
+            @include if-tablet-laptop {
+                margin-bottom: 0.125 * $h1-size;
+            }
+            @include if-mobile {
+                margin-bottom: 0.125 * $h1-size;
+            }
+        }
+
+        ol.career-timeline {
+            display: flex;
+
+            @include if-desktop {
+                margin-top: 0.25 * $h1-size;
+            }
+
+            @include if-mobile-tablet {
+                flex-direction: column;
+            }
+
+            & > li {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                min-height: $career-height;
+                padding: 0 0.4 * $career-height 0.2 * $career-height 0.4 * $career-height;
+
+                @include if-mobile-tablet {
+                    flex-direction: row;
+                    padding: 0 0 0.2 * $career-height 0;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+
+                .career-years {
+                    font-size: 1.4 * $h3-size;
+                    color: $acolor;
+                    opacity: 60%;
+
+                    @include if-mobile-tablet {
+                        min-width: 80px;
+                    }
+
+                    @include if-mobile-tablet {
+                        font-size: $h3-size;
+                        padding-right: 2 * $spacing;
+                        min-width: 90px;
+                    }
+                }
+
+                .career-header {
+                    position: relative;
+                    margin-bottom: 1.5 * $spacing;
+
+                    h3 {
+                        @include if-mobile {
+                            font-size: 0.9 * $h3-size;
+                        }
+                    }
+
+                    small {
+                        color: $acolor;
+                        text-transform: uppercase;
+
+                        &.position {
+                            display: flex;
+                            align-items: center;
+
+                            ul.career-langs {
+                                display: none;
+                                margin-left: auto;
+
+                                @include if-mobile-tablet {
+                                    display: flex;
+                                }
+
+                                @include if-small-height {
+                                    display: none;
+                                }
+
+                                :global(li) {
+                                    img {
+                                        margin: 0 $spacing;
+                                        width: 1.5rem;
+                                        height: 1.5rem;
+                                    }
+
+                                    figcaption {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    :global(a.to-url) {
+                        position: absolute;
+                        fill: $acolor;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+
+                @include if-desktop {
+                    .career-body {
+                        margin-bottom: 2 * $spacing;
+                    }
+                }
+
+                ul.career-langs {
+                    display: flex;
+                    margin-left: auto;
+
+                    @include if-mobile-tablet {
+                        display: none;
+                    }
+
+                    :global(li) {
+                        img {
+                            margin: 0 $spacing;
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>

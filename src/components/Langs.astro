@@ -1,6 +1,7 @@
 ---
 import type { Language } from '../types';
 import LangBlob from './LangBlob.astro';
+import Slide from './Slide.astro';
 
 interface Props {
     languages: Language[];
@@ -9,11 +10,34 @@ interface Props {
 const { languages } = Astro.props;
 ---
 
-<article class="slide langs" id="slide-lang">
+<Slide class="langs" id="slide-lang">
     <h2 id="slide-lang-title">Skills</h2>
     <ul>
         {languages.map((language) => <LangBlob {...language} />)}
     </ul>
-    <img class="arrow up" src="/icons/angle-double-up.svg" alt="Up arrow for navigation" />
-    <img class="arrow down" src="/icons/angle-double-down.svg" alt="Down arrow for navigation" />
-</article>
+</Slide>
+
+<style lang="scss">
+    @use '../style/variables.scss' as *;
+    @use '../style/mixins.scss' as *;
+
+    h2 {
+        position: relative;
+        top: 50vh;
+        margin: 0;
+        transition: $trans-short;
+        margin-top: -0.5 * $img-size;
+    }
+    .langs.is-active {
+        h2 {
+            transform: translateY(-$lang-radius * 0.75);
+            transition: $trans-short;
+        }
+        ul {
+            :global(li.lang-blob:not(.is-active)) {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+</style>

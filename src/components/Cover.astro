@@ -1,4 +1,6 @@
 ---
+import Slide from './Slide.astro';
+
 interface Props {
     title: string;
 }
@@ -6,14 +8,30 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<article class="slide cover">
+<Slide class="cover">
     <picture>
         <source srcset="/olti.webp" type="image/webp" />
         <source srcset="/olti.png" type="image/png" />
         <img src="/olti.png" alt="Me in a suit" />
     </picture>
-    <h1>
-        {title}
-    </h1>
-    <img class="arrow down" src="/icons/angle-double-down.svg" alt="Down arrow for navigation" />
-</article>
+    <h1>{title}</h1>
+</Slide>
+
+<style lang="scss">
+    @use '../style/variables.scss' as *;
+    @use '../style/mixins.scss' as *;
+
+    img:not(.arrow) {
+        height: 100vh;
+        width: auto;
+    }
+    h1 {
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        top: 50vh;
+        @include if-desktop {
+            padding-left: $h1-padding;
+        }
+    }
+</style>

@@ -1,0 +1,61 @@
+---
+interface Props {
+    id?: string;
+    class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<article class:list={['slide', className]} {...rest}>
+    <slot />
+    <img class="arrow up" src="/icons/angle-double-up.svg" alt="Up arrow for navigation" />
+    <img class="arrow down" src="/icons/angle-double-down.svg" alt="Down arrow for navigation" />
+</article>
+
+<style lang="scss">
+    @use '../style/variables.scss' as *;
+    @use '../style/mixins.scss' as *;
+
+    .slide {
+        img.arrow {
+            position: absolute;
+            width: $img-size;
+            height: $img-size;
+            left: 50%;
+            margin-left: -0.5 * $img-size;
+            cursor: pointer;
+            transition: $trans-short;
+            opacity: 0.6;
+
+            &.up {
+                top: $spacing-big;
+                &:hover {
+                    top: $spacing-big - $spacing;
+                    transition: $trans-short;
+                    opacity: 1;
+                }
+            }
+            &.down {
+                bottom: $spacing-big;
+                &:hover {
+                    bottom: $spacing-big - $spacing;
+                    transition: $trans-short;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:first-child {
+            img.arrow.up {
+                display: none;
+            }
+        }
+
+        &:last-child {
+            img.arrow.down {
+                display: none;
+            }
+        }
+    }
+</style>
