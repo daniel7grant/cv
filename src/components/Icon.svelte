@@ -1,11 +1,11 @@
----
-interface Props {
-    name: string;
-    icon: string;
-}
+<script lang="ts">
+    interface Props {
+        name: string;
+        icon: string;
+    }
 
-const { name, icon } = Astro.props;
----
+    const { name, icon } = $props();
+</script>
 
 <li>
     <figure>

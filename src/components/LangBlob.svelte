@@ -1,34 +1,55 @@
----
-import type { Module } from '../types';
-import Icon from './Icon.astro';
+<script lang="ts">
+    import type { Language, Module } from '../types';
+    import Icon from './Icon.svelte';
 
-interface Props {
-    id: string;
-    icon: string;
-    name: string;
-    level: string;
-    description: string;
-    modules: Module[];
-}
+    interface Props {
+        language: Language;
+        x: number;
+        y: number;
+        isOpen: boolean;
+        isActive: boolean;
+        onClick: () => void;
+        onClose: () => void;
+    }
 
-const { id, icon, name, level, description, modules } = Astro.props;
----
+    const { language, x, y, isOpen, isActive, onClick, onClose }: Props = $props();
+</script>
 
-<li id={`lang-${id}`} class="lang-blob">
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+<li
+    id={`lang-${language.id}`}
+    class={`lang-blob ${isActive ? 'is-active' : ''} ${isOpen ? 'is-open' : ''}`}
+    style={`transform: translate(${x}px, ${y}px)`}
+    onclick={(event) => {
+        event.stopPropagation();
+        onClick();
+    }}
+>
     <div class="lang-title">
-        <img class="icon" src={icon} alt={name} />
-        <h3>{name}</h3>
+        <img class="icon" src={language.icon} alt={language.name} />
+        <h3>{language.name}</h3>
         <div class="lang-level">
-            <h4>{level}</h4>
+            <h4>{language.level}</h4>
             <div>Level</div>
         </div>
-        <img class="close" src="/icons/close.svg" />
+        <img
+            class="close"
+            src="/icons/close.svg"
+            alt="Close"
+            onclick={(event) => {
+                event.stopPropagation();
+                onClose();
+            }}
+        />
     </div>
     <hr />
     <div class="lang-description">
-        {description}
+        {@html language.description}
         <ul class="lang-modules">
-            {modules.map((module) => <Icon {...module} />)}
+            {#each language.modules as module}
+                <Icon {...module} />
+            {/each}
         </ul>
     </div>
 </li>
@@ -45,6 +66,11 @@ const { id, icon, name, level, description, modules } = Astro.props;
         left: 50%;
         margin-left: -0.5 * $img-size;
         margin-top: -0.5 * $img-size;
+        list-style: none;
+        &.is-open:not(.is-active) {
+            opacity: 0;
+            visibility: hidden;
+        }
         div.lang-title {
             display: flex;
             align-items: center;
@@ -112,10 +138,8 @@ const { id, icon, name, level, description, modules } = Astro.props;
                 display: flex;
                 flex-wrap: wrap;
                 margin-top: 2 * $spacing;
-                :global(li) {
-                    img {
-                        margin: 0 2 * $spacing;
-                    }
+                :global(li img) {
+                    margin: 0 2 * $spacing;
                 }
             }
         }

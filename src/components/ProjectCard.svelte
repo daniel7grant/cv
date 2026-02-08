@@ -1,28 +1,39 @@
----
-import type { Client, Cover, ShortLanguage } from '../types';
-import Icon from './Icon.astro';
-import ToUrl from './ToUrl.astro';
+<script lang="ts">
+    import type { Client, Cover, ShortLanguage } from '../types';
+    import Icon from './Icon.svelte';
+    import ToUrl from './ToUrl.svelte';
 
-interface Props {
-    name: string;
-    cover: Cover;
-    url: string;
-    client: Client;
-    details: string[];
-    languages: ShortLanguage[];
-}
+    interface Props {
+        name: string;
+        cover: Cover;
+        url: string;
+        client: Client;
+        details: string[];
+        languages: ShortLanguage[];
+        isActive: boolean;
+        onClick: () => void;
+    }
 
-const { name, cover, url, client, details, languages } = Astro.props;
----
+    const { name, cover, url, client, details, languages, isActive, onClick }: Props = $props();
+</script>
 
-<li class="project-card">
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+<li
+    class="project-card"
+    class:is-active={isActive}
+    onclick={(event) => {
+        event.stopPropagation();
+        onClick();
+    }}
+>
     <div class="project-cover">
         <picture>
             <source srcset={`/${cover.webp}`} type="image/webp" />
             <source srcset={`/${cover.png}`} type="image/png" />
             <img src={`/${cover.png}`} alt={name} />
         </picture>
-        <ToUrl name={name} url={url} />
+        <ToUrl {name} {url} />
     </div>
     <div class="project-details">
         <h3>{name}</h3>
@@ -30,12 +41,16 @@ const { name, cover, url, client, details, languages } = Astro.props;
             >for <a href={client.url} target="_blank" rel="noopener">{client.name}</a></span
         >
         <ul class="project-details-list">
-            {details.map((detail) => <li>{detail}</li>)}
+            {#each details as detail}
+                <li>{detail}</li>
+            {/each}
         </ul>
         <ul class="project-langs">
-            {languages.map((language) => <Icon {...language} />)}
+            {#each languages as language}
+                <Icon {...language} />
+            {/each}
         </ul>
-        <ToUrl name={name} url={url} />
+        <ToUrl {name} {url} />
     </div>
 </li>
 
@@ -103,7 +118,7 @@ const { name, cover, url, client, details, languages } = Astro.props;
             ul.project-details-list {
                 margin: 2 * $spacing $spacing-big;
                 list-style-type: circle;
-                li {
+                :global(li) {
                     margin-bottom: $spacing;
                 }
             }
@@ -111,14 +126,14 @@ const { name, cover, url, client, details, languages } = Astro.props;
                 display: flex;
                 margin-top: 2 * $spacing;
                 :global(li) {
-                    img {
+                    :global(img) {
                         margin: 0 2 * $spacing;
                         @include if-laptop {
                             width: 1.5rem;
                             height: 1.5rem;
                         }
                     }
-                    div {
+                    :global(div) {
                         margin-top: $spacing;
                         text-align: center;
                         font-size: 80%;

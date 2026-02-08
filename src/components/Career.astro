@@ -1,8 +1,8 @@
 ---
 import type { Career } from '../types';
-import Icon from './Icon.astro';
+import Icon from './Icon.svelte';
 import Slide from './Slide.astro';
-import ToUrl from './ToUrl.astro';
+import ToUrl from './ToUrl.svelte';
 
 interface Props {
     careers: Career[];
@@ -149,13 +149,13 @@ const { careers } = Astro.props;
                                 }
 
                                 :global(li) {
-                                    img {
+                                    :global(img) {
                                         margin: 0 $spacing;
                                         width: 1.5rem;
                                         height: 1.5rem;
                                     }
 
-                                    figcaption {
+                                    :global(figcaption) {
                                         display: none;
                                     }
                                 }
@@ -185,12 +185,10 @@ const { careers } = Astro.props;
                         display: none;
                     }
 
-                    :global(li) {
-                        img {
-                            margin: 0 $spacing;
-                            width: 3rem;
-                            height: 3rem;
-                        }
+                    :global(li img) {
+                        margin: 0 $spacing;
+                        width: 3rem;
+                        height: 3rem;
                     }
                 }
             }

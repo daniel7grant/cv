@@ -1,6 +1,6 @@
 ---
 import type { Project } from '../types';
-import ProjectCard from './ProjectCard.astro';
+import ProjectContainer from './ProjectContainer.svelte';
 import Slide from './Slide.astro';
 
 interface Props {
@@ -13,9 +13,7 @@ const { projects } = Astro.props;
 <Slide class="projects">
     <h2>Projects</h2>
     <div class="ds-parent-inner">
-        <ul id="slide-projects-list">
-            {projects.map((project) => <ProjectCard {...project} />)}
-        </ul>
+        <ProjectContainer client:load {projects} />
     </div>
     <p class="click-on">Click on the image for more details</p>
     <p class="swipe-on">Swipe left or right for more, click for details</p>
@@ -31,28 +29,6 @@ const { projects } = Astro.props;
     />
 
     <script>
-        function deactivateElements(ev: Event) {
-            const elements = Array.from(
-                document.querySelectorAll('#slide-lang,.lang-blob,.project-card'),
-            );
-            elements.forEach((element) => element.classList.remove('is-active'));
-            ev.stopPropagation();
-        }
-
-        function toggleElement(ev: Event, element: HTMLElement) {
-            if (!element.classList.contains('is-active')) {
-                deactivateElements(ev);
-                element.classList.add('is-active');
-            } else {
-                deactivateElements(ev);
-                element.classList.remove('is-active');
-            }
-        }
-
-        (Array.from(document.getElementsByClassName('project-card')) as HTMLElement[]).forEach(
-            (element) => element.addEventListener('click', (ev) => toggleElement(ev, element)),
-        );
-
         // @ts-ignore
         import DoSlide from 'do-slide';
         if (window.matchMedia('screen and (max-width: 1199px)').matches) {
@@ -94,17 +70,6 @@ const { projects } = Astro.props;
                 margin: auto;
                 width: $card-width;
                 height: 0.75 * $card-width;
-            }
-            ul#slide-projects-list {
-                @include if-mobile-tablet {
-                    width: $card-width;
-                    height: 0.75 * $card-width;
-                }
-                @include if-desktop {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                }
             }
         }
         img.project-switch {
