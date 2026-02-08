@@ -8,6 +8,18 @@
     </div>
 </section>
 
+<script>
+    // @ts-ignore
+    import DoSlide from 'do-slide';
+    const slider = new DoSlide('#slide-container', { activeClass: 'current-slide' });
+    Array.from(document.querySelectorAll('img.arrow')).forEach((element) =>
+        element.addEventListener('click', () => {
+            if (element.classList.contains('down')) slider.next();
+            else if (element.classList.contains('up')) slider.prev();
+        }),
+    );
+</script>
+
 <style lang="scss">
     section.ds-parent {
         display: block;

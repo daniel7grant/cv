@@ -46,6 +46,19 @@ const { email, github } = Astro.props;
     </div>
 </Slide>
 
+<script>
+    import Clipboard from 'clipboard';
+    new Clipboard('a.copy');
+
+    (Array.from(document.querySelectorAll('input.contact-input')) as HTMLInputElement[]).forEach(
+        (element) =>
+            element.addEventListener('click', (ev) => {
+                element.focus();
+                element.select();
+            }),
+    );
+</script>
+
 <style lang="scss">
     @use '../style/variables.scss' as *;
     @use '../style/mixins.scss' as *;

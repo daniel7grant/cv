@@ -31,6 +31,47 @@ const { projects } = Astro.props;
     />
 </Slide>
 
+<script>
+    function deactivateElements(ev: Event) {
+        const elements = Array.from(
+            document.querySelectorAll('#slide-lang,.lang-blob,.project-card'),
+        );
+        elements.forEach((element) => element.classList.remove('is-active'));
+        ev.stopPropagation();
+    }
+
+    function toggleElement(ev: Event, element: HTMLElement) {
+        if (!element.classList.contains('is-active')) {
+            deactivateElements(ev);
+            element.classList.add('is-active');
+        } else {
+            deactivateElements(ev);
+            element.classList.remove('is-active');
+        }
+    }
+
+    (Array.from(document.getElementsByClassName('project-card')) as HTMLElement[]).forEach(
+        (element) => element.addEventListener('click', (ev) => toggleElement(ev, element)),
+    );
+</script>
+
+<script>
+    // @ts-ignore
+    import DoSlide from 'do-slide';
+    if (window.matchMedia('screen and (max-width: 1199px)').matches) {
+        const slider = new DoSlide('#slide-projects-list', {
+            horizontal: true,
+            listenUserMouseWheel: false,
+        });
+        Array.from(document.querySelectorAll('img.arrow')).forEach((element) =>
+            element.addEventListener('click', () => {
+                if (element.classList.contains('left')) slider.prev();
+                else if (element.classList.contains('right')) slider.next();
+            }),
+        );
+    }
+</script>
+
 <style lang="scss">
     @use '../style/variables.scss' as *;
     @use '../style/mixins.scss' as *;
