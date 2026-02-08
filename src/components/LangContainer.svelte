@@ -28,9 +28,10 @@
             radius = Math.min(window.innerWidth, window.innerHeight) * 0.5 * 0.7;
         }
 
-        document.addEventListener('click', () => {
-            deactivateLanguage();
-        });
+        document.addEventListener('click', deactivateLanguage);
+        return () => {
+            document.removeEventListener('click', deactivateLanguage);
+        };
     });
 </script>
 
