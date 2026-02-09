@@ -1,11 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
 import Career from '../components/Career.astro';
 import Contact from '../components/Contact.astro';
 import Cover from '../components/Cover.astro';
 import Langs from '../components/Langs.astro';
 import Projects from '../components/Projects.astro';
 import Layout from '../layouts/Layout.astro';
+import getCareer from '../contents/jobs/getCareer';
+import getLanguages from '../contents/languages/getLanguages';
+import getProjects from '../contents/projects/getProjects';
 
 const language = 'en';
 const name = 'Gergely Dániel';
@@ -13,18 +15,9 @@ const description = "Gergely Dániel's CV website";
 const email = 'grant@d7gr.net';
 const github = 'https://github.com/daniel7grant/';
 
-const careerCollection = await getCollection('jobs');
-const careers = careerCollection
-    .toSorted((c1, c2) => (c1.data.years < c2.data.years ? -1 : 1))
-    .map((c) => ({ ...c.data, description: c.rendered!.html }));
-const languageCollection = await getCollection('languages');
-const languages = languageCollection
-    .toSorted((l1, l2) => l1.data.order - l2.data.order)
-    .map((l) => ({ ...l.data, description: l.rendered!.html }));
-const projectCollection = await getCollection('projects');
-const projects = projectCollection
-    .toSorted((p1, p2) => p1.data.order - p2.data.order)
-    .map((p) => p.data);
+const careers = await getCareer();
+const languages = await getLanguages();
+const projects = await getProjects();
 ---
 
 <Layout {name} {description} {language}>
