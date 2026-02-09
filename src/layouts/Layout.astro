@@ -23,8 +23,8 @@ const { name, description, language } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <meta property="og:title" content={name} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${Astro.site}/{{language}}/`} />
-        <meta property="og:image" content={`${Astro.site}/olti-dark.png`} />
+        <meta property="og:url" content={`${Astro.site}${language}`} />
+        <meta property="og:image" content={`${Astro.site}olti-dark.png`} />
         <meta property="og:description" content={description} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
