@@ -16,7 +16,8 @@
         "normalize.css": "^8.0.1",
         "sass": "^1.97.3",
         "svelte": "^5.50.0",
-        "typescript": "^5.9.3"
+        "typescript": "^5.9.3",
+        "zod": "^3.25.76"
     },
     "devDependencies": {
         "@typescript-eslint/parser": "^8.54.0",

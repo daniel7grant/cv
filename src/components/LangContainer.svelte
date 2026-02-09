@@ -1,10 +1,10 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import type { Language } from '../types';
+    import type { Language, WithContent } from '../types';
     import LangBlob from './LangBlob.svelte';
 
     interface Props {
-        languages: Language[];
+        languages: WithContent<Language>[];
     }
 
     const { languages }: Props = $props();

@@ -1,10 +1,10 @@
 ---
-import type { Language } from '../types';
+import type { Language, WithContent } from '../types';
 import LangContainer from './LangContainer.svelte';
 import Slide from './Slide.astro';
 
 interface Props {
-    languages: Language[];
+    languages: WithContent<Language>[];
 }
 
 const { languages } = Astro.props;

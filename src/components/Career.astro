@@ -1,11 +1,11 @@
 ---
-import type { Career } from '../types';
+import type { Job, WithContent } from '../types';
 import Icon from './Icon.svelte';
 import Slide from './Slide.astro';
 import ToUrl from './ToUrl.svelte';
 
 interface Props {
-    careers: Career[];
+    careers: WithContent<Job>[];
 }
 
 const { careers } = Astro.props;
@@ -33,7 +33,7 @@ const { careers } = Astro.props;
                                 </ul>
                             </small>
                         </div>
-                        <div class="career-body">{career.description}</div>
+                        <div class="career-body" set:html={career.description} />
                         <ul class="career-langs">
                             {career.languages.map((language) => (
                                 <Icon {...language} />

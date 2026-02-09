@@ -1,9 +1,9 @@
 <script lang="ts">
-    import type { Language, Module } from '../types';
+    import type { Language, Module, WithContent } from '../types';
     import Icon from './Icon.svelte';
 
     interface Props {
-        language: Language;
+        language: WithContent<Language>;
         x: number;
         y: number;
         isOpen: boolean;

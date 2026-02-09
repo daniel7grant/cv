@@ -1,57 +1,57 @@
-export interface Template {
-    language: string;
-    name: string;
-    description: string;
-    email: string;
-    github: string;
-    career: Career[];
-    languages: Language[];
-    projects: Project[];
-}
+import { z } from 'zod';
 
-export interface Career {
-    name: string;
-    description: string;
-    url: string;
-    years: string;
-    position: string;
-    languages: ShortLanguage[];
-}
+export const shortLanguage = z.object({
+    name: z.string(),
+    icon: z.string(),
+});
+export type ShortLanguage = z.infer<typeof shortLanguage>;
 
-export interface Language {
-    id: string;
-    name: string;
-    icon: string;
-    level: string;
-    description: string;
-    modules: Module[];
-}
+export const module = z.object({
+    name: z.string(),
+    icon: z.string(),
+});
+export type Module = z.infer<typeof module>;
 
-export interface ShortLanguage {
-    name: string;
-    icon: string;
-}
+export const cover = z.object({
+    png: z.string(),
+    webp: z.string(),
+});
+export type Cover = z.infer<typeof cover>;
 
-export interface Module {
-    name: string;
-    icon: string;
-}
+export const client = z.object({
+    name: z.string(),
+    url: z.string(),
+});
+export type Client = z.infer<typeof client>;
 
-export interface Project {
-    name: string;
-    cover: Cover;
-    url: string;
-    client: Client;
-    details: string[];
-    languages: ShortLanguage[];
-}
+export const job = z.object({
+    name: z.string(),
+    url: z.string(),
+    years: z.string(),
+    position: z.string(),
+    languages: z.array(shortLanguage),
+});
+export type Job = z.infer<typeof job>;
 
-export interface Cover {
-    png: string;
-    webp: string;
-}
+export const language = z.object({
+    id: z.string(),
+    name: z.string(),
+    icon: z.string(),
+    level: z.string(),
+    order: z.number(),
+    modules: z.array(module),
+});
+export type Language = z.infer<typeof language>;
 
-export interface Client {
-    name: string;
-    url: string;
-}
+export const project = z.object({
+    name: z.string(),
+    cover: cover,
+    url: z.string(),
+    client: client,
+    details: z.array(z.string()),
+    order: z.number(),
+    languages: z.array(shortLanguage),
+});
+export type Project = z.infer<typeof project>;
+
+export type WithContent<T> = T & { description: string };
