@@ -4,12 +4,26 @@ import Contact from '../components/Contact.astro';
 import Cover from '../components/Cover.astro';
 import Langs from '../components/Langs.astro';
 import Projects from '../components/Projects.astro';
+import Layout from '../layouts/Layout.astro';
+import getCareer from '../contents/jobs/getCareer';
+import getLanguages from '../contents/languages/getLanguages';
+import getProjects from '../contents/projects/getProjects';
+
+const language = 'en';
+const name = 'Gergely Dániel';
+const description = "Gergely Dániel's CV website";
+const email = 'grant@d7gr.net';
+const github = 'https://github.com/daniel7grant/';
+
+const careers = await getCareer();
+const languages = await getLanguages();
+const projects = await getProjects();
 ---
 
-<Layout>
-    <Cover />
-    <Career />
-    <Langs />
-    <Projects />
-    <Contact />
+<Layout {name} {description} {language}>
+    <Cover title={name} />
+    <Career {careers} />
+    <Langs {languages} />
+    <Projects {projects} />
+    <Contact {email} {github} />
 </Layout>
