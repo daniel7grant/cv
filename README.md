@@ -42,6 +42,6 @@ For actual deployment, I wrap the these into a docker container, with NGINX reve
 
 ### Change the content
 
-You can change the content of the page without any knowledge in coding by modifying the `content.js` JSON file. Recompile your files after you finished.
+You can change the content of the page without any knowledge in coding by modifying the `src/contents` MD files. Recompile your files after you finished.
 
 If you use the page, please pay me a mention.

@@ -13,3 +13,5 @@ languages:
     - name: Rust
       icon: /icons/rust/rust-plain.svg
 ---
+
+I moved on to Alias where I could put my Node.js and Rust skills to good use by developing for hardware and software for a cash register application.

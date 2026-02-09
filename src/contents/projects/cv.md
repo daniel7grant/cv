@@ -8,16 +8,15 @@ client:
     name: me
     url: https://cv.danielgrants.com
 details:
-    - Built without any frameworks, only using Handlebars and vite
-    - Dynamically generated from a JSON file
+    - Built with Astro and Svelte
+    - Statically generated from content markdowns
+    - Designed entirely from scratch
 order: 7
 languages:
-    - name: Vite
-      icon: /icons/vitejs/vitejs-original.svg
-    - name: JavaScript
-      icon: /icons/javascript/javascript-original.svg
+    - name: Astro
+      icon: /icons/astro/astro-original.svg
+    - name: Svelte
+      icon: /icons/svelte/svelte-original.svg
     - name: SCSS
       icon: /icons/sass/sass-original.svg
-    - name: Handlebars
-      icon: /icons/handlebars/handlebars-original.svg
 ---

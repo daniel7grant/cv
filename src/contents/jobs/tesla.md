@@ -1,5 +1,5 @@
 ---
-name: Tesla Gigafactory Berlin
+name: Tesla
 url: https://www.tesla.com/giga-berlin
 years: 2025-2025
 position: Full Stack Engineer
@@ -12,4 +12,4 @@ languages:
       icon: /icons/react/react-original.svg
 ---
 
-I worked out-sourced to
+I was outsourced to Tesla Gigafactory Berlin, where I was writing supporting software for factory workers.
