@@ -14,6 +14,19 @@
             else if (element.classList.contains('up')) slider.prev();
         }),
     );
+    // Jump to the previous slide without animation
+    if (window.location.hash.startsWith('#slide')) {
+        const slideIndex = Number.parseInt(window.location.hash.slice(6), 10) - 1;
+        setTimeout(() => {
+            slider.set({ duration: 0 });
+            slider.go(slideIndex);
+            slider.set({ duration: 1000 });
+        }, 0);
+    }
+    // Store the current slide in the hash
+    slider.onBeforeChange(function (_: number, index: number) {
+        window.history.pushState(null, '', `#slide${index + 1}`);
+    });
 </script>
 
 <style lang="scss">
