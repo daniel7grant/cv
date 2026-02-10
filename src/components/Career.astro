@@ -1,8 +1,8 @@
 ---
 import type { Job, WithContent } from '../types';
-import Icon from './Icon.svelte';
+
+import JobContainer from './JobContainer.svelte';
 import Slide from './Slide.astro';
-import ToUrl from './ToUrl.svelte';
 
 interface Props {
     careers: WithContent<Job>[];
@@ -13,37 +13,7 @@ const { careers } = Astro.props;
 
 <Slide class="career">
     <h2>Career</h2>
-    <ol class="career-timeline">
-        {
-            careers.map((career) => (
-                <li>
-                    <div class="career-years">
-                        <span>{career.years}</span>
-                    </div>
-                    <div class="career-container">
-                        <div class="career-header">
-                            <ToUrl name={career.name} url={career.url} />
-                            <h3>{career.name}</h3>
-                            <small class="position">
-                                <span>{career.position}</span>
-                                <ul class="career-langs">
-                                    {career.languages.map((language) => (
-                                        <Icon {...language} />
-                                    ))}
-                                </ul>
-                            </small>
-                        </div>
-                        <div class="career-body" set:html={career.description} />
-                        <ul class="career-langs">
-                            {career.languages.map((language) => (
-                                <Icon {...language} />
-                            ))}
-                        </ul>
-                    </div>
-                </li>
-            ))
-        }
-    </ol>
+    <JobContainer {careers} client:load />
 </Slide>
 
 <style lang="scss">
@@ -72,125 +42,6 @@ const { careers } = Astro.props;
             }
             @include if-mobile {
                 margin-bottom: 0.125 * $h1-size;
-            }
-        }
-
-        ol.career-timeline {
-            display: flex;
-
-            @include if-desktop {
-                margin-top: 0.25 * $h1-size;
-            }
-
-            @include if-mobile-tablet {
-                flex-direction: column;
-            }
-
-            & > li {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                min-height: $career-height;
-                padding: 0 0.4 * $career-height 0.2 * $career-height 0.4 * $career-height;
-
-                @include if-mobile-tablet {
-                    flex-direction: row;
-                    padding: 0 0 0.2 * $career-height 0;
-                }
-
-                &:last-child {
-                    padding-bottom: 0;
-                }
-
-                .career-years {
-                    font-size: 1.4 * $h3-size;
-                    color: $acolor;
-                    opacity: 60%;
-
-                    @include if-mobile-tablet {
-                        min-width: 80px;
-                    }
-
-                    @include if-mobile-tablet {
-                        font-size: $h3-size;
-                        padding-right: 2 * $spacing;
-                        min-width: 90px;
-                    }
-                }
-
-                .career-header {
-                    position: relative;
-                    margin-bottom: 1.5 * $spacing;
-
-                    h3 {
-                        @include if-mobile {
-                            font-size: 0.9 * $h3-size;
-                        }
-                    }
-
-                    small {
-                        color: $acolor;
-                        text-transform: uppercase;
-
-                        &.position {
-                            display: flex;
-                            align-items: center;
-
-                            ul.career-langs {
-                                display: none;
-                                margin-left: auto;
-
-                                @include if-mobile-tablet {
-                                    display: flex;
-                                }
-
-                                @include if-small-height {
-                                    display: none;
-                                }
-
-                                :global(li) {
-                                    :global(img) {
-                                        margin: 0 $spacing;
-                                        width: 1.5rem;
-                                        height: 1.5rem;
-                                    }
-
-                                    :global(figcaption) {
-                                        display: none;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    :global(a.to-url) {
-                        position: absolute;
-                        fill: $acolor;
-                        top: 0;
-                        right: 0;
-                    }
-                }
-
-                @include if-desktop {
-                    .career-body {
-                        margin-bottom: 2 * $spacing;
-                    }
-                }
-
-                ul.career-langs {
-                    display: flex;
-                    margin-left: auto;
-
-                    @include if-mobile-tablet {
-                        display: none;
-                    }
-
-                    :global(li img) {
-                        margin: 0 $spacing;
-                        width: 3rem;
-                        height: 3rem;
-                    }
-                }
             }
         }
     }
