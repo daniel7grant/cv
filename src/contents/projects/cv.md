@@ -11,7 +11,7 @@ details:
     - Built with Astro and Svelte
     - Statically generated from content markdowns
     - Designed entirely from scratch
-order: 7
+order: 99
 languages:
     - name: Astro
       icon: /icons/astro/astro-original.svg
