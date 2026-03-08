@@ -1,0 +1,45 @@
+---
+import 'normalize.css';
+import '../style/theme.scss';
+import 'do-slide/dist/do-slide.min.css';
+import Slides from '../components/Slides.astro';
+
+interface Props {
+    name: string;
+    description: string;
+    language: string;
+}
+const { name, description, language } = Astro.props;
+---
+
+<!doctype html>
+<html lang={language}>
+    <head>
+        <title>{name}</title>
+        <meta charset="UTF-8" />
+        <meta name="author" content={name} />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <meta property="og:title" content={name} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${Astro.site}${language}`} />
+        <meta property="og:image" content={`${Astro.site}olti-dark.png`} />
+        <meta property="og:description" content={description} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <Slides>
+            <slot />
+        </Slides>
+    </body>
+</html>

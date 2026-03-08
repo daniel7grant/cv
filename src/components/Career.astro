@@ -1,0 +1,48 @@
+---
+import type { Job, WithContent } from '../types';
+
+import JobContainer from './JobContainer.svelte';
+import Slide from './Slide.astro';
+
+interface Props {
+    careers: WithContent<Job>[];
+}
+
+const { careers } = Astro.props;
+---
+
+<Slide class="career">
+    <h2>Career</h2>
+    <JobContainer {careers} client:load />
+</Slide>
+
+<style lang="scss">
+    @use '../style/variables.scss' as *;
+    @use '../style/mixins.scss' as *;
+
+    .career {
+        margin: auto;
+        padding: 0.75 * $h1-size 0.75 * $h1-size $h1-size 0.75 * $h1-size;
+
+        @include if-desktop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include if-mobile-tablet {
+            width: $lang-width;
+            max-width: 100%;
+            padding: 0.5 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
+        }
+
+        h2 {
+            @include if-tablet-laptop {
+                margin-bottom: 0.125 * $h1-size;
+            }
+            @include if-mobile {
+                margin-bottom: 0.125 * $h1-size;
+            }
+        }
+    }
+</style>

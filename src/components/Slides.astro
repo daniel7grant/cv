@@ -1,0 +1,43 @@
+<section class="ds-parent">
+    <div id="slide-container" class="ds-container">
+        <slot />
+    </div>
+</section>
+
+<script>
+    // @ts-ignore
+    import DoSlide from 'do-slide';
+    const slider = new DoSlide('#slide-container', { activeClass: 'current-slide' });
+    Array.from(document.querySelectorAll('img.arrow')).forEach((element) =>
+        element.addEventListener('click', () => {
+            if (element.classList.contains('down')) slider.next();
+            else if (element.classList.contains('up')) slider.prev();
+        }),
+    );
+    // Jump to the previous slide without animation
+    if (window.location.hash.startsWith('#slide')) {
+        const slideIndex = Number.parseInt(window.location.hash.slice(6), 10) - 1;
+        setTimeout(() => {
+            slider.set({ duration: 0 });
+            slider.go(slideIndex);
+            slider.set({ duration: 1000 });
+        }, 0);
+    }
+    // Store the current slide in the hash
+    slider.onBeforeChange(function (_: number, index: number) {
+        window.history.pushState(null, '', `#slide${index + 1}`);
+    });
+</script>
+
+<style lang="scss">
+    section.ds-parent {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        article.slide {
+            position: relative;
+        }
+    }
+</style>

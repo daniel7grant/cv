@@ -1,0 +1,143 @@
+---
+import type { Project } from '../types';
+import ProjectContainer from './ProjectContainer.svelte';
+import Slide from './Slide.astro';
+
+interface Props {
+    projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<Slide class="projects">
+    <h2>Projects</h2>
+    <div class="ds-parent-inner">
+        <ProjectContainer client:load {projects} />
+    </div>
+    <p class="click-on">Click on the image for more details</p>
+    <p class="swipe-on">Swipe left or right for more, click for details</p>
+    <img
+        class="project-switch arrow left"
+        src="/icons/arrow_left.svg"
+        alt="Left arrow to switch projects"
+    />
+    <img
+        class="project-switch arrow right"
+        src="/icons/arrow_right.svg"
+        alt="Right arrow to switch projects"
+    />
+
+    <script>
+        // @ts-ignore
+        import DoSlide from 'do-slide';
+        if (window.matchMedia('screen and (max-width: 1199px)').matches) {
+            const slider = new DoSlide('#slide-projects-list', {
+                horizontal: true,
+                listenUserMouseWheel: false,
+            });
+            Array.from(document.querySelectorAll('img.arrow')).forEach((element) =>
+                element.addEventListener('click', () => {
+                    if (element.classList.contains('left')) slider.prev();
+                    else if (element.classList.contains('right')) slider.next();
+                }),
+            );
+        }
+    </script>
+</Slide>
+
+<style lang="scss">
+    @use '../style/variables.scss' as *;
+    @use '../style/mixins.scss' as *;
+
+    .projects {
+        padding: 0.75 * $h1-size 0.75 * $h1-size 0 0.75 * $h1-size;
+        @include if-tablet-laptop {
+            padding: 0.5 * $h1-size 0.5 * $h1-size 0 0.5 * $h1-size;
+        }
+        @include if-mobile {
+            padding: 0.75 * $h1-size 0.25 * $h1-size 0 0.25 * $h1-size;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .ds-parent-inner {
+            @include if-mobile-tablet {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                overflow-y: visible;
+                margin: auto;
+                width: $card-width;
+                height: 0.75 * $card-width;
+            }
+        }
+        img.project-switch {
+            @include if-desktop {
+                display: none;
+            }
+        }
+        p {
+            margin: $spacing-big;
+            text-align: center;
+            font-size: 90%;
+            color: $acolor;
+            font-style: italic;
+            display: none;
+            @include if-tablet {
+                &.click-on {
+                    display: block;
+                }
+            }
+            @include if-mobile {
+                &.swipe-on {
+                    display: block;
+                }
+            }
+        }
+
+        img.arrow {
+            position: absolute;
+            width: $img-size;
+            height: $img-size;
+            left: 50%;
+            margin-left: -0.5 * $img-size;
+            cursor: pointer;
+            transition: $trans-short;
+            opacity: 0.6;
+
+            &.left {
+                top: 0.5 * $h1-size + $h2-size + 0.5 * $h2-size + 0.5 * 0.75 * $card-width - 0.5 *
+                    $img-size;
+                margin-left: -(0.5 * $card-width + $spacing-big) - 0.5 * $img-size;
+
+                @include if-mobile {
+                    top: 0.75 * $h1-size + $h2-size + 0.5 * $h2-size + 0.5 * 0.75 * $card-width -
+                        0.5 * $img-size;
+                }
+
+                &:hover {
+                    margin-left: -(0.5 * $card-width + $spacing-big + $spacing) - 0.5 * $img-size;
+                    transition: $trans-short;
+                    opacity: 1;
+                }
+            }
+            &.right {
+                top: 0.5 * $h1-size + $h2-size + 0.5 * $h2-size + 0.5 * 0.75 * $card-width - 0.5 *
+                    $img-size;
+                margin-left: 0.5 * $card-width + $spacing-big - 0.5 * $img-size;
+
+                @include if-mobile {
+                    top: 0.75 * $h1-size + $h2-size + 0.5 * $h2-size + 0.5 * 0.75 * $card-width -
+                        0.5 * $img-size;
+                }
+
+                &:hover {
+                    margin-left: 0.5 * $card-width + $spacing-big + $spacing - 0.5 * $img-size;
+                    transition: $trans-short;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+</style>

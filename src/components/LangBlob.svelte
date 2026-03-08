@@ -1,0 +1,184 @@
+<script lang="ts">
+    import type { Language, Module, WithContent } from '../types';
+    import Icon from './Icon.svelte';
+
+    interface Props {
+        language: WithContent<Language>;
+        x: number;
+        y: number;
+        isOpen: boolean;
+        isActive: boolean;
+        onClick: () => void;
+        onClose: () => void;
+    }
+
+    const { language, x, y, isOpen, isActive, onClick, onClose }: Props = $props();
+</script>
+
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+<li
+    id={`lang-${language.id}`}
+    class={`lang-blob ${isActive ? 'is-active' : ''} ${isOpen ? 'is-open' : ''}`}
+    style={`transform: translate(${x}px, ${y}px)`}
+    onclick={(event) => {
+        event.stopPropagation();
+        onClick();
+    }}
+>
+    <div class="lang-title">
+        <img class="icon" src={language.icon} alt={language.name} />
+        <h3>{language.name}</h3>
+        <div class="lang-level">
+            <h4>{language.level}</h4>
+            <div>Level</div>
+        </div>
+        <img
+            class="close"
+            src="/icons/close.svg"
+            alt="Close"
+            onclick={(event) => {
+                event.stopPropagation();
+                onClose();
+            }}
+        />
+    </div>
+    <hr />
+    <div class="lang-description">
+        {@html language.description}
+        <ul class="lang-modules">
+            {#each language.modules as module}
+                <Icon {...module} />
+            {/each}
+        </ul>
+    </div>
+</li>
+
+<style lang="scss">
+    @use '../style/variables.scss' as *;
+    @use '../style/mixins.scss' as *;
+
+    li.lang-blob {
+        position: absolute;
+        width: $img-size;
+        transition: $trans-short;
+        top: 50vh;
+        left: 50%;
+        margin-left: -0.5 * $img-size;
+        margin-top: -0.5 * $img-size;
+        list-style: none;
+        &.is-open:not(.is-active) {
+            opacity: 0;
+            visibility: hidden;
+        }
+        div.lang-title {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: $trans-short;
+            img {
+                flex: 0 1 auto;
+                margin-right: 2 * $spacing;
+            }
+            h3 {
+                margin: 0;
+                flex: 1 0 auto;
+                white-space: nowrap;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5 * $trans-short $trans-short;
+            }
+            div.lang-level {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5 * $trans-short $trans-short;
+                flex: 0 1 auto;
+                height: 100%;
+                max-height: 100%;
+                text-align: center;
+                text-transform: uppercase;
+                margin: 0 $spacing;
+                h4 {
+                    font-family: $font-header;
+                    font-size: 0.67 * $h3-size;
+                    margin: 0;
+                }
+                div {
+                    font-family: $font-header;
+                    font-size: 0.33 * $h3-size;
+                }
+            }
+            img.close {
+                margin: 0;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5 * $trans-short $trans-short;
+            }
+        }
+        hr {
+            height: 0;
+            border-bottom: 1px solid $fgcolor;
+            transition: $trans-short;
+        }
+        div.lang-description {
+            box-sizing: border-box;
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            transition: 0.5 * $trans-short $trans-short;
+            margin-top: 2 * $spacing;
+            padding-left: $img-size + 2 * $spacing;
+            overflow: hidden;
+            width: 100%;
+            ul.lang-modules {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 2 * $spacing;
+                :global(li img) {
+                    margin: 0 2 * $spacing;
+                }
+            }
+        }
+        &.is-active {
+            width: $lang-width;
+            transform: translate(
+                -0.5 * $lang-width,
+                -0.5 * $lang-radius
+            ) !important; //I don't usually do this I swear
+            margin-left: 0;
+            @include if-mobile {
+                width: $lang-width-s;
+                transform: translate(
+                    -0.5 * $lang-width-s,
+                    -0.5 * $lang-radius
+                ) !important; //I don't usually do this I swear
+            }
+            div.lang-title {
+                h3,
+                div.lang-level,
+                img.close {
+                    visibility: visible;
+                    opacity: 1;
+                    transition: 0.5 * $trans-short $trans-short;
+                }
+            }
+            div.lang-description {
+                height: auto;
+                visibility: visible;
+                opacity: 1;
+                transition: 0.5 * $trans-short $trans-short;
+            }
+        }
+        &:not(.is-active):hover {
+            div.lang-title,
+            hr {
+                transition: $trans-short;
+                transform: scale(1.2);
+            }
+        }
+    }
+</style>

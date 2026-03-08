@@ -1,0 +1,174 @@
+<script lang="ts">
+    import type { Client, Cover, ShortLanguage } from '../types';
+    import Icon from './Icon.svelte';
+    import ToUrl from './ToUrl.svelte';
+
+    interface Props {
+        name: string;
+        cover: Cover;
+        url: string;
+        client: Client;
+        details: string[];
+        languages: ShortLanguage[];
+        isActive: boolean;
+        onClick: () => void;
+    }
+
+    const { name, cover, url, client, details, languages, isActive, onClick }: Props = $props();
+</script>
+
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+<li
+    class="project-card"
+    class:is-active={isActive}
+    onclick={(event) => {
+        event.stopPropagation();
+        onClick();
+    }}
+>
+    <div class="project-cover">
+        <picture>
+            <source srcset={`/${cover.webp}`} type="image/webp" />
+            <source srcset={`/${cover.png}`} type="image/png" />
+            <img src={`/${cover.png}`} alt={name} />
+        </picture>
+        <ToUrl {name} {url} />
+    </div>
+    <div class="project-details">
+        <h3>{name}</h3>
+        <span class="project-client"
+            >for <a href={client.url} target="_blank" rel="noopener">{client.name}</a></span
+        >
+        <ul class="project-details-list">
+            {#each details as detail}
+                <li>{detail}</li>
+            {/each}
+        </ul>
+        <ul class="project-langs">
+            {#each languages as language}
+                <Icon {...language} />
+            {/each}
+        </ul>
+        <ToUrl {name} {url} />
+    </div>
+</li>
+
+<style lang="scss">
+    @use '../style/variables.scss' as *;
+    @use '../style/mixins.scss' as *;
+
+    li.project-card {
+        position: relative;
+        cursor: pointer;
+        width: $card-width;
+        height: 0.75 * $card-width;
+        perspective: 1000px;
+        margin-bottom: 2 * $spacing-big;
+        @include if-laptop {
+            // Cards are breaking weirdly in this size, so let's make them smaller
+            width: 0.8 * $card-width;
+            height: 0.8 * 0.75 * $card-width;
+            font-size: 80%;
+            margin-bottom: $spacing-big;
+
+            h3 {
+                font-size: 0.8 * $h3-size;
+            }
+        }
+        @include if-mobile-tablet {
+            margin-bottom: 0;
+            overflow: hidden;
+            width: $card-width;
+            height: 0.75 * $card-width;
+        }
+        & > div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transform-origin: 50% 50%;
+            :global(a.to-url) {
+                position: absolute;
+                top: 2 * $spacing;
+                right: 2 * $spacing;
+            }
+        }
+        div.project-cover {
+            transform: rotateY(0deg);
+            transition: transform $trans-short;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: $spacing;
+            }
+        }
+        div.project-details {
+            box-sizing: border-box;
+            transform: rotateY(180deg);
+            transition: transform $trans-short;
+            background-color: #202020;
+            border-radius: $spacing;
+            padding: 2 * $spacing;
+            span.project-client {
+                font-size: 95%;
+            }
+            ul.project-details-list {
+                margin: 2 * $spacing $spacing-big;
+                list-style-type: circle;
+                :global(li) {
+                    margin-bottom: $spacing;
+                }
+            }
+            ul.project-langs {
+                display: flex;
+                margin-top: 2 * $spacing;
+                :global(li) {
+                    :global(img) {
+                        margin: 0 2 * $spacing;
+                        @include if-laptop {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+                    }
+                    :global(div) {
+                        margin-top: $spacing;
+                        text-align: center;
+                        font-size: 80%;
+                    }
+                }
+            }
+            :global(a.to-url) {
+                display: none;
+            }
+        }
+        &:hover {
+            @include if-desktop {
+                div.project-cover {
+                    transform: rotateY(-20deg);
+                    transition: transform $trans-short;
+                }
+                div.project-details {
+                    transform: rotateY(160deg);
+                    transition: transform $trans-short;
+                }
+            }
+        }
+        &.is-active {
+            div.project-cover {
+                transform: rotateY(-180deg);
+                transition: transform $trans-short;
+            }
+            div.project-details {
+                transform: rotateY(0deg);
+                transition: transform $trans-short;
+
+                :global(a.to-url) {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+</style>

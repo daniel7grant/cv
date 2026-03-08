@@ -1,0 +1,15 @@
+---
+import type { Language, WithContent } from '../types';
+import LangContainer from './LangContainer.svelte';
+import Slide from './Slide.astro';
+
+interface Props {
+    languages: WithContent<Language>[];
+}
+
+const { languages } = Astro.props;
+---
+
+<Slide class="langs" id="slide-lang">
+    <LangContainer {languages} client:load />
+</Slide>
