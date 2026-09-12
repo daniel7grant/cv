@@ -16,13 +16,13 @@
         "normalize.css": "^8.0.1",
         "sass": "^1.97.3",
         "svelte": "^5.50.0",
-        "typescript": "5.9",
+        "typescript": "^6.0.3",
         "zod": "^4.3.6"
     },
     "devDependencies": {
         "@typescript-eslint/parser": "^8.54.0",
         "eslint": "^10.1.0",
-        "eslint-plugin-astro": "^1.5.0",
+        "eslint-plugin-astro": "^3.1.0",
         "prettier": "^3.8.1"
     }
 }
